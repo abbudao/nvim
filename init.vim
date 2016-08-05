@@ -170,6 +170,9 @@ call dein#add('Shougo/deoplete.nvim',
 
 " languages
 
+call dein#add('sheerun/vim-polyglot',
+\ {'on_event': 'BufRead'})
+
 call dein#add('artur-shaik/vim-javacomplete2',
 \ {'on_ft': 'java', 'if': executable('javac'),
 \  'hook_add': 'au FileType java setl omnifunc=javacomplete#Complete'})
@@ -179,10 +182,6 @@ call dein#add('davidhalter/jedi-vim',
 call dein#add('zchee/deoplete-jedi',
 \ {'depends': ['deoplete.nvim', 'jedi-vim']})
 
-call dein#add('othree/yajs.vim',
-\ {'on_ft': 'javascript'})
-call dein#add('othree/es.next.syntax.vim',
-\ {'depends': 'yajs.vim'})
 call dein#add('ternjs/tern_for_vim',
 \ {'on_ft': 'javascript', 'if': executable('npm'), 'build': 'npm i',
 \  'hook_add': 'let $PATH="node_modules/.bin:".$PATH'})
