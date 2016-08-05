@@ -91,8 +91,8 @@ call dein#add('dylanaraps/root.vim',
 
 " movement
 
-call dein#add('kana/vim-textobj-user')
-
+call dein#add('kana/vim-textobj-user',
+\ {'on_event': 'BufRead'})
 call dein#add('kana/vim-textobj-function',
 \ {'depends': 'vim-textobj-user'})
 call dein#add('kana/vim-textobj-indent',
