@@ -152,7 +152,7 @@ call dein#add('Raimondi/delimitMate',
 \          'let g:delimitMate_balance_matchpairs=1'], '|')})
 
 call dein#add('SirVer/ultisnips',
-\ {'on_event': 'InsertEnter', 'on_if': has('python3'),
+\ {'on_event': 'InsertEnter', 'if': has('python3'),
 \  'hook_add':
 \    join(['let g:UltiSnipsExpandTrigger="<tab>"',
 \          'let g:UltiSnipsListSnippets="<c-tab>"',
@@ -162,7 +162,7 @@ call dein#add('honza/vim-snippets',
 \ {'depends': 'ultisnips'})
 
 call dein#add('Shougo/deoplete.nvim',
-\ {'on_event': 'InsertEnter', 'on_if': has('python3'),
+\ {'on_event': 'InsertEnter', 'if': has('python3'),
 \  'hook_add':
 \    join(['let g:deoplete#enable_at_startup=1',
 \          'let g:deoplete#auto_completion_start_length=1',
@@ -171,11 +171,11 @@ call dein#add('Shougo/deoplete.nvim',
 " languages
 
 call dein#add('artur-shaik/vim-javacomplete2',
-\ {'on_ft': 'java', 'on_if': executable('javac'),
+\ {'on_ft': 'java', 'if': executable('javac'),
 \  'hook_add': 'au FileType java setl omnifunc=javacomplete#Complete'})
 
 call dein#add('davidhalter/jedi-vim',
-\ {'on_ft': 'python', 'on_if': has('python') || has('python3')})
+\ {'on_ft': 'python', 'if': has('python') || has('python3')})
 call dein#add('zchee/deoplete-jedi',
 \ {'depends': ['deoplete.nvim', 'jedi-vim']})
 
@@ -184,7 +184,7 @@ call dein#add('othree/yajs.vim',
 call dein#add('othree/es.next.syntax.vim',
 \ {'depends': 'yajs.vim'})
 call dein#add('ternjs/tern_for_vim',
-\ {'on_ft': 'javascript', 'on_if': executable('npm'), 'build': 'npm i',
+\ {'on_ft': 'javascript', 'if': executable('npm'), 'build': 'npm i',
 \  'hook_add': 'let $PATH="node_modules/.bin:".$PATH'})
 call dein#add('carlitux/deoplete-ternjs',
 \ {'depends': ['deoplete.nvim', 'tern_for_vim']})
