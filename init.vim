@@ -40,8 +40,7 @@ call dein#add('bling/vim-bufferline',
 \          'let g:bufferline_active_buffer_left=""',
 \          'let g:bufferline_active_buffer_right=""'], '|'),
 \  'hook_post_source':
-\    'let &statusline="%#StatusLineNC# '
-\      .'%{bufferline#refresh_status()}"'
+\    'let &statusline="%{bufferline#refresh_status()}"'
 \      .'.bufferline#get_status_string()'})
 
 call dein#add('deris/vim-shot-f')
