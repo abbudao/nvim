@@ -4,13 +4,7 @@ set clipboard+=unnamedplus
 set completeopt=menuone,preview,noinsert,noselect
 set confirm hidden noswapfile undofile undodir=~/.cache
 set gdefault nohlsearch
-set number relativenumber
 set tabstop=2 shiftwidth=2 expandtab list
-
-hi! link LineNr NonText
-hi! link CursorLineNr NonText
-hi! link StatusLine Question
-hi! link StatusLineNC Visual
 
 nmap <esc> q:k
 nmap <c-p> :bp<cr>
@@ -25,7 +19,7 @@ tmap <c-v> <c-\><c-n>
 
 au CmdwinEnter * nmap <buffer><esc> :q<cr>
 
-let s:dein_dir='~/.local/share/nvim/site/'
+let s:dein_dir='~/.local/share/nvim/site'
 let s:dein_cache='~/.cache/dein'
 let g:dein#types#git#clone_depth=1
 if isdirectory(expand(s:dein_dir))
@@ -35,6 +29,8 @@ call dein#begin(s:dein_cache)
 call dein#add('Shougo/dein.vim', {'rtp': ''})
 
 " interface
+
+call dein#add('jonathanfilip/vim-lucius')
 
 call dein#add('bling/vim-bufferline',
 \ {'on_event': 'BufRead',
@@ -199,8 +195,11 @@ if dein#check_install() | call dein#install() | endif
 call dein#save_state()
 endif
 
+colorscheme lucius
+LuciusWhiteLowContrast
+
 else
-exe '!git clone --depth=1 https://github.com/Shougo/dein.vim ~/.local/share/nvim/site'
+exe '!git clone --depth=1 https://github.com/Shougo/dein.vim '.s:dein_dir
 endif
 
 filetype plugin indent on
