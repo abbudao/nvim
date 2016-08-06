@@ -33,7 +33,7 @@ call dein#add('Shougo/dein.vim', {'rtp': ''})
 call dein#add('jonathanfilip/vim-lucius')
 
 call dein#add('bling/vim-bufferline',
-\ {'on_event': 'BufRead',
+\ {'on_path': '.*',
 \  'hook_add':
 \    join(['let g:bufferline_echo=0',
 \          'let g:bufferline_show_bufnr=0',
@@ -43,87 +43,63 @@ call dein#add('bling/vim-bufferline',
 \    'let &statusline="%{bufferline#refresh_status()}"'
 \      .'.bufferline#get_status_string()'})
 
-call dein#add('deris/vim-shot-f')
-
-call dein#add('osyo-manga/vim-over')
+call dein#add('deris/vim-shot-f', {'on_map': ['f', 'F', 't', 'T']})
 
 " utilities
 
 call dein#add('rliang/termedit.nvim')
 
-call dein#add('tpope/vim-eunuch')
-
-call dein#add('tpope/vim-rsi')
+call dein#add('junegunn/vim-easy-align',
+\ {'on_cmd': ['EasyAlign', 'LiveEasyAlign']})
 
 call dein#add('tpope/vim-repeat')
 
-call dein#add('junegunn/vim-easy-align',
-\ {'on_map': '<plug>(EasyAlign',
-\  'hook_add':
-\    join(['nmap <leader>a <plug>(EasyAlign)',
-\          'vmap <leader>a <plug>(EasyAlign)'], '|')})
+call dein#add('tpope/vim-eunuch',
+\ {'on_cmd': ['Remove', 'Move', 'Rename', 'Chmod', 'Mkdir', 'Find', 'SudoWrite', 'SudoRead']})
 
 " navigation
 
-call dein#add('junegunn/fzf',
-\ {'build': './install --all'})
-
-call dein#add('junegunn/fzf.vim',
-\ {'depends': 'fzf',
-\  'hook_add':
-\    join(['nmap <leader>: :Commands<cr>',
-\          'nmap <leader>; :History:<cr>',
-\          'nmap <leader>b :Buffers<cr>',
-\          'nmap <leader>f :Files<cr>',
-\          'nmap <leader>g :GFiles<cr>',
-\          'nmap <leader>h :History<cr>',
-\          'nmap <leader>i :Snippets<cr>',
-\          'nmap <leader>l :Lines<cr>',
-\          'nmap <leader><tab> <plug>(fzf-maps-n)',
-\          'xmap <leader><tab> <plug>(fzf-maps-x)',
-\          'omap <leader><tab> <plug>(fzf-maps-o)'], '|')})
-
 call dein#add('dylanaraps/root.vim',
-\ {'on_event': 'BufRead',
+\ {'on_path': '.*',
 \  'hook_add':
 \    join(['let g:root#auto=1',
 \          'let g:root#echo=0'], '|')})
 
+call dein#add('junegunn/fzf',
+\ {'lazy': 1, 'build': './install --all'})
+
+call dein#add('junegunn/fzf.vim',
+\ {'depends': 'fzf',
+\  'on_cmd': ['Commands', 'History:', 'Files', 'GFiles', 'History', 'Snippets', 'Lines'],
+\  'hook_add':
+\    join(['nmap <leader>: :Commands<cr>',
+\          'nmap <leader>; :History:<cr>',
+\          'nmap <leader>f :Files<cr>',
+\          'nmap <leader>g :GFiles<cr>',
+\          'nmap <leader>h :History<cr>',
+\          'nmap <leader>i :Snippets<cr>',
+\          'nmap <leader>l :Lines<cr>'], '|')})
+
 " movement
 
-call dein#add('kana/vim-textobj-user',
-\ {'on_event': 'BufRead'})
-call dein#add('kana/vim-textobj-function',
-\ {'depends': 'vim-textobj-user'})
-call dein#add('kana/vim-textobj-indent',
-\ {'depends': 'vim-textobj-user'})
-call dein#add('beloglazov/vim-textobj-punctuation',
-\ {'depends': 'vim-textobj-user'})
-call dein#add('beloglazov/vim-textobj-quotes',
-\ {'depends': 'vim-textobj-user'})
-call dein#add('Julian/vim-textobj-brace',
-\ {'depends': 'vim-textobj-user'})
-call dein#add('Julian/vim-textobj-variable-segment',
-\ {'depends': 'vim-textobj-user'})
-call dein#add('glts/vim-textobj-comment',
-\ {'depends': 'vim-textobj-user'})
-call dein#add('sgur/vim-textobj-parameter',
-\ {'depends': 'vim-textobj-user'})
-call dein#add('vimtaku/vim-textobj-keyvalue',
-\ {'depends': 'vim-textobj-user'})
-call dein#add('thalesmello/vim-textobj-methodcall',
-\ {'depends': 'vim-textobj-user'})
+call dein#add('tpope/vim-rsi',
+\ {'on_map':
+\   {'ic': ['<c-a>', '<c-b>', '<c-d>', '<c-e>', '<c-f>', '<c-g>',
+\           '<m-bs>', '<m-b>', '<m-b>', '<m-f>', '<m-n>', '<m-p>']}})
 
-call dein#add('tpope/vim-surround',
-\ {'on_map': {'n': ['ys', 'cs', 'ds']}})
+call dein#add('terryma/vim-multiple-cursors',
+\ {'on_map': {'n': '<c-f>'},
+\  'hook_add':
+\    join(['let g:multi_cursor_next_key="<c-f>"',
+\          'let g:multi_cursor_prev_key="<c-b>"'], '|')})
 
 call dein#add('tpope/vim-commentary',
-\ {'on_map': '<plug>Commentary',
+\ {'on_map': '<Plug>Commentary',
 \  'hook_add':
-\    join(['xmap <leader>c <plug>Commentary',
-\          'nmap <leader>c <plug>Commentary',
-\          'omap <leader>c <plug>Commentary',
-\          'nmap <leader>cl <plug>CommentaryLine'], '|')})
+\    join(['nmap <leader>c <Plug>Commentary',
+\          'xmap <leader>c <Plug>Commentary',
+\          'omap <leader>c <Plug>Commentary',
+\          'nmap <leader>cl <Plug>CommentaryLine'], '|')})
 
 call dein#add('Lokaltog/vim-easymotion',
 \ {'on_map': '<plug>(easymotion',
@@ -137,10 +113,34 @@ call dein#add('Lokaltog/vim-easymotion',
 \          'omap S <plug>(easymotion-s)',
 \          'xmap S <plug>(easymotion-s)'], '|')})
 
-call dein#add('terryma/vim-multiple-cursors',
-\ {'hook_add':
-\    join(['let g:multi_cursor_next_key="<c-f>"',
-\          'let g:multi_cursor_prev_key="<c-b>"'], '|')})
+call dein#add('tpope/vim-surround',
+\ {'on_map': {'n': ['ds', 'cs', 'cS', 'ys', 'yS', 'yss', 'ySs', 'ySS'], 'x': ['S', 'gS']}})
+
+call dein#add('PeterRincker/vim-argumentative',
+\ {'on_map': {'n': ['>,', '<,'], 'xo': ['i,', 'a,'], 'nxo': ['[,', '],']}})
+
+call dein#add('kana/vim-textobj-user')
+
+call dein#add('zandrmartin/vim-textobj-blanklines',
+\ {'on_map': {'vo': ['i<space>', 'a<space>']}})
+
+call dein#add('saihoooooooo/vim-textobj-space',
+\ {'on_map': {'vo': ['iS', 'aS']}})
+
+call dein#add('beloglazov/vim-textobj-punctuation',
+\ {'on_map': {'vo': ['iu', 'au']}})
+
+call dein#add('kana/vim-textobj-indent',
+\ {'on_map': {'vo': ['ii', 'ai', 'iI', 'aI']}})
+
+call dein#add('rhysd/vim-textobj-anyblock',
+\ {'on_map': {'vo': ['ib', 'ab']}})
+
+call dein#add('Julian/vim-textobj-variable-segment',
+\ {'on_map': {'vo': ['iv', 'av']}})
+
+call dein#add('thalesmello/vim-textobj-methodcall',
+\ {'on_map': {'vo': ['im', 'am', 'iM', 'aM']}})
 
 " insertion
 
@@ -152,17 +152,18 @@ call dein#add('Raimondi/delimitMate',
 \          'let g:delimitMate_balance_matchpairs=1'], '|')})
 
 call dein#add('SirVer/ultisnips',
-\ {'on_event': 'InsertEnter', 'if': has('python3'),
+\ {'if': has('python3'), 'on_event': 'InsertEnter', 'on_cmd': 'Snippets',
 \  'hook_add':
 \    join(['let g:UltiSnipsExpandTrigger="<tab>"',
 \          'let g:UltiSnipsListSnippets="<c-tab>"',
 \          'let g:UltiSnipsJumpForwardTrigger="<c-n>"',
 \          'let g:UltiSnipsJumpBackwardTrigger="<c-p>"'], '|')})
+
 call dein#add('honza/vim-snippets',
 \ {'depends': 'ultisnips'})
 
 call dein#add('Shougo/deoplete.nvim',
-\ {'on_event': 'InsertEnter', 'if': has('python3'),
+\ {'if': has('python3'), 'on_event': 'InsertEnter',
 \  'hook_add':
 \    join(['let g:deoplete#enable_at_startup=1',
 \          'let g:deoplete#auto_completion_start_length=1',
@@ -170,20 +171,19 @@ call dein#add('Shougo/deoplete.nvim',
 
 " languages
 
-call dein#add('sheerun/vim-polyglot',
-\ {'on_event': 'BufRead'})
+call dein#add('sheerun/vim-polyglot')
 
 call dein#add('artur-shaik/vim-javacomplete2',
-\ {'on_ft': 'java', 'if': executable('javac'),
+\ {'if': executable('javac'), 'on_ft': 'java',
 \  'hook_add': 'au FileType java setl omnifunc=javacomplete#Complete'})
 
 call dein#add('davidhalter/jedi-vim',
-\ {'on_ft': 'python', 'if': has('python') || has('python3')})
+\ {'if': has('python') || has('python3'), 'on_ft': 'python'})
 call dein#add('zchee/deoplete-jedi',
 \ {'depends': ['deoplete.nvim', 'jedi-vim']})
 
 call dein#add('ternjs/tern_for_vim',
-\ {'on_ft': 'javascript', 'if': executable('npm'), 'build': 'npm i',
+\ {'if': executable('npm'), 'build': 'npm i', 'on_ft': 'javascript',
 \  'hook_add': 'let $PATH="node_modules/.bin:".$PATH'})
 call dein#add('carlitux/deoplete-ternjs',
 \ {'depends': ['deoplete.nvim', 'tern_for_vim']})
