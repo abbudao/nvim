@@ -1,23 +1,49 @@
-let g:mapleader="\<space>"
-
 set clipboard+=unnamedplus
 set completeopt=menuone,preview,noinsert,noselect
-set confirm hidden noswapfile undofile undodir=~/.cache
-set gdefault nohlsearch
+set number relativenumber
+set confirm hidden noswapfile undofile
 set tabstop=2 shiftwidth=2 expandtab list
 
-nmap <esc> q:k
+let g:mapleader="\<space>"
+
+nnoremap / :noh<cr>//<left>
+nnoremap ? :noh<cr>??<left>
+map f /
+map F ?
+nnoremap . .n
+nmap <leader>r q:i%s///g<left><left><left>
+
 nmap <c-p> :bp<cr>
 nmap <c-n> :bn<cr>
 nmap <leader>x :bd<cr>
 nmap <leader>X :bd!<cr>
-nmap <leader>q :q<cr>
 nmap <leader>w :w<cr>
-nmap <leader>r q:i%s//<left>
-nmap <leader>s :term<cr>
-tmap <c-v> <c-\><c-n>
+nmap <leader>q :q<cr>
 
-au CmdwinEnter * nmap <buffer><esc> :q<cr>
+nmap <leader>s :te<cr>
+tmap <c-v> <c-\><c-n>
+function! s:term()
+  set number relativenumber
+endfunction
+au TermOpen * call s:term()
+
+nmap <esc> q:k
+function! s:cmdwin()
+  nmap <buffer> <esc> :q<cr>
+endfunction
+au CmdwinEnter * call s:cmdwin()
+
+let g:netrw_banner=0
+nmap <leader>e :Ex<cr>
+function! s:netrw()
+  setl ignorecase smartcase
+  nmap <buffer> h -
+  nmap <buffer> l <cr>
+  nmap <buffer> f /
+  nmap <buffer> <esc> :bd<cr>
+  nmap <buffer> ~ :e $HOME<cr>
+endfunction
+au FileType netrw call s:netrw()
 
 let s:dein_dir='~/.local/share/nvim/site'
 let s:dein_cache='~/.cache/dein'
@@ -42,8 +68,6 @@ call dein#add('bling/vim-bufferline',
 \  'hook_post_source':
 \    'let &statusline="%{bufferline#refresh_status()}"'
 \      .'.bufferline#get_status_string()'})
-
-call dein#add('deris/vim-shot-f', {'on_map': ['f', 'F', 't', 'T']})
 
 " utilities
 
