@@ -34,7 +34,6 @@ au CmdwinEnter * call s:cmdwin()
 
 " terminal
 
-nmap gt :bel 10sp +te<cr>
 nmap gT :te<cr>
 tmap <c-v> <c-\><c-n>
 function! s:term()
@@ -84,13 +83,21 @@ call dein#add('bling/vim-bufferline',
 \      .'.bufferline#get_status_string()'})
 
 call dein#add('moll/vim-bbye',
-\  {'hook_add': 'cmap bd Bdelete'})
+\ {'hook_add': 'cmap bd Bdelete'})
 
 " utilities
 
 call dein#add('rliang/termedit.nvim')
 
-call dein#add('tpope/vim-repeat')
+call dein#add('kassio/neoterm',
+\ {'on_cmd': ['Ttoggle'],
+\  'hook_add':
+\    join(['let g:neoterm_size=10',
+\          'let g:neoterm_autoinsert=1',
+\          'nmap gt :Ttoggle<cr>'], '|')})
+
+call dein#add('tpope/vim-repeat',
+\ {'on_map': {'n': '.'}})
 
 call dein#add('tpope/vim-eunuch',
 \ {'on_cmd': ['Remove', 'Move', 'Rename', 'Chmod', 'Mkdir', 'SudoWrite', 'SudoRead']})
