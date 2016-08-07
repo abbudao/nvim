@@ -1,18 +1,21 @@
 set clipboard+=unnamedplus
 set completeopt=menuone,preview,noinsert,noselect
-set number relativenumber list
-set smartcase
 set confirm hidden noswapfile undofile
 set tabstop=2 shiftwidth=2 expandtab
+set number relativenumber list nohlsearch noincsearch smartcase
+
+" replacements
+
+map Y y$
+map H ^
+map L $
+map f //e<left><left>
+map t /
+map F ?
+map T ??e+<left><left><left>
 
 " mappings
 
-let g:mapleader="\<space>"
-
-map H ^
-map L $
-map f /
-map F ?
 nmap gn :bn<cr>
 nmap gp :bp<cr>
 nmap gd :bd<cr>
@@ -20,12 +23,6 @@ nmap gD :bd!<cr>
 nmap gq :q<cr>
 nmap gs :w<cr>
 nmap gr q:%s///g<esc>3hi
-
-" improvements
-
-nnoremap / :noh<cr>/
-nnoremap ? :noh<cr>?
-nnoremap . .n
 
 " cmdwin
 
@@ -132,7 +129,7 @@ call dein#add('Lokaltog/vim-easymotion',
 \          'let g:EasyMotion_do_shade=0',
 \          'let g:EasyMotion_smartcase=1',
 \          'let g:EasyMotion_use_upper=1',
-\          'map s <plug>(easymotion-s)'], '|')})
+\          'map z <plug>(easymotion-s)'], '|')})
 
 call dein#add('terryma/vim-multiple-cursors',
 \ {'on_map': {'nv': '<c-n>'}})
