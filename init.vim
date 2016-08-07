@@ -41,7 +41,7 @@ nmap gt :bel 10sp +te<cr>
 nmap gT :te<cr>
 tmap <c-v> <c-\><c-n>
 function! s:term()
-  set number relativenumber
+  au TermClose <buffer> bd!
 endfunction
 au TermOpen * call s:term()
 
@@ -50,7 +50,7 @@ au TermOpen * call s:term()
 let g:netrw_banner=0
 let g:netrw_keepdir=0
 let g:netrw_list_hide='\.\.\?\/'
-nmap ge :e.<cr>/
+nmap ge :e.<cr>
 function! s:netrw()
   setl ignorecase smartcase
   nmap <buffer> f /
