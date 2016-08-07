@@ -16,13 +16,15 @@ map T ??e+<left><left><left>
 
 " mappings
 
-nmap gn :bn<cr>
-nmap gp :bp<cr>
-nmap gd :bd<cr>
-nmap gD :bd!<cr>
-nmap gq :q<cr>
-nmap gs :w<cr>
-nmap gr q:%s///g<esc>3hi
+let g:mapleader='g'
+
+nmap <leader>n :bn<cr>
+nmap <leader>p :bp<cr>
+nmap <leader>d :bd<cr>
+nmap <leader>D :bd!<cr>
+nmap <leader>q :q<cr>
+nmap <leader>s :w<cr>
+nmap <leader>r q:%s///g<esc>3hi
 
 " cmdwin
 
@@ -34,7 +36,7 @@ au CmdwinEnter * call s:cmdwin()
 
 " terminal
 
-nmap gT :te<cr>
+nmap <leader>T :te<cr>
 tmap <c-v> <c-\><c-n>
 function! s:term()
   au TermClose <buffer> bd!
@@ -46,7 +48,7 @@ au TermOpen * call s:term()
 let g:netrw_banner=0
 let g:netrw_keepdir=0
 let g:netrw_list_hide='\.\.\?\/'
-nmap ge :e.<cr>
+nmap <leader>e :e.<cr>
 function! s:netrw()
   setl ignorecase smartcase
   nmap <buffer> f /
@@ -94,13 +96,14 @@ call dein#add('kassio/neoterm',
 \  'hook_add':
 \    join(['let g:neoterm_size=10',
 \          'let g:neoterm_autoinsert=1',
-\          'nmap gt :Ttoggle<cr>'], '|')})
+\          'nmap <leader>t :Ttoggle<cr>'], '|')})
 
 call dein#add('tpope/vim-repeat',
 \ {'on_map': {'n': '.'}})
 
 call dein#add('tpope/vim-eunuch',
-\ {'on_cmd': ['Remove', 'Move', 'Rename', 'Chmod', 'Mkdir', 'SudoWrite', 'SudoRead']})
+\ {'on_cmd': ['Remove', 'Move', 'Rename', 'Chmod',
+\             'Mkdir', 'SudoWrite', 'SudoRead']})
 
 call dein#add('junegunn/vim-easy-align',
 \ {'on_cmd': ['EasyAlign', 'LiveEasyAlign']})
@@ -120,10 +123,10 @@ call dein#add('junegunn/fzf.vim',
 \ {'depends': 'fzf',
 \  'on_cmd': ['Files', 'GFiles', 'History', 'Snippets'],
 \  'hook_add':
-\    join(['nmap gf :Files<cr>',
-\          'nmap gF :GFiles<cr>',
-\          'nmap gh :History<cr>',
-\          'nmap gi :Snippets<cr>'], '|')})
+\    join(['nmap <leader>f :Files<cr>',
+\          'nmap <leader>F :GFiles<cr>',
+\          'nmap <leader>h :History<cr>',
+\          'nmap <leader>i :Snippets<cr>'], '|')})
 
 " movement
 
@@ -132,11 +135,12 @@ call dein#add('Lokaltog/vim-easymotion',
 \  'hook_add':
 \    join(['hi! link EasyMotionTarget2Second EasyMotionTarget',
 \          'hi! link EasyMotionTarget2First EasyMotionTarget',
-\          'let g:EasyMotion_keys="alskdjfhcnvb"',
+\          'let g:EasyMotion_keys="alskdjfh"',
+\          'let g:EasyMotion_do_mapping=0',
 \          'let g:EasyMotion_do_shade=0',
 \          'let g:EasyMotion_smartcase=1',
 \          'let g:EasyMotion_use_upper=1',
-\          'map z <plug>(easymotion-s)'], '|')})
+\          'map <leader>a <plug>(easymotion-s)'], '|')})
 
 call dein#add('terryma/vim-multiple-cursors',
 \ {'on_map': {'nv': '<c-n>'}})
