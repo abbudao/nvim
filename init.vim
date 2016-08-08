@@ -141,7 +141,7 @@ call dein#add('Lokaltog/vim-easymotion',
 \          'let g:EasyMotion_do_shade=0',
 \          'let g:EasyMotion_smartcase=1',
 \          'let g:EasyMotion_use_upper=1',
-\          'map <leader>a <plug>(easymotion-s)'], '|')})
+\          'map <leader>z <plug>(easymotion-s)'], '|')})
 
 call dein#add('terryma/vim-multiple-cursors',
 \ {'on_map': {'nv': '<c-n>'}})
