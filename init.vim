@@ -55,6 +55,7 @@ function! s:netrw()
   nmap <buffer> h -
   nmap <buffer> l <cr>
   nmap <buffer> <esc> :bd<cr>
+  nmap <buffer> 0 :e /<cr>
   nmap <buffer> ~ :e $HOME<cr>
 endfunction
 au FileType netrw call s:netrw()
