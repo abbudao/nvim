@@ -24,7 +24,7 @@ nm <leader>p :bp<cr>
 nm <leader>d :bd<cr>
 nm <leader>q :q<cr>
 nm <leader>s :w<cr>
-nm <leader>r :%s///g<home><right><right><right>
+nm <leader>r :%s///g<left><left><left>
 
 nm <esc> :<c-f><up>
 au CmdwinEnter * nm <buffer> <esc> :q<cr>
@@ -82,7 +82,10 @@ call dein#add('justinmk/vim-dirvish',
 \ {'on_cmd': 'Dirvish',
 \  'hook_add':
 \    join(['nm <leader>e :Dirvish<cr>',
-\          'au FileType dirvish cd %'], '|')})
+\          'au FileType dirvish cd %',
+\            'nm <buffer> h -',
+\            'nm <buffer> l <cr>',
+\            'nm <buffer> ~ :Dirvish ~<cr>'], '|')})
 
 call dein#add('junegunn/fzf',
 \ {'lazy': 1, 'build': './install --all'})
