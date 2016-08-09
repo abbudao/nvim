@@ -2,63 +2,36 @@ set clipboard+=unnamedplus
 set completeopt=menuone,preview,noinsert,noselect
 set confirm hidden noswapfile undofile
 set tabstop=2 shiftwidth=2 expandtab
-set number relativenumber list nohlsearch noincsearch smartcase
+set number relativenumber list
+set nohlsearch noincsearch ignorecase smartcase
 
 " replacements
 
 map Y y$
 map H ^
 map L $
-map f //e<left><left>
+map f //e<home>
 map t /
 map F ?
-map T ??e+<left><left><left>
+map T ??e+<home>
 
 " mappings
 
 let g:mapleader='g'
 
-nmap <leader>n :bn<cr>
-nmap <leader>p :bp<cr>
-nmap <leader>d :bd<cr>
-nmap <leader>D :bd!<cr>
-nmap <leader>q :q<cr>
-nmap <leader>s :w<cr>
-nmap <leader>r q:%s///g<esc>3hi
+nm <leader>n :bn<cr>
+nm <leader>p :bp<cr>
+nm <leader>d :bd<cr>
+nm <leader>q :q<cr>
+nm <leader>s :w<cr>
+nm <leader>r :%s///g<home><right><right><right>
 
-" cmdwin
+nm <esc> :<c-f><up>
+au CmdwinEnter * nm <buffer> <esc> :q<cr>
 
-nmap <esc> q:k
-function! s:cmdwin()
-  nmap <buffer> <esc> :q<cr>
-endfunction
-au CmdwinEnter * call s:cmdwin()
-
-" terminal
-
-nmap <leader>T :te<cr>
-tmap <c-v> <c-\><c-n>
-function! s:term()
-  au TermClose <buffer> bd!
-endfunction
-au TermOpen * call s:term()
-
-" netrw
-
-let g:netrw_banner=0
-let g:netrw_keepdir=0
-let g:netrw_list_hide='\.\.\?\/'
-nmap <leader>e :e.<cr>
-function! s:netrw()
-  setl ignorecase smartcase
-  nmap <buffer> f /
-  nmap <buffer> h -
-  nmap <buffer> l <cr>
-  nmap <buffer> <esc> :bd<cr>
-  nmap <buffer> 0 :e /<cr>
-  nmap <buffer> ~ :e $HOME<cr>
-endfunction
-au FileType netrw call s:netrw()
+nm <leader>t :term<cr>
+au TermOpen * tm <buffer> <esc> <c-\><c-n>
+au TermOpen * au TermClose <buffer> bd!
 
 " plugins
 
@@ -82,29 +55,17 @@ call dein#add('bling/vim-bufferline',
 \          'let g:bufferline_active_buffer_left=""',
 \          'let g:bufferline_active_buffer_right=""'], '|'),
 \  'hook_post_source':
-\    'let &statusline="%{bufferline#refresh_status()}"'
-\      .'.bufferline#get_status_string()'})
-
-call dein#add('moll/vim-bbye',
-\ {'hook_add': 'cmap bd Bdelete'})
+\    'let &statusline="%{bufferline#refresh_status()}".bufferline#get_status_string()'})
 
 " utilities
 
 call dein#add('rliang/termedit.nvim')
 
-call dein#add('kassio/neoterm',
-\ {'on_cmd': ['Ttoggle'],
-\  'hook_add':
-\    join(['let g:neoterm_size=10',
-\          'let g:neoterm_autoinsert=1',
-\          'nmap <leader>t :Ttoggle<cr>'], '|')})
-
 call dein#add('tpope/vim-repeat',
 \ {'on_map': {'n': '.'}})
 
 call dein#add('tpope/vim-eunuch',
-\ {'on_cmd': ['Remove', 'Move', 'Rename', 'Chmod',
-\             'Mkdir', 'SudoWrite', 'SudoRead']})
+\ {'on_cmd': ['Remove', 'Move', 'Rename', 'Chmod', 'Mkdir', 'SudoWrite', 'SudoRead']})
 
 call dein#add('junegunn/vim-easy-align',
 \ {'on_cmd': ['EasyAlign', 'LiveEasyAlign']})
@@ -117,6 +78,12 @@ call dein#add('dylanaraps/root.vim',
 \    join(['let g:root#auto=1',
 \          'let g:root#echo=0'], '|')})
 
+call dein#add('justinmk/vim-dirvish',
+\ {'on_cmd': 'Dirvish',
+\  'hook_add':
+\    join(['nm <leader>e :Dirvish<cr>',
+\          'au FileType dirvish cd %'], '|')})
+
 call dein#add('junegunn/fzf',
 \ {'lazy': 1, 'build': './install --all'})
 
@@ -124,10 +91,11 @@ call dein#add('junegunn/fzf.vim',
 \ {'depends': 'fzf',
 \  'on_cmd': ['Files', 'GFiles', 'History', 'Snippets'],
 \  'hook_add':
-\    join(['nmap <leader>f :Files<cr>',
-\          'nmap <leader>F :GFiles<cr>',
-\          'nmap <leader>h :History<cr>',
-\          'nmap <leader>i :Snippets<cr>'], '|')})
+\    join(['nm <leader>f :Files<cr>',
+\          'nm <leader>F :GFiles<cr>',
+\          'nm <leader>h :History<cr>',
+\          'nm <leader>i :Snippets<cr>',
+\          'au FileType fzf tun <buffer> <esc>'], '|')})
 
 " movement
 
