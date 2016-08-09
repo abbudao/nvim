@@ -47,6 +47,11 @@ call dein#add('Shougo/dein.vim', {'rtp': ''})
 
 call dein#add('jonathanfilip/vim-lucius')
 
+call dein#add('mhinz/vim-startify',
+\ {'hook_add':
+\    join(['let g:startify_custom_header=[]',
+\          'nm <leader>h :Startify<cr>'], '|')})
+
 call dein#add('bling/vim-bufferline',
 \ {'on_event': 'BufRead',
 \  'hook_add':
@@ -86,19 +91,6 @@ call dein#add('justinmk/vim-dirvish',
 \            'nm <buffer> h -',
 \            'nm <buffer> l <cr>',
 \            'nm <buffer> ~ :Dirvish ~<cr>'], '|')})
-
-call dein#add('junegunn/fzf',
-\ {'lazy': 1, 'build': './install --all'})
-
-call dein#add('junegunn/fzf.vim',
-\ {'depends': 'fzf',
-\  'on_cmd': ['Files', 'GFiles', 'History', 'Snippets'],
-\  'hook_add':
-\    join(['nm <leader>f :Files<cr>',
-\          'nm <leader>F :GFiles<cr>',
-\          'nm <leader>h :History<cr>',
-\          'nm <leader>i :Snippets<cr>',
-\          'au FileType fzf tun <buffer> <esc>'], '|')})
 
 " movement
 
