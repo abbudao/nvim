@@ -102,21 +102,6 @@ call dein#add('junegunn/fzf.vim',
 
 " movement
 
-call dein#add('Lokaltog/vim-easymotion',
-\ {'on_map': '<plug>(easymotion',
-\  'hook_add':
-\    join(['hi! link EasyMotionTarget2Second EasyMotionTarget',
-\          'hi! link EasyMotionTarget2First EasyMotionTarget',
-\          'let g:EasyMotion_keys="alskdjfh"',
-\          'let g:EasyMotion_do_mapping=0',
-\          'let g:EasyMotion_do_shade=0',
-\          'let g:EasyMotion_smartcase=1',
-\          'let g:EasyMotion_use_upper=1',
-\          'map <leader>z <plug>(easymotion-s)'], '|')})
-
-call dein#add('terryma/vim-multiple-cursors',
-\ {'on_map': {'nv': '<c-n>'}})
-
 call dein#add('tpope/vim-rsi',
 \ {'on_map':
 \   {'ic': ['<c-a>', '<c-b>', '<c-d>', '<c-e>', '<c-f>', '<c-g>',
