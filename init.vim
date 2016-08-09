@@ -48,7 +48,7 @@ call dein#add('Shougo/dein.vim', {'rtp': ''})
 call dein#add('jonathanfilip/vim-lucius')
 
 call dein#add('bling/vim-bufferline',
-\ {'on_path': '.*',
+\ {'on_event': 'BufRead',
 \  'hook_add':
 \    join(['let g:bufferline_echo=0',
 \          'let g:bufferline_show_bufnr=0',
@@ -73,7 +73,7 @@ call dein#add('junegunn/vim-easy-align',
 " navigation
 
 call dein#add('dylanaraps/root.vim',
-\ {'on_path': '.*',
+\ {'on_event': 'BufRead',
 \  'hook_add':
 \    join(['let g:root#auto=1',
 \          'let g:root#echo=0'], '|')})
