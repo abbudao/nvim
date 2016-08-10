@@ -165,16 +165,22 @@ call dein#add('artur-shaik/vim-javacomplete2',
 \ {'on_ft': 'java', 'if': executable('javac'),
 \  'hook_add': 'au FileType java setl omnifunc=javacomplete#Complete'})
 
-call dein#add('davidhalter/jedi-vim',
-\ {'on_ft': 'python', 'if': has('python') || has('python3')})
-call dein#add('zchee/deoplete-jedi',
-\ {'depends': ['deoplete.nvim', 'jedi-vim']})
-
 call dein#add('ternjs/tern_for_vim',
 \ {'on_ft': 'javascript', 'if': executable('npm'), 'build': 'npm i',
 \  'hook_add': 'let $PATH="node_modules/.bin:".$PATH'})
 call dein#add('carlitux/deoplete-ternjs',
 \ {'depends': ['deoplete.nvim', 'tern_for_vim']})
+
+call dein#add('davidhalter/jedi-vim',
+\ {'on_ft': 'python', 'if': has('python') || has('python3'),
+\  'hook_add':
+\    join(['let g:jedi#completions_enabled=0',
+\          'let g:jedi#goto_command="<leader>D"',
+\          'let g:jedi#goto_assignments_command="<leader>G"',
+\          'let g:jedi#rename_command="<leader>R"',
+\          'let g:jedi#usages_command="<leader>N"'], '|')})
+call dein#add('zchee/deoplete-jedi',
+\ {'depends': ['deoplete.nvim', 'jedi-vim']})
 
 call dein#end()
 if dein#check_install() | call dein#install() | endif
