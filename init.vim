@@ -172,6 +172,14 @@ call dein#add('ternjs/tern_for_vim',
 call dein#add('carlitux/deoplete-ternjs',
 \ {'depends': ['deoplete.nvim', 'tern_for_vim']})
 
+call dein#add('zchee/deoplete-clang',
+\ {'on_ft': ['c', 'cpp'], 'if': executable('clang'),
+\  'depends': 'deoplete.nvim',
+\  'hook_add':
+\    join(['let g:deoplete#sources#clang#libclang_path="/usr/lib64/libclang.so"',
+\          'let g:deoplete#sources#clang#clang_header="/usr/lib64/clang"',
+\          'let g:deoplete#sources#clang#flags=[]'], '|')})
+
 call dein#add('davidhalter/jedi-vim',
 \ {'on_ft': 'python', 'if': has('python') || has('python3'),
 \  'hook_add':
