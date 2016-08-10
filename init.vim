@@ -158,6 +158,9 @@ call dein#add('honza/vim-snippets',
 
 call dein#add('sheerun/vim-polyglot')
 
+call dein#add('rbonvall/vim-textobj-latex',
+\ {'on_ft': ['tex', 'latex']})
+
 call dein#add('artur-shaik/vim-javacomplete2',
 \ {'on_ft': 'java', 'if': executable('javac'),
 \  'hook_add': 'au FileType java setl omnifunc=javacomplete#Complete'})
