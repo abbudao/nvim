@@ -47,11 +47,6 @@ call dein#add('Shougo/dein.vim', {'rtp': ''})
 
 call dein#add('jonathanfilip/vim-lucius')
 
-call dein#add('mhinz/vim-startify',
-\ {'hook_add':
-\    join(['let g:startify_custom_header=[]',
-\          'nm <leader>h :Startify<cr>'], '|')})
-
 call dein#add('bling/vim-bufferline',
 \ {'on_event': 'BufRead',
 \  'hook_add':
@@ -66,8 +61,7 @@ call dein#add('bling/vim-bufferline',
 
 call dein#add('rliang/termedit.nvim')
 
-call dein#add('tpope/vim-repeat',
-\ {'on_map': {'n': '.'}})
+call dein#add('tpope/vim-repeat')
 
 call dein#add('tpope/vim-eunuch',
 \ {'on_cmd': ['Remove', 'Move', 'Rename', 'Chmod', 'Mkdir', 'SudoWrite', 'SudoRead']})
@@ -82,6 +76,10 @@ call dein#add('dylanaraps/root.vim',
 \  'hook_add':
 \    join(['let g:root#auto=1',
 \          'let g:root#echo=0'], '|')})
+
+call dein#add('ctrlpvim/ctrlp.vim',
+\ {'on_cmd': 'CtrlPMRU',
+\  'hook_add': 'nm <leader>h :CtrlPMRU<cr>'})
 
 call dein#add('justinmk/vim-dirvish',
 \ {'on_cmd': 'Dirvish',
@@ -105,13 +103,19 @@ call dein#add('tpope/vim-commentary',
 call dein#add('tpope/vim-surround',
 \ {'on_map': {'n': ['ds', 'cs', 'cS', 'ys', 'yS', 'yss', 'ySs', 'ySS'], 'x': ['S', 'gS']}})
 
-call dein#add('PeterRincker/vim-argumentative',
-\ {'on_map': {'n': ['>,', '<,'], 'xo': ['i,', 'a,'], 'nxo': ['[,', '],']}})
-
 call dein#add('kana/vim-textobj-user')
 
-call dein#add('zandrmartin/vim-textobj-blanklines',
-\ {'on_map': {'xo': ['i<space>', 'a<space>']}})
+call dein#add('rhysd/vim-textobj-anyblock',
+\ {'on_map': {'vo': ['ib', 'ab']}})
+
+call dein#add('kana/vim-textobj-indent',
+\ {'on_map': {'xo': ['ii', 'ai', 'iI', 'aI']}})
+
+call dein#add('thinca/vim-textobj-between',
+\ {'on_map': {'xo': ['if', 'af']}})
+
+call dein#add('thalesmello/vim-textobj-methodcall',
+\ {'on_map': {'xo': ['im', 'am', 'iM', 'aM']}})
 
 call dein#add('saihoooooooo/vim-textobj-space',
 \ {'on_map': {'xo': ['iS', 'aS']}})
@@ -119,17 +123,14 @@ call dein#add('saihoooooooo/vim-textobj-space',
 call dein#add('beloglazov/vim-textobj-punctuation',
 \ {'on_map': {'xo': ['iu', 'au']}})
 
-call dein#add('kana/vim-textobj-indent',
-\ {'on_map': {'xo': ['ii', 'ai', 'iI', 'aI']}})
-
-call dein#add('rhysd/vim-textobj-anyblock',
-\ {'on_map': {'vo': ['ib', 'ab']}})
-
 call dein#add('Julian/vim-textobj-variable-segment',
 \ {'on_map': {'xo': ['iv', 'av']}})
 
-call dein#add('thalesmello/vim-textobj-methodcall',
-\ {'on_map': {'xo': ['im', 'am', 'iM', 'aM']}})
+call dein#add('zandrmartin/vim-textobj-blanklines',
+\ {'on_map': {'xo': ['i<space>', 'a<space>']}})
+
+call dein#add('PeterRincker/vim-argumentative',
+\ {'on_map': {'n': ['>,', '<,'], 'xo': ['i,', 'a,'], 'nxo': ['[,', '],']}})
 
 " insertion
 
@@ -141,17 +142,17 @@ call dein#add('Raimondi/delimitMate',
 \          'let g:delimitMate_balance_matchpairs=1'], '|')})
 
 call dein#add('Shougo/deoplete.nvim',
-\ {'on_event': 'BufReadPost', 'if': has('python3'),
+\ {'on_event': 'InsertEnter', 'if': has('python3'),
 \  'hook_add':
 \    join(['let g:deoplete#enable_at_startup=1',
 \          'let g:deoplete#auto_completion_start_length=1',
 \          'let g:deoplete#enable_smart_case=1'], '|')})
 
 call dein#add('SirVer/ultisnips',
-\ {'lazy': 1, 'if': has('python3')})
+\ {'on_event': 'BufRead', 'if': has('python3')})
 
 call dein#add('honza/vim-snippets',
-\ {'on_event': 'BufReadPost', 'depends': 'ultisnips'})
+\ {'depends': 'ultisnips'})
 
 " languages
 
@@ -162,15 +163,15 @@ call dein#add('artur-shaik/vim-javacomplete2',
 \  'hook_add': 'au FileType java setl omnifunc=javacomplete#Complete'})
 
 call dein#add('davidhalter/jedi-vim',
-\ {'lazy': 1, 'if': has('python') || has('python3')})
+\ {'on_ft': 'python', 'if': has('python') || has('python3')})
 call dein#add('zchee/deoplete-jedi',
-\ {'on_ft': 'python', 'depends': ['deoplete.nvim', 'jedi-vim']})
+\ {'depends': ['deoplete.nvim', 'jedi-vim']})
 
 call dein#add('ternjs/tern_for_vim',
-\ {'lazy': 1, 'if': executable('npm'), 'build': 'npm i',
+\ {'on_ft': 'javascript', 'if': executable('npm'), 'build': 'npm i',
 \  'hook_add': 'let $PATH="node_modules/.bin:".$PATH'})
 call dein#add('carlitux/deoplete-ternjs',
-\ {'on_ft': 'javascript', 'depends': ['deoplete.nvim', 'tern_for_vim']})
+\ {'depends': ['deoplete.nvim', 'tern_for_vim']})
 
 call dein#end()
 if dein#check_install() | call dein#install() | endif
