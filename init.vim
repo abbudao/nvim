@@ -35,12 +35,12 @@ au TermOpen * au TermClose <buffer> bd!
 
 " plugins
 
-let s:dein_dir='~/.local/share/nvim/site'
-let s:dein_cache='~/.cache/dein'
+let s:dein_dir=expand('~/.local/share/nvim/site')
 let g:dein#types#git#clone_depth=1
-if isdirectory(expand(s:dein_dir))
-if dein#load_state(s:dein_cache)
-call dein#begin(s:dein_cache)
+if isdirectory(s:dein_dir)
+if dein#load_state(s:dein_dir)
+
+call dein#begin(s:dein_dir)
 call dein#add('Shougo/dein.vim', {'rtp': ''})
 
 " interface
@@ -166,7 +166,8 @@ call dein#add('artur-shaik/vim-javacomplete2',
 \  'hook_add': 'au FileType java setl omnifunc=javacomplete#Complete'})
 
 call dein#add('ternjs/tern_for_vim',
-\ {'on_ft': 'javascript', 'if': executable('npm'), 'build': 'npm i',
+\ {'on_ft': 'javascript', 'if': executable('npm'),
+\  'build': 'npm i',
 \  'hook_add': 'let $PATH="node_modules/.bin:".$PATH'})
 call dein#add('carlitux/deoplete-ternjs',
 \ {'depends': ['deoplete.nvim', 'tern_for_vim']})
