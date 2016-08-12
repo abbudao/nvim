@@ -1,2 +1,8 @@
 .init.vim-rplugin~
 .netrwhist
+.dein/
+cache_nvim
+merged
+repos/
+rollbacks/
+state_nvim.vim

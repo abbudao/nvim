@@ -28,7 +28,7 @@ au TermOpen * au TermClose <buffer> bd!
 
 let s:conf_dir=expand('<sfile>:h')
 let s:dein_dir=s:conf_dir.'/repos/github.com/Shougo/dein.vim'
-set rtp^=s:dein_dir
+let &rtp.=','.s:dein_dir
 if !isdirectory(s:dein_dir)
 exe '!mkdir -p '.s:dein_dir
 exe '!git clone --depth=1 https://github.com/Shougo/dein.vim '.s:dein_dir
