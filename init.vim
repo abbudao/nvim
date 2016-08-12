@@ -98,8 +98,8 @@ call dein#add('haya14busa/incsearch.vim',
 \          'map F <plug>(incsearch-backward)'], '|')})
 
 call dein#add('terryma/vim-multiple-cursors',
-\ {'on_map': {'nv': ['<c-n>', '<c-m>']},
-\  'hook_add': 'let g:multi_cursor_start_key="<c-m>"'})
+\ {'on_map': {'nv': ['<c-n>', '<c-f>']},
+\  'hook_add': 'let g:multi_cursor_start_key="<c-f>"'})
 
 call dein#add('tpope/vim-rsi',
 \ {'on_map': {'ic': ['<c-a>', '<c-b>', '<c-d>', '<c-e>', '<c-f>', '<c-g>',
