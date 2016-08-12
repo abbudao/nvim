@@ -1,8 +1,10 @@
+.dein/
 .init.vim-rplugin~
 .netrwhist
-.dein/
 cache_nvim
+direct_install.vim
 merged
 repos/
 rollbacks/
 state_nvim.vim
+temp/
