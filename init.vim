@@ -68,6 +68,10 @@ call dein#add('tpope/vim-eunuch',
 call dein#add('junegunn/vim-easy-align',
 \ {'on_cmd': ['EasyAlign', 'LiveEasyAlign']})
 
+call dein#add('mbbill/undotree',
+\ {'on_cmd': 'UndotreeToggle',
+\  'hook_add': 'nm <leader>u :UndotreeToggle<cr>'})
+
 " navigation
 
 call dein#add('dylanaraps/root.vim',
