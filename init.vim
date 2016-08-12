@@ -3,17 +3,7 @@ set completeopt=menuone,preview,noinsert,noselect
 set confirm hidden noswapfile undofile
 set tabstop=2 shiftwidth=2 expandtab
 set number relativenumber list
-set nohlsearch noincsearch ignorecase smartcase
-
-" replacements
-
-map Y y$
-map H ^
-map L $
-map f //e<home>
-map t /
-map F ?
-map T ??e+<home>
+set nohlsearch ignorecase smartcase
 
 " mappings
 
@@ -25,6 +15,7 @@ nm <leader>d :bd<cr>
 nm <leader>q :q<cr>
 nm <leader>s :w<cr>
 nm <leader>r :%s///g<left><left><left>
+vm <leader>r :s///g<left><left><left>
 
 nm <esc> :<c-f><up>
 au CmdwinEnter * nm <buffer> <esc> :q<cr>
@@ -61,7 +52,8 @@ call dein#add('bling/vim-bufferline',
 
 call dein#add('rliang/termedit.nvim')
 
-call dein#add('tpope/vim-repeat')
+call dein#add('kana/vim-repeat',
+\ {'on_map': {'n': ['.', 'u', 'U', '<c-r>', 'g-', 'g+']}})
 
 call dein#add('tpope/vim-eunuch',
 \ {'on_cmd': ['Remove', 'Move', 'Rename', 'Chmod', 'Mkdir', 'SudoWrite', 'SudoRead']})
@@ -92,10 +84,18 @@ call dein#add('justinmk/vim-dirvish',
 
 " movement
 
+call dein#add('haya14busa/incsearch.vim',
+\ {'on_map': '<plug>(incsearch',
+\  'hook_add':
+\    join(['map f <plug>(incsearch-forward)',
+\          'map F <plug>(incsearch-backward)'], '|')})
+
+call dein#add('terryma/vim-multiple-cursors',
+\ {'on_map': {'nv': '<c-n>'}})
+
 call dein#add('tpope/vim-rsi',
-\ {'on_map':
-\   {'ic': ['<c-a>', '<c-b>', '<c-d>', '<c-e>', '<c-f>', '<c-g>',
-\           '<m-bs>', '<m-b>', '<m-b>', '<m-f>', '<m-n>', '<m-p>']}})
+\ {'on_map': {'ic': ['<c-a>', '<c-b>', '<c-d>', '<c-e>', '<c-f>', '<c-g>',
+\                    '<m-bs>', '<m-b>', '<m-b>', '<m-f>', '<m-n>', '<m-p>']}})
 
 call dein#add('tpope/vim-commentary',
 \ {'on_map': {'n': 'gcl', 'nxo': 'gc'}})
