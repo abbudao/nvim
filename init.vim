@@ -179,7 +179,12 @@ call dein#add('artur-shaik/vim-javacomplete2',
 call dein#add('ternjs/tern_for_vim',
 \ {'on_ft': 'javascript', 'if': executable('npm'),
 \  'build': 'npm i',
-\  'hook_add': 'let $PATH="node_modules/.bin:".$PATH'})
+\  'hook_add':
+\    join(['let s:node_bin="node_modules/.bin"',
+\          'let s:tern_dir="'.fnamemodify(s:dein_dir, ':h:h').'/ternjs/tern_for_vim"',
+\          'let $PATH=join([s:node_bin, $PATH, s:tern_dir."/".s:node_bin], ":")',
+\          'let g:tern#command=["tern"]',
+\          'let g:tern#arguments=["--persistent"]'], '|')})
 call dein#add('carlitux/deoplete-ternjs',
 \ {'depends': ['deoplete.nvim', 'tern_for_vim']})
 
