@@ -24,14 +24,21 @@ nm <leader>t :term<cr>
 au TermOpen * tm <buffer> <esc> <c-\><c-n>
 au TermOpen * au TermClose <buffer> bd!
 
+" manager
+
+let s:conf_dir=expand('<sfile>:h')
+let s:dein_dir=s:conf_dir.'/repos/github.com/Shougo/dein.vim'
+set rtp^=s:dein_dir
+if !isdirectory(s:dein_dir)
+exe '!mkdir -p '.s:dein_dir
+exe '!git clone --depth=1 https://github.com/Shougo/dein.vim '.s:dein_dir
+endif
+
 " plugins
 
-let s:dein_dir=expand('~/.local/share/nvim/site')
 let g:dein#types#git#clone_depth=1
-if isdirectory(s:dein_dir)
-if dein#load_state(s:dein_dir)
-
-call dein#begin(s:dein_dir)
+if dein#load_state(s:conf_dir)
+call dein#begin(s:conf_dir)
 call dein#add('Shougo/dein.vim', {'rtp': ''})
 
 " interface
@@ -198,9 +205,5 @@ endif
 
 colorscheme lucius
 LuciusWhiteLowContrast
-
-else
-exe '!git clone --depth=1 https://github.com/Shougo/dein.vim '.s:dein_dir
-endif
 
 filetype plugin indent on
