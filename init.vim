@@ -176,18 +176,6 @@ call dein#add('artur-shaik/vim-javacomplete2',
 \ {'on_ft': 'java', 'if': executable('javac'),
 \  'hook_add': 'au FileType java setl omnifunc=javacomplete#Complete'})
 
-call dein#add('ternjs/tern_for_vim',
-\ {'on_ft': 'javascript', 'if': executable('npm'),
-\  'build': 'npm i',
-\  'hook_add':
-\    join(['let s:node_bin="node_modules/.bin"',
-\          'let s:tern_dir="'.fnamemodify(s:dein_dir, ':h:h').'/ternjs/tern_for_vim"',
-\          'let $PATH=join([s:node_bin, $PATH, s:tern_dir."/".s:node_bin], ":")',
-\          'let g:tern#command=["tern"]',
-\          'let g:tern#arguments=["--persistent"]'], '|')})
-call dein#add('carlitux/deoplete-ternjs',
-\ {'depends': ['deoplete.nvim', 'tern_for_vim']})
-
 call dein#add('zchee/deoplete-clang',
 \ {'on_ft': ['c', 'cpp'], 'if': executable('clang'),
 \  'depends': 'deoplete.nvim',
@@ -206,6 +194,17 @@ call dein#add('davidhalter/jedi-vim',
 \          'let g:jedi#usages_command="<leader>N"'], '|')})
 call dein#add('zchee/deoplete-jedi',
 \ {'depends': ['deoplete.nvim', 'jedi-vim']})
+
+call dein#add('ternjs/tern_for_vim',
+\ {'on_ft': 'javascript', 'if': executable('npm'), 'build': 'npm i',
+\  'hook_add':
+\    join(['let s:node_bin="node_modules/.bin"',
+\          'let s:tern_dir="'.fnamemodify(s:dein_dir, ':h:h').'/ternjs/tern_for_vim"',
+\          'let $PATH=join([s:node_bin, $PATH, s:tern_dir."/".s:node_bin], ":")',
+\          'let g:tern#command=["tern"]',
+\          'let g:tern#arguments=["--persistent"]'], '|')})
+call dein#add('carlitux/deoplete-ternjs',
+\ {'depends': ['deoplete.nvim', 'tern_for_vim']})
 
 call dein#end()
 if dein#check_install() | call dein#install() | endif
