@@ -155,11 +155,15 @@ call dein#add('Shougo/deoplete.nvim',
 \          'let g:deoplete#auto_completion_start_length=1',
 \          'let g:deoplete#enable_smart_case=1'], '|')})
 
-call dein#add('SirVer/ultisnips',
-\ {'on_event': 'BufRead', 'if': has('python3')})
+call dein#add('Shougo/neosnippet',
+\ {'on_event': 'InsertEnter',
+\  'hook_add':
+\    join(['imap <tab> <plug>(neosnippet_expand_or_jump)',
+\          'smap <tab> <plug>(neosnippet_expand_or_jump)',
+\          'xmap <tab> <plug>(neosnippet_expand_target)'], '|')})
 
-call dein#add('honza/vim-snippets',
-\ {'depends': 'ultisnips'})
+call dein#add('Shougo/neosnippet-snippets',
+\ {'depends': 'neosnippet'})
 
 " languages
 
