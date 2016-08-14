@@ -98,6 +98,18 @@ call dein#add('justinmk/vim-dirvish',
 
 " movement
 
+call dein#add('Lokaltog/vim-easymotion',
+\ {'on_map': '<plug>(easymotion',
+\  'hook_add':
+\    join(['hi! link EasyMotionTarget2Second EasyMotionTarget',
+\          'hi! link EasyMotionTarget2First EasyMotionTarget',
+\          'let g:EasyMotion_keys="alskdjfh"',
+\          'let g:EasyMotion_do_mapping=0',
+\          'let g:EasyMotion_do_shade=0',
+\          'let g:EasyMotion_smartcase=1',
+\          'let g:EasyMotion_use_upper=1',
+\          'map <leader><space> <plug>(easymotion-s)'], '|')})
+
 call dein#add('haya14busa/incsearch.vim',
 \ {'on_map': '<plug>(incsearch',
 \  'hook_add':
