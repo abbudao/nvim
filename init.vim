@@ -11,7 +11,6 @@ let g:mapleader='g'
 
 nm <leader>n :bn<cr>
 nm <leader>p :bp<cr>
-nm <leader>d :bd<cr>
 nm <leader>q :q<cr>
 nm <leader>s :w<cr>
 nm <leader>r :%s///g<left><left><left>
@@ -65,12 +64,16 @@ call dein#add('kana/vim-repeat',
 call dein#add('tpope/vim-eunuch',
 \ {'on_cmd': ['Remove', 'Move', 'Rename', 'Chmod', 'Mkdir', 'SudoWrite', 'SudoRead']})
 
-call dein#add('junegunn/vim-easy-align',
-\ {'on_cmd': ['EasyAlign', 'LiveEasyAlign']})
+call dein#add('moll/vim-bbye',
+\ {'on_cmd': 'Bdelete',
+\  'hook_add': 'nmap <leader>d :Bdelete<cr>'})
 
 call dein#add('mbbill/undotree',
 \ {'on_cmd': 'UndotreeToggle',
 \  'hook_add': 'nm <leader>u :UndotreeToggle<cr>'})
+
+call dein#add('junegunn/vim-easy-align',
+\ {'on_cmd': ['EasyAlign', 'LiveEasyAlign']})
 
 " navigation
 
