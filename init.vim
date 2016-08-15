@@ -108,7 +108,7 @@ call dein#add('Lokaltog/vim-easymotion',
 \          'let g:EasyMotion_do_shade=0',
 \          'let g:EasyMotion_smartcase=1',
 \          'let g:EasyMotion_use_upper=1',
-\          'map <leader><space> <plug>(easymotion-s)'], '|')})
+\          'map s <plug>(easymotion-s)'], '|')})
 
 call dein#add('haya14busa/incsearch.vim',
 \ {'on_map': '<plug>(incsearch',
@@ -130,10 +130,12 @@ call dein#add('tpope/vim-commentary',
 call dein#add('tpope/vim-surround',
 \ {'on_map': {'n': ['ds', 'cs', 'cS', 'ys', 'yS', 'yss', 'ySs', 'ySS'], 'x': ['S', 'gS']}})
 
-call dein#add('kana/vim-textobj-user')
+call dein#add('PeterRincker/vim-argumentative',
+\ {'on_map': {'n': ['>,', '<,'], 'xo': ['i,', 'a,'], 'nxo': ['[,', '],']}})
 
-call dein#add('rhysd/vim-textobj-anyblock',
-\ {'on_map': {'vo': ['ib', 'ab']}})
+call dein#add('wellle/targets.vim')
+
+call dein#add('kana/vim-textobj-user')
 
 call dein#add('kana/vim-textobj-indent',
 \ {'on_map': {'xo': ['ii', 'ai', 'iI', 'aI']}})
@@ -155,9 +157,6 @@ call dein#add('Julian/vim-textobj-variable-segment',
 
 call dein#add('zandrmartin/vim-textobj-blanklines',
 \ {'on_map': {'xo': ['i<space>', 'a<space>']}})
-
-call dein#add('PeterRincker/vim-argumentative',
-\ {'on_map': {'n': ['>,', '<,'], 'xo': ['i,', 'a,'], 'nxo': ['[,', '],']}})
 
 " insertion
 
