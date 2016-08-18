@@ -77,15 +77,15 @@ call dein#add('junegunn/vim-easy-align',
 
 " navigation
 
+call dein#add('ctrlpvim/ctrlp.vim',
+\ {'on_cmd': 'CtrlPMRU',
+\  'hook_add': 'nm <leader>h :CtrlPMRU<cr>'})
+
 call dein#add('dylanaraps/root.vim',
 \ {'on_event': 'BufRead',
 \  'hook_add':
 \    join(['let g:root#auto=1',
 \          'let g:root#echo=0'], '|')})
-
-call dein#add('ctrlpvim/ctrlp.vim',
-\ {'on_cmd': 'CtrlPMRU',
-\  'hook_add': 'nm <leader>h :CtrlPMRU<cr>'})
 
 call dein#add('justinmk/vim-dirvish',
 \ {'on_cmd': 'Dirvish',
@@ -99,7 +99,7 @@ call dein#add('justinmk/vim-dirvish',
 
 " movement
 
-call dein#add('Lokaltog/vim-easymotion',
+call dein#add('easymotion/vim-easymotion',
 \ {'on_map': '<plug>(easymotion',
 \  'hook_add':
 \    join(['hi! link EasyMotionTarget2Second EasyMotionTarget',
@@ -124,6 +124,8 @@ call dein#add('terryma/vim-multiple-cursors',
 call dein#add('tpope/vim-rsi',
 \ {'on_map': {'ic': ['<c-a>', '<c-b>', '<c-d>', '<c-e>', '<c-f>', '<c-g>',
 \                    '<m-bs>', '<m-b>', '<m-b>', '<m-f>', '<m-n>', '<m-p>']}})
+
+" text objects
 
 call dein#add('tpope/vim-commentary',
 \ {'on_map': {'n': 'gcl', 'nxo': 'gc'}})
