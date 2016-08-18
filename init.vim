@@ -102,20 +102,12 @@ call dein#add('justinmk/vim-dirvish',
 call dein#add('easymotion/vim-easymotion',
 \ {'on_map': '<plug>(easymotion',
 \  'hook_add':
-\    join(['hi! link EasyMotionTarget2Second EasyMotionTarget',
-\          'hi! link EasyMotionTarget2First EasyMotionTarget',
-\          'let g:EasyMotion_keys="alskdjfh"',
-\          'let g:EasyMotion_do_mapping=0',
-\          'let g:EasyMotion_do_shade=0',
+\    join(['let g:EasyMotion_do_mapping=0',
 \          'let g:EasyMotion_smartcase=1',
 \          'let g:EasyMotion_use_upper=1',
-\          'map s <plug>(easymotion-s)'], '|')})
-
-call dein#add('haya14busa/incsearch.vim',
-\ {'on_map': '<plug>(incsearch',
-\  'hook_add':
-\    join(['map f <plug>(incsearch-forward)',
-\          'map F <plug>(incsearch-backward)'], '|')})
+\          'map f <plug>(easymotion-sn)',
+\          'map n <plug>(easymotion-next)',
+\          'map N <plug>(easymotion-prev)'], '|')})
 
 call dein#add('terryma/vim-multiple-cursors',
 \ {'on_map': {'nv': ['<c-n>', '<c-f>']},
