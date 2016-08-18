@@ -91,11 +91,11 @@ call dein#add('justinmk/vim-dirvish',
 \ {'on_cmd': 'Dirvish',
 \  'hook_add':
 \    join(['let g:loaded_netrwPlugin=1',
-\          'nm <leader>e :e .<cr>',
+\          'nm <leader>e :Dirvish<cr>',
 \          'au FileType dirvish cd %',
 \            'nm <buffer> h -',
 \            'nm <buffer> l <cr>',
-\            'nm <buffer> ~ :e ~<cr>'], '|')})
+\            'nm <buffer> ~ :Dirvish ~<cr>'], '|')})
 
 " movement
 
