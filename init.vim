@@ -90,11 +90,12 @@ call dein#add('ctrlpvim/ctrlp.vim',
 call dein#add('justinmk/vim-dirvish',
 \ {'on_cmd': 'Dirvish',
 \  'hook_add':
-\    join(['nm <leader>e :Dirvish<cr>',
+\    join(['let g:loaded_netrwPlugin=1',
+\          'nm <leader>e :e .<cr>',
 \          'au FileType dirvish cd %',
 \            'nm <buffer> h -',
 \            'nm <buffer> l <cr>',
-\            'nm <buffer> ~ :Dirvish ~<cr>'], '|')})
+\            'nm <buffer> ~ :e ~<cr>'], '|')})
 
 " movement
 
