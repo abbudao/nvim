@@ -195,9 +195,9 @@ call dein#add('zchee/deoplete-clang',
 \  'depends': 'deoplete.nvim',
 \  'hook_add':
 \    join(['let g:deoplete#sources#clang#libclang_path='.
-\            system('find /usr/lib[0-9]* -name libclang.so -printf \"%p\"'),
+\            system('find /usr/lib* -name libclang.so* -printf \"%p\"'),
 \          'let g:deoplete#sources#clang#clang_header='.
-\            system('find /usr/lib[0-9]* -type d -name clang -printf \"%p\"')], '|')})
+\            system('find /usr/lib* -maxdepth 2 -type d -name clang -printf \"%p\"')], '|')})
 
 call dein#add('davidhalter/jedi-vim',
 \ {'on_ft': 'python', 'if': has('python') || has('python3'),
