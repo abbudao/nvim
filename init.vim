@@ -48,7 +48,7 @@ call dein#add('Shougo/dein.vim', {'rtp': ''})
 call dein#add('jonathanfilip/vim-lucius')
 
 call dein#add('bling/vim-bufferline',
-\ {'on_event': 'BufRead',
+\ {'on_event': ['BufRead', 'TermOpen'],
 \  'hook_add':
 \    join(['let g:bufferline_echo=0',
 \          'let g:bufferline_show_bufnr=0',
