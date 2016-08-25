@@ -42,7 +42,7 @@ call dein#add('Shougo/dein.vim', {'rtp': ''})
 
 " interface
 
-call dein#add('jonathanfilip/vim-lucius')
+call dein#add('NLKNguyen/papercolor-theme')
 
 call dein#add('bling/vim-bufferline',
 \ {'on_event': 'BufRead',
@@ -226,7 +226,7 @@ if dein#check_install() | call dein#install() | endif
 call dein#save_state()
 endif
 
-colorscheme lucius
-LuciusLightLowContrast
+set background=light
+colorscheme PaperColor
 
 filetype plugin indent on
