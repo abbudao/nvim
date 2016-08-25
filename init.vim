@@ -5,6 +5,9 @@ set tabstop=2 shiftwidth=2 expandtab
 set number relativenumber list
 set nohlsearch ignorecase smartcase
 
+hi! link LineNr Comment
+hi! link CursorLineNr Comment
+
 " mappings
 
 let g:mapleader='g'
@@ -227,6 +230,6 @@ call dein#save_state()
 endif
 
 colorscheme lucius
-LuciusWhiteLowContrast
+LuciusLightLowContrast
 
 filetype plugin indent on
