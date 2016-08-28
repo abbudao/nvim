@@ -48,7 +48,10 @@ call dein#add('bling/vim-bufferline',
 \ {'on_event': 'BufRead',
 \  'hook_add':
 \    join(['let g:bufferline_echo=0',
+\          'let g:bufferline_fname_mod=":~:."',
+\          'let g:bufferline_pathshorten=1',
 \          'let g:bufferline_show_bufnr=0',
+\          'let g:bufferline_solo_highlight=1',
 \          'let g:bufferline_active_buffer_left=""',
 \          'let g:bufferline_active_buffer_right=""'], '|'),
 \  'hook_post_source':
@@ -183,8 +186,7 @@ call dein#add('Shougo/neosnippet-snippets',
 
 call dein#add('sheerun/vim-polyglot')
 
-call dein#add('rbonvall/vim-textobj-latex',
-\ {'on_ft': ['tex', 'latex']})
+call dein#add('rbonvall/vim-textobj-latex')
 
 call dein#add('artur-shaik/vim-javacomplete2',
 \ {'on_ft': 'java', 'if': executable('javac'),
