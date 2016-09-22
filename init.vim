@@ -45,17 +45,16 @@ call dein#add('Shougo/dein.vim', {'rtp': ''})
 call dein#add('NLKNguyen/papercolor-theme')
 
 call dein#add('bling/vim-bufferline',
-\ {'on_event': 'BufRead',
-\  'hook_add':
+\ {'on_event': 'VimEnter',
+\  'hook_post_source':
 \    join(['let g:bufferline_echo=0',
 \          'let g:bufferline_fname_mod=":~:."',
 \          'let g:bufferline_pathshorten=1',
 \          'let g:bufferline_show_bufnr=0',
 \          'let g:bufferline_solo_highlight=1',
 \          'let g:bufferline_active_buffer_left=""',
-\          'let g:bufferline_active_buffer_right=""'], '|'),
-\  'hook_post_source':
-\    'let &statusline="%{bufferline#refresh_status()}".bufferline#get_status_string()'})
+\          'let g:bufferline_active_buffer_right=""',
+\          'let &statusline="%{bufferline#refresh_status()}".bufferline#get_status_string()'], '|')})
 
 " utilities
 
@@ -217,8 +216,8 @@ call dein#add('ternjs/tern_for_vim',
 \  'hook_add':
 \    join(['let s:node_bin="node_modules/.bin"',
 \          'let s:tern_dir="'.fnamemodify(s:dein_dir, ':h:h').'/ternjs/tern_for_vim"',
-\          'let $PATH=join([s:node_bin, $PATH, s:tern_dir."/".s:node_bin], ":")',
-\          'let g:tern#command=["tern"]',
+\          'let $PATH=join([s:node_bin, $PATH], ":")',
+\          'let g:tern#command=[join([s:tern_dir, s:node_bin, "tern"], "/")]',
 \          'let g:tern#arguments=["--persistent"]'], '|')})
 call dein#add('carlitux/deoplete-ternjs',
 \ {'depends': ['deoplete.nvim', 'tern_for_vim']})
