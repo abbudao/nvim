@@ -1,3 +1,4 @@
+set termguicolors
 set clipboard+=unnamedplus
 set completeopt=menuone,preview,noinsert,noselect
 set confirm hidden noswapfile undofile
@@ -107,9 +108,7 @@ call dein#add('easymotion/vim-easymotion',
 \    join(['let g:EasyMotion_do_mapping=0',
 \          'let g:EasyMotion_smartcase=1',
 \          'let g:EasyMotion_use_upper=1',
-\          'map f <plug>(easymotion-sn)',
-\          'map n <plug>(easymotion-next)',
-\          'map N <plug>(easymotion-prev)'], '|')})
+\          'map s <plug>(easymotion-s)'], '|')})
 
 call dein#add('terryma/vim-multiple-cursors',
 \ {'on_map': {'nv': ['<c-n>', '<c-f>']},
