@@ -13,7 +13,8 @@ let g:mapleader='g'
 nm <c-f> :bn<cr>
 nm <c-b> :bp<cr>
 nm <leader>s :w<cr>
-nm <leader>q :q<cr>
+nm <leader>e :e .<cr>
+nm Q :q<cr>
 
 nm <esc> :<c-f><up>
 au CmdwinEnter * nm <buffer> <esc> :q<cr>
@@ -38,13 +39,16 @@ let &rtp.=','.g:dein_dir
 let g:python3_host_skip_check=1
 let g:dein#types#git#clone_depth=1
 if dein#load_state(s:conf_dir)
+  if !has('python3') && executable('pip3')
+    exec '!pip3 install --user neovim'
+  endif
   call dein#begin(s:conf_dir)
   call dein#load_toml(s:conf_dir.'/plugins.toml')
   call dein#end()
-  call dein#remote_plugins()
   if dein#check_install()
     call dein#install()
   endif
+  call dein#remote_plugins()
   call dein#save_state()
 endif
 
