@@ -49,6 +49,7 @@ hook_add = '''
 let g:loaded_netrwPlugin=1
 '''
 hook_post_source = '''
+au FileType dirvish cd %
 au FileType dirvish nm <buffer> h -
 au FileType dirvish nm <buffer> l <cr>
 au FileType dirvish nm <buffer> ~ :Dirvish ~<cr>
@@ -66,6 +67,9 @@ repo = 'rliang/termedit.nvim'
 [[plugins]]
 repo = 'tpope/vim-eunuch'
 on_event = ['VimEnter']
+hook_post_source = '''
+nm <leader>S :SudoWrite<cr>
+'''
 
 [[plugins]]
 repo = 'mbbill/undotree'

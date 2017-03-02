@@ -16,10 +16,11 @@ nm <leader>s :w<cr>
 nm <leader>e :e .<cr>
 nm Q :q<cr>
 
-nm <esc> :<c-f><up>
+nm <esc> q:<up>
 au CmdwinEnter * nm <buffer> <esc> :q<cr>
 
 nm <leader>t :bot10sp +te<cr>
+nm <leader>T :te<cr>
 au TermOpen * tm <buffer> <esc> <c-\><c-n>
 au TermOpen * au TermClose <buffer> bd!
 
