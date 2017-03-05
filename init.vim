@@ -67,20 +67,20 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-set completeopt+=menuone,noinsert,noselect
+set cot+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_smart_case=1
 let g:deoplete#enable_refresh_always=1
 let g:deoplete#sources#latex#include_misc=1
 let g:deoplete#sources#jedi#show_docstring=1
-au CompleteDone * pclose!
+au CompleteDone * pc!
 
 let g:python_host_skip_check=1
 let g:python3_host_skip_check=1
 if !has('python') && executable('pip2')
-  exec '!pip2 install --user neovim'
+  exe '!pip2 install --user neovim'
 endif
 if !has('python3') && executable('pip3')
-  exec '!pip3 install --user neovim'
+  exe '!pip3 install --user neovim'
 endif
 packl
