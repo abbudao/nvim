@@ -1,0 +1,105 @@
+[submodule "pack/all/start/ctrlp.vim"]
+	path = pack/all/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "pack/all/start/delimitMate"]
+	path = pack/all/start/delimitMate
+	url = https://github.com/Raimondi/delimitMate
+[submodule "pack/all/start/deoplete-clang2"]
+	path = pack/all/start/deoplete-clang2
+	url = https://github.com/tweekmonster/deoplete-clang2
+[submodule "pack/all/start/deoplete-jedi"]
+	path = pack/all/start/deoplete-jedi
+	url = https://github.com/zchee/deoplete-jedi
+[submodule "pack/all/start/deoplete-latex"]
+	path = pack/all/start/deoplete-latex
+	url = https://github.com/poppyschmo/deoplete-latex
+[submodule "pack/all/start/deoplete.nvim"]
+	path = pack/all/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "pack/all/start/deoplete-ternjs"]
+	path = pack/all/start/deoplete-ternjs
+	url = https://github.com/carlitux/deoplete-ternjs
+[submodule "pack/all/start/incsearch.vim"]
+	path = pack/all/start/incsearch.vim
+	url = https://github.com/haya14busa/incsearch.vim
+[submodule "pack/all/start/neoformat"]
+	path = pack/all/start/neoformat
+	url = https://github.com/sbdchd/neoformat
+[submodule "pack/all/start/papercolor-theme"]
+	path = pack/all/start/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme
+[submodule "pack/all/start/targets.vim"]
+	path = pack/all/start/targets.vim
+	url = https://github.com/wellle/targets.vim
+[submodule "pack/all/start/termedit.nvim"]
+	path = pack/all/start/termedit.nvim
+	url = https://github.com/rliang/termedit.nvim
+[submodule "pack/all/start/ultisnips"]
+	path = pack/all/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "pack/all/start/undotree"]
+	path = pack/all/start/undotree
+	url = https://github.com/mbbill/undotree
+[submodule "pack/all/start/vim-bbye"]
+	path = pack/all/start/vim-bbye
+	url = https://github.com/moll/vim-bbye
+[submodule "pack/all/start/vim-commentary"]
+	path = pack/all/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "pack/all/start/vim-dirvish"]
+	path = pack/all/start/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish
+[submodule "pack/all/start/vim-easy-align"]
+	path = pack/all/start/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align
+[submodule "pack/all/start/vim-eunuch"]
+	path = pack/all/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule "pack/all/start/vim-exchange"]
+	path = pack/all/start/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange
+[submodule "pack/all/start/vim-javacomplete2"]
+	path = pack/all/start/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2
+[submodule "pack/all/start/vim-multiple-cursors"]
+	path = pack/all/start/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "pack/all/start/vim-polyglot"]
+	path = pack/all/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "pack/all/start/vim-repeat"]
+	path = pack/all/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "pack/all/start/vim-rooter"]
+	path = pack/all/start/vim-rooter
+	url = https://github.com/airblade/vim-rooter
+[submodule "pack/all/start/vim-rsi"]
+	path = pack/all/start/vim-rsi
+	url = https://github.com/tpope/vim-rsi
+[submodule "pack/all/start/vim-signify"]
+	path = pack/all/start/vim-signify
+	url = https://github.com/mhinz/vim-signify
+[submodule "pack/all/start/vim-snippets"]
+	path = pack/all/start/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "pack/all/start/vim-surround"]
+	path = pack/all/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "pack/all/start/vimtex"]
+	path = pack/all/start/vimtex
+	url = https://github.com/lervag/vimtex
+[submodule "pack/all/start/vim-textobj-user"]
+	path = pack/all/start/vim-textobj-user
+	url = https://github.com/kana/vim-textobj-user
+[submodule "pack/all/start/vim-textobj-indent"]
+	path = pack/all/start/vim-textobj-indent
+	url = https://github.com/kana/vim-textobj-indent
+[submodule "pack/all/start/vim-textobj-methodcall"]
+	path = pack/all/start/vim-textobj-methodcall
+	url = https://github.com/thalesmello/vim-textobj-methodcall
+[submodule "pack/all/start/vim-textobj-between"]
+	path = pack/all/start/vim-textobj-between
+	url = https://github.com/thinca/vim-textobj-between
+[submodule "pack/all/start/vim-textobj-variable-segment"]
+	path = pack/all/start/vim-textobj-variable-segment
+	url = https://github.com/Julian/vim-textobj-variable-segment

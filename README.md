@@ -4,24 +4,40 @@ Personal Neovim configuration.
 ## Installation
 
 ```sh
-git clone --depth=1 https://github.com/rliang/nvim ~/.config/nvim
+git clone --recursive --depth=1 https://github.com/rliang/nvim ~/.config/nvim
+```
+
+## Updating plugins
+
+```sh
+git submodule update --init --recursive
 ```
 
 ## Main keybindings
 
-### Normal Mode
+### Normal/Visual/Operator-pending Mode
 
 * `f` `F` Forward/backward search
+
+### Normal Mode
+
 * `<c-f>` `<c-b>` Next/previous buffer
+
 * `X` Delete buffer
 * `Q` Close window
+
 * `gs` Save buffer
+* `gS` Save buffer with `sudo`
+
+* `gu` Open undo tree
+
+* `gh` Open MRU file list
+* `ge` Open file explorer
 
 * `<esc>` Open command line window
+
 * `gt` Open terminal in bottom split
-* `ge` Open file explorer
-* `gh` Open MRU file list
-* `gu` Open undo tree
+* `gT` Open terminal
 
 * `ys{motion}` Surround `{motion}`
 * `yss` Surround line
@@ -34,12 +50,27 @@ git clone --depth=1 https://github.com/rliang/nvim ~/.config/nvim
 
 * `<c-n>` Multiple cursors
 
-### Normal Mode (dirvish)
+### Normal/Visual Mode
+
+* `ga`: Align
+* `gQ`: Format
+
+### Normal Mode (file explorer)
 
 * `l` `h` Forward/backward navigate
 * `~` Home directory
 
+### Normal Mode (command-line window)
+
+* `<esc>` Exit command-line window
+
+### Terminal Mode
+
+* `<esc>` Exit terminal mode
+
 ### Insert Mode
+
+* `<s-tab>` Jump outside delimiter
 
 * `<tab>` Expand snippet
 * `<tab>` `<s-tab>` Forward/backward jump in snippet
@@ -52,7 +83,7 @@ git clone --depth=1 https://github.com/rliang/nvim ~/.config/nvim
 * `<m-n>` `<m-p>` Forward/backward history
 * `<m-bs>` Delete word
 
-### Operator-Pending Mode
+### Operator-pending Mode
 
 * `if{char}` `af{char}` Between `{char}`
 * `iv` `av` Underscore/camel case
