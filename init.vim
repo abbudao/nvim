@@ -1,6 +1,6 @@
 set ts=2 sw=2 et cb+=unnamedplus
 
-set ls=1 tgc nu rnu list nohls
+set ls=1 tgc nu rnu list
 colo PaperColor
 au ColorScheme * hi! NonText ctermfg=bg guifg=bg
 au ColorScheme * hi! link DiffAdd Tag
@@ -11,6 +11,7 @@ com! Cinv :let &bg=(&bg == 'dark' ? 'light' : 'dark')
 
 let g:mapleader='g'
 
+set nohls
 map f <plug>(incsearch-forward)
 map F <plug>(incsearch-backward)
 
