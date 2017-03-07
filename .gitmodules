@@ -37,18 +37,12 @@
 [submodule "pack/all/start/ultisnips"]
 	path = pack/all/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "pack/all/start/undotree"]
-	path = pack/all/start/undotree
-	url = https://github.com/mbbill/undotree
 [submodule "pack/all/start/vim-bbye"]
 	path = pack/all/start/vim-bbye
 	url = https://github.com/moll/vim-bbye
 [submodule "pack/all/start/vim-commentary"]
 	path = pack/all/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule "pack/all/start/vim-dirvish"]
-	path = pack/all/start/vim-dirvish
-	url = https://github.com/justinmk/vim-dirvish
 [submodule "pack/all/start/vim-easy-align"]
 	path = pack/all/start/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
@@ -103,3 +97,6 @@
 [submodule "pack/all/start/vim-textobj-variable-segment"]
 	path = pack/all/start/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
+[submodule "pack/all/start/incsearch-fuzzy"]
+	path = pack/all/start/incsearch-fuzzy
+	url = https://github.com/haya14busa/incsearch-fuzzy.vim
