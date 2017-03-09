@@ -10,35 +10,29 @@ git clone --recursive --depth=1 https://github.com/rliang/nvim ~/.config/nvim
 ## Updating plugins
 
 ```sh
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 ```
 
 ## Main keybindings
 
 ### Normal/Visual/Operator-pending Mode
 
-* `f` `F` Forward/backward search
+* `/` `?` Forward/backward `incsearch`
+* `f` `F` Forward/backward `incsearch-fuzzy`
 
 ### Normal Mode
 
 * `<c-f>` `<c-b>` Next/previous buffer
-
 * `X` Delete buffer
 * `Q` Close window
-
 * `gs` Save buffer
-* `gS` Save buffer with `sudo`
-
-* `gu` Open undo tree
-
-* `gh` Open MRU file list
-* `ge` Open file explorer
-
+* `gS` Save buffer with `SudoWrite`
+* `gw` Vertical split
+* `gh` Open `CtrlPMRU`
+* `ge` Open `Dirvish`
 * `<esc>` Open command line window
-
 * `gt` Open terminal in bottom split
 * `gT` Open terminal
-
 * `ys{motion}` Surround `{motion}`
 * `yss` Surround line
 * `yS{motion}` Block surround `{motion}`
@@ -47,8 +41,8 @@ git submodule update --init --recursive
 * `gcc` Comment line
 * `cx{motion}` Exchange `{motion}`
 * `cxx` Exchange line
-
-* `<c-n>` Multiple cursors
+* `<c-n>` Start `multiple-cursors`
+* `gC` Swap light/dark background
 
 ### Normal/Visual Mode
 
@@ -59,6 +53,7 @@ git submodule update --init --recursive
 
 * `l` `h` Forward/backward navigate
 * `~` Home directory
+* `q` Exit
 
 ### Normal Mode (command-line window)
 
@@ -71,7 +66,6 @@ git submodule update --init --recursive
 ### Insert Mode
 
 * `<s-tab>` Jump outside delimiter
-
 * `<tab>` Expand snippet
 * `<tab>` `<s-tab>` Forward/backward jump in snippet
 
