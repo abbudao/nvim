@@ -25,9 +25,6 @@
 [submodule "pack/all/start/neoformat"]
 	path = pack/all/start/neoformat
 	url = https://github.com/sbdchd/neoformat
-[submodule "pack/all/start/papercolor-theme"]
-	path = pack/all/start/papercolor-theme
-	url = https://github.com/NLKNguyen/papercolor-theme
 [submodule "pack/all/start/targets.vim"]
 	path = pack/all/start/targets.vim
 	url = https://github.com/wellle/targets.vim
@@ -103,3 +100,6 @@
 [submodule "pack/all/start/vim-dirvish"]
 	path = pack/all/start/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish
+[submodule "pack/all/start/vim-lucius"]
+	path = pack/all/start/vim-lucius
+	url = https://github.com/jonathanfilip/vim-lucius

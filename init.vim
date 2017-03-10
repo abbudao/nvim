@@ -2,14 +2,23 @@ set ts=2 sw=2 et cb+=unnamedplus
 
 let g:mapleader='g'
 
-set ls=1 tgc list
-colo PaperColor
-au ColorScheme * hi! NonText ctermfg=bg guifg=bg
+set ls=1 ru tgc list
+colo lucius
+LuciusWhiteLowContrast
+nm <leader>C :exe 'Lucius'.(&bg=='dark'?'White':'Dark').'LowContrast'<cr>
 au ColorScheme * hi! link DiffAdd Tag
 au ColorScheme * hi! link DiffChange Comment
 au ColorScheme * hi! link DiffDelete WarningMsg
 au ColorScheme * hi! link SignColumn Normal
-nm <leader>C :let &bg=(&bg=='dark'?'light':'dark')<cr>
+
+fu! TextObjBeg(...)
+  norm! `[
+endf
+fu! TextObjEnd(...)
+  norm! `]
+endf
+nm <silent> [a :set opfunc=TextObjBeg<cr>g@a
+nm <silent> ]a :set opfunc=TextObjEnd<cr>g@a
 
 set nohls
 map / <plug>(incsearch-forward)

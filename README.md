@@ -41,6 +41,7 @@ git submodule update --init --recursive --remote
 * `gcc` Comment line
 * `cx{motion}` Exchange `{motion}`
 * `cxx` Exchange line
+* `[a{motion}` `]a{motion}` Move before/after `{motion}`
 * `<c-n>` Start `multiple-cursors`
 * `gC` Swap light/dark background
 
