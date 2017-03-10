@@ -58,9 +58,11 @@ set cot+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_smart_case=1
 let g:deoplete#enable_refresh_always=1
+let g:deoplete#auto_complete_start_length=0
+let g:deoplete#auto_complete_delay=200
 let g:deoplete#sources#latex#include_misc=1
 let g:deoplete#sources#jedi#show_docstring=1
-au CompleteDone * pc!
+au CompleteDone *.* pc!
 
 let g:ctrlp_map='<leader>h'
 let g:ctrlp_cmd='CtrlPMRU'
