@@ -17,8 +17,7 @@ git submodule update --init --recursive --remote
 
 ### Normal/Visual/Operator-pending Mode
 
-* `/` `?` Forward/backward `incsearch`
-* `f` `F` Forward/backward `incsearch-fuzzy`
+* `f` `F` Forward/backward `incsearch`
 
 ### Normal Mode
 
@@ -43,7 +42,7 @@ git submodule update --init --recursive --remote
 * `cxx` Exchange line
 * `[a{motion}` `]a{motion}` Move before/after `{motion}`
 * `<c-n>` Start `multiple-cursors`
-* `gC` Swap light/dark background
+* `gC` Swap between light/dark theme
 
 ### Normal/Visual Mode
 

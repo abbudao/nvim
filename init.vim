@@ -1,11 +1,16 @@
-set ts=2 sw=2 et cb+=unnamedplus
-
 let g:mapleader='g'
 
-set ls=1 ru tgc list
+set cb+=unnamedplus
+
+set ts=2 sw=2 et
+
+set ls=1 sc ru list
+
+set tgc
 colo lucius
 LuciusWhiteLowContrast
-nm <leader>C :exe 'Lucius'.(&bg=='dark'?'White':'Dark').'LowContrast'<cr>
+nm <leader>C :exe 'Lucius'.(&bg=='dark'?'WhiteLowContrast':'Dark')<cr>
+au ColorScheme * hi! NonText ctermfg=bg guifg=bg
 au ColorScheme * hi! link DiffAdd Tag
 au ColorScheme * hi! link DiffChange Comment
 au ColorScheme * hi! link DiffDelete WarningMsg
@@ -20,11 +25,9 @@ endf
 nm <silent> [a :set opfunc=TextObjBeg<cr>g@a
 nm <silent> ]a :set opfunc=TextObjEnd<cr>g@a
 
-set nohls
-map / <plug>(incsearch-forward)
-map ? <plug>(incsearch-backward)
-map f <plug>(incsearch-fuzzy-/)
-map F <plug>(incsearch-fuzzy-?)
+set ic scs nohls
+map f <plug>(incsearch-forward)
+map F <plug>(incsearch-backward)
 
 set hid
 nm <c-f> :bn<cr>
@@ -39,13 +42,12 @@ set udf noswf
 nm <leader>s :w<cr>
 nm <leader>S :SudoWrite<cr>
 
+set shcf+=\ -i
+nm <leader>t :te<space>
+au TermOpen * tm <buffer> <esc> <c-\><c-n>
+
 nm <esc> q:<up>
 au CmdwinEnter * nm <buffer> <esc> :q<cr>
-
-nm <leader>t :bot10sp +te<cr>
-nm <leader>T :te<cr>
-au TermOpen * tno <buffer> <esc> <c-\><c-n>
-au TermOpen * au TermClose <buffer> bd!
 
 nm <leader>a :EasyAlign<space>
 vm <leader>a :EasyAlign<space>
@@ -71,7 +73,7 @@ let g:deoplete#auto_complete_start_length=0
 let g:deoplete#auto_complete_delay=200
 let g:deoplete#sources#latex#include_misc=1
 let g:deoplete#sources#jedi#show_docstring=1
-au CompleteDone *.* pc!
+au InsertLeave,CompleteDone * if pumvisible()==0 | sil! pc! | endif
 
 let g:ctrlp_map='<leader>h'
 let g:ctrlp_cmd='CtrlPMRU'
@@ -88,10 +90,5 @@ let g:rooter_change_directory_for_non_project_files='current'
 
 let g:python_host_skip_check=1
 let g:python3_host_skip_check=1
-if !has('python') && executable('pip2')
-  exe '!pip2 install --user neovim'
-endif
-if !has('python3') && executable('pip3')
-  exe '!pip3 install --user neovim'
-endif
 packl
+filetype plugin indent on

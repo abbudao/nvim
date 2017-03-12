@@ -94,9 +94,6 @@
 [submodule "pack/all/start/vim-textobj-variable-segment"]
 	path = pack/all/start/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
-[submodule "pack/all/start/incsearch-fuzzy"]
-	path = pack/all/start/incsearch-fuzzy
-	url = https://github.com/haya14busa/incsearch-fuzzy.vim
 [submodule "pack/all/start/vim-dirvish"]
 	path = pack/all/start/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish
