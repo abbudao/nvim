@@ -22,38 +22,35 @@ endf
 fu! TextObjEnd(...)
   norm! `]
 endf
-nm <silent> [a :set opfunc=TextObjBeg<cr>g@a
-nm <silent> ]a :set opfunc=TextObjEnd<cr>g@a
+nn <silent> [a :set opfunc=TextObjBeg<cr>g@a
+nn <silent> ]a :set opfunc=TextObjEnd<cr>g@a
 
 set ic scs nohls
 map f <plug>(incsearch-forward)
 map F <plug>(incsearch-backward)
 
 set hid
-nm <c-f> :bn<cr>
-nm <c-b> :bp<cr>
+nn <c-f> :bn<cr>
+nn <c-b> :bp<cr>
 
 set cf
-nm <leader>w :vsp<cr>
-nm X :Bdelete<cr>
-nm Q :q<cr>
+nn <leader>w :vsp<cr>
+nn X :Bdelete<cr>
+nn Q :q<cr>
 
 set udf noswf
-nm <leader>s :w<cr>
-nm <leader>S :SudoWrite<cr>
+nn <leader>s :w<cr>
+nn <leader>S :SudoWrite<cr>
 
 set shcf+=\ -i
-nm <leader>t :te<space>
-au TermOpen * tm <buffer> <esc> <c-\><c-n>
+nn <leader>t :te<space>
+au TermOpen * tno <buffer> <esc> <c-\><c-n>
 
-nm <esc> q:<up>
-au CmdwinEnter * nm <buffer> <esc> :q<cr>
+nn <esc> q:<up>
+au CmdwinEnter * nn <buffer> <esc> :q<cr>
 
-nm <leader>a :EasyAlign<space>
-vm <leader>a :EasyAlign<space>
-
-nm <leader>Q :Neoformat<cr>
-vm <leader>Q :Neoformat<cr>
+nn <leader>a :EasyAlign<space>
+vn <leader>a :EasyAlign<space>
 
 let g:delimitMate_expand_cr=1
 let g:delimitMate_expand_space=1
@@ -83,7 +80,7 @@ au FileType dirvish cd %
 au FileType dirvish nm <buffer> h -
 au FileType dirvish nm <buffer> l i
 au FileType dirvish nm <buffer> ~ :e $HOME<cr>
-nm <leader>e :e .<cr>
+nn <leader>e :e .<cr>
 
 let g:rooter_silent_chdir=1
 let g:rooter_change_directory_for_non_project_files='current'
