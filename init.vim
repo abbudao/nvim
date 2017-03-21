@@ -11,10 +11,6 @@ colo lucius
 LuciusWhiteLowContrast
 nm <leader>C :exe 'Lucius'.(&bg=='dark'?'WhiteLowContrast':'Dark')<cr>
 au ColorScheme * hi! NonText ctermfg=bg guifg=bg
-au ColorScheme * hi! link DiffAdd Tag
-au ColorScheme * hi! link DiffChange Comment
-au ColorScheme * hi! link DiffDelete WarningMsg
-au ColorScheme * hi! link SignColumn Normal
 
 fu! TextObjBeg(...)
   norm! `[
@@ -42,7 +38,7 @@ set udf noswf
 nn <leader>s :w<cr>
 nn <leader>S :SudoWrite<cr>
 
-set shcf+=\ -i
+set shcf=-ic
 nn <leader>t :te<space>
 au TermOpen * tno <buffer> <esc> <c-\><c-n>
 
@@ -87,5 +83,5 @@ let g:rooter_change_directory_for_non_project_files='current'
 
 let g:python_host_skip_check=1
 let g:python3_host_skip_check=1
+
 packl
-filetype plugin indent on
