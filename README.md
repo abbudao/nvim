@@ -26,12 +26,12 @@ git submodule update --init --recursive --remote
 * `Q` Close window
 * `gs` Save buffer
 * `gS` Save buffer with `SudoWrite`
-* `gw` Vertical split
+* `gv` Vertical split
+* `gb` Bottom horizontal split
 * `gh` Open `CtrlPMRU`
 * `ge` Open `Dirvish`
 * `<esc>` Open command line window
-* `gt` Open terminal in bottom split
-* `gT` Open terminal
+* `gt` Prompt for `neoterm`
 * `ys{motion}` Surround `{motion}`
 * `yss` Surround line
 * `yS{motion}` Block surround `{motion}`

@@ -30,7 +30,7 @@ nn <c-f> :bn<cr>
 nn <c-b> :bp<cr>
 
 set cf
-nn <leader>w :vsp<cr>
+nn <leader>v :vsp<cr>
 nn X :Bdelete<cr>
 nn Q :q<cr>
 
@@ -38,8 +38,9 @@ set udf noswf
 nn <leader>s :w<cr>
 nn <leader>S :SudoWrite<cr>
 
-set shcf=-ic
-nn <leader>t :te<space>
+let g:neoterm_size=10
+let g:neoterm_keep_term_open=0
+nn <leader>t :T<space>
 au TermOpen * tno <buffer> <esc> <c-\><c-n>
 
 nn <esc> q:<up>
