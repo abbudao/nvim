@@ -17,7 +17,7 @@ git submodule update --init --recursive --remote
 
 ### Normal/Visual/Operator-pending Mode
 
-* `f` `F` Forward/backward `incsearch`
+* `f` `F` Forward/backward search
 
 ### Normal Mode
 
@@ -47,7 +47,6 @@ git submodule update --init --recursive --remote
 ### Normal/Visual Mode
 
 * `ga`: Align
-* `gQ`: Format
 
 ### Normal Mode (file explorer)
 

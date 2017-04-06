@@ -6,30 +6,6 @@
 	path = pack/all/start/delimitMate
 	url = https://github.com/Raimondi/delimitMate
 	ignore = dirty
-[submodule "pack/all/start/deoplete-clang2"]
-	path = pack/all/start/deoplete-clang2
-	url = https://github.com/tweekmonster/deoplete-clang2
-	ignore = dirty
-[submodule "pack/all/start/deoplete-jedi"]
-	path = pack/all/start/deoplete-jedi
-	url = https://github.com/zchee/deoplete-jedi
-	ignore = dirty
-[submodule "pack/all/start/deoplete-latex"]
-	path = pack/all/start/deoplete-latex
-	url = https://github.com/poppyschmo/deoplete-latex
-	ignore = dirty
-[submodule "pack/all/start/deoplete.nvim"]
-	path = pack/all/start/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
-	ignore = dirty
-[submodule "pack/all/start/deoplete-ternjs"]
-	path = pack/all/start/deoplete-ternjs
-	url = https://github.com/carlitux/deoplete-ternjs
-	ignore = dirty
-[submodule "pack/all/start/incsearch.vim"]
-	path = pack/all/start/incsearch.vim
-	url = https://github.com/haya14busa/incsearch.vim
-	ignore = dirty
 [submodule "pack/all/start/targets.vim"]
 	path = pack/all/start/targets.vim
 	url = https://github.com/wellle/targets.vim
@@ -129,4 +105,8 @@
 [submodule "pack/all/start/neoterm"]
 	path = pack/all/start/neoterm
 	url = https://github.com/kassio/neoterm
+	ignore = dirty
+[submodule "pack/all/start/completor.vim"]
+	path = pack/all/start/completor.vim
+	url = https://github.com/maralla/completor.vim
 	ignore = dirty

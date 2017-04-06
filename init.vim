@@ -10,7 +10,6 @@ set tgc
 colo lucius
 LuciusWhiteLowContrast
 nm <leader>C :exe 'Lucius'.(&bg=='dark'?'WhiteLowContrast':'Dark')<cr>
-au ColorScheme * hi! NonText ctermfg=bg guifg=bg
 
 fu! TextObjBeg(...)
   norm! `[
@@ -22,8 +21,8 @@ nn <silent> [a :set opfunc=TextObjBeg<cr>g@a
 nn <silent> ]a :set opfunc=TextObjEnd<cr>g@a
 
 set ic scs nohls
-map f <plug>(incsearch-forward)
-map F <plug>(incsearch-backward)
+map f /
+map F ?
 
 set hid
 nn <c-f> :bn<cr>
@@ -41,6 +40,7 @@ nn <leader>S :SudoWrite<cr>
 let g:neoterm_size=10
 let g:neoterm_keep_term_open=0
 nn <leader>t :T<space>
+nn <leader>T :Tclose<cr>
 au TermOpen * tno <buffer> <esc> <c-\><c-n>
 
 nn <esc> q:<up>
@@ -60,23 +60,12 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
 set cot+=menuone,noinsert,noselect
-let g:deoplete#enable_at_startup=1
-let g:deoplete#enable_smart_case=1
-let g:deoplete#enable_refresh_always=1
-let g:deoplete#auto_complete_start_length=0
-let g:deoplete#auto_complete_delay=200
-let g:deoplete#sources#latex#include_misc=1
-let g:deoplete#sources#jedi#show_docstring=1
-au InsertLeave,CompleteDone * if pumvisible()==0 | sil! pc! | endif
 
 let g:ctrlp_map='<leader>h'
 let g:ctrlp_cmd='CtrlPMRU'
 
 let g:loaded_netrwPlugin=1
-au FileType dirvish cd %
-au FileType dirvish nm <buffer> h -
-au FileType dirvish nm <buffer> l i
-au FileType dirvish nm <buffer> ~ :e $HOME<cr>
+au FileType dirvish cd % | nm <buffer> h - | nm <buffer> l i | nm <buffer> ~ :e $HOME<cr>
 nn <leader>e :e .<cr>
 
 let g:rooter_silent_chdir=1
