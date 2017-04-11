@@ -1,112 +1,108 @@
 [submodule "pack/all/start/ctrlp.vim"]
-	path = pack/all/start/ctrlp.vim
+	path = pack/file/start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
 	ignore = dirty
 [submodule "pack/all/start/delimitMate"]
-	path = pack/all/start/delimitMate
+	path = pack/core/start/delimitMate
 	url = https://github.com/Raimondi/delimitMate
 	ignore = dirty
 [submodule "pack/all/start/targets.vim"]
-	path = pack/all/start/targets.vim
+	path = pack/tobj/start/targets.vim
 	url = https://github.com/wellle/targets.vim
 	ignore = dirty
 [submodule "pack/all/start/termedit.nvim"]
-	path = pack/all/start/termedit.nvim
+	path = pack/term/start/termedit.nvim
 	url = https://github.com/rliang/termedit.nvim
 	ignore = dirty
 [submodule "pack/all/start/ultisnips"]
-	path = pack/all/start/ultisnips
+	path = pack/snip/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
 	ignore = dirty
 [submodule "pack/all/start/vim-bbye"]
-	path = pack/all/start/vim-bbye
+	path = pack/misc/start/vim-bbye
 	url = https://github.com/moll/vim-bbye
 	ignore = dirty
 [submodule "pack/all/start/vim-commentary"]
-	path = pack/all/start/vim-commentary
+	path = pack/core/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
 	ignore = dirty
 [submodule "pack/all/start/vim-easy-align"]
-	path = pack/all/start/vim-easy-align
+	path = pack/misc/start/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
 	ignore = dirty
 [submodule "pack/all/start/vim-eunuch"]
-	path = pack/all/start/vim-eunuch
+	path = pack/misc/start/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
 	ignore = dirty
 [submodule "pack/all/start/vim-exchange"]
-	path = pack/all/start/vim-exchange
+	path = pack/util/start/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange
 	ignore = dirty
-[submodule "pack/all/start/vim-javacomplete2"]
-	path = pack/all/start/vim-javacomplete2
-	url = https://github.com/artur-shaik/vim-javacomplete2
-	ignore = dirty
 [submodule "pack/all/start/vim-multiple-cursors"]
-	path = pack/all/start/vim-multiple-cursors
+	path = pack/util/start/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
 	ignore = dirty
 [submodule "pack/all/start/vim-polyglot"]
-	path = pack/all/start/vim-polyglot
+	path = pack/lang/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
 	ignore = dirty
 [submodule "pack/all/start/vim-repeat"]
-	path = pack/all/start/vim-repeat
+	path = pack/core/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat
 	ignore = dirty
 [submodule "pack/all/start/vim-rooter"]
-	path = pack/all/start/vim-rooter
+	path = pack/file/start/vim-rooter
 	url = https://github.com/airblade/vim-rooter
 	ignore = dirty
 [submodule "pack/all/start/vim-rsi"]
-	path = pack/all/start/vim-rsi
+	path = pack/util/start/vim-rsi
 	url = https://github.com/tpope/vim-rsi
 	ignore = dirty
 [submodule "pack/all/start/vim-snippets"]
-	path = pack/all/start/vim-snippets
+	path = pack/snip/start/vim-snippets
 	url = https://github.com/honza/vim-snippets
 	ignore = dirty
 [submodule "pack/all/start/vim-surround"]
-	path = pack/all/start/vim-surround
+	path = pack/util/start/vim-surround
 	url = https://github.com/tpope/vim-surround
 	ignore = dirty
 [submodule "pack/all/start/vimtex"]
-	path = pack/all/start/vimtex
+	path = pack/lang/start/vimtex
 	url = https://github.com/lervag/vimtex
 	ignore = dirty
 [submodule "pack/all/start/vim-textobj-user"]
-	path = pack/all/start/vim-textobj-user
+	path = pack/tobj/start/vim-textobj-user
 	url = https://github.com/kana/vim-textobj-user
 	ignore = dirty
 [submodule "pack/all/start/vim-textobj-indent"]
-	path = pack/all/start/vim-textobj-indent
+	path = pack/tobj/start/vim-textobj-indent
 	url = https://github.com/kana/vim-textobj-indent
 	ignore = dirty
 [submodule "pack/all/start/vim-textobj-methodcall"]
-	path = pack/all/start/vim-textobj-methodcall
+	path = pack/tobj/start/vim-textobj-methodcall
 	url = https://github.com/thalesmello/vim-textobj-methodcall
 	ignore = dirty
 [submodule "pack/all/start/vim-textobj-between"]
-	path = pack/all/start/vim-textobj-between
+	path = pack/tobj/start/vim-textobj-between
 	url = https://github.com/thinca/vim-textobj-between
 	ignore = dirty
 [submodule "pack/all/start/vim-textobj-variable-segment"]
-	path = pack/all/start/vim-textobj-variable-segment
+	path = pack/tobj/start/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
 	ignore = dirty
 [submodule "pack/all/start/vim-dirvish"]
-	path = pack/all/start/vim-dirvish
+	path = pack/file/start/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish
 	ignore = dirty
 [submodule "pack/all/start/vim-lucius"]
-	path = pack/all/start/vim-lucius
+	path = pack/candy/start/vim-lucius
 	url = https://github.com/jonathanfilip/vim-lucius
 	ignore = dirty
 [submodule "pack/all/start/neoterm"]
-	path = pack/all/start/neoterm
+	path = pack/term/start/neoterm
 	url = https://github.com/kassio/neoterm
 	ignore = dirty
 [submodule "pack/all/start/completor.vim"]
-	path = pack/all/start/completor.vim
+	path = pack/comp/start/completor.vim
 	url = https://github.com/maralla/completor.vim
 	ignore = dirty
