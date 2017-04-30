@@ -10,10 +10,6 @@
 	path = pack/tobj/start/targets.vim
 	url = https://github.com/wellle/targets.vim
 	ignore = dirty
-[submodule "pack/all/start/termedit.nvim"]
-	path = pack/term/start/termedit.nvim
-	url = https://github.com/rliang/termedit.nvim
-	ignore = dirty
 [submodule "pack/all/start/ultisnips"]
 	path = pack/snip/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
@@ -105,4 +101,8 @@
 [submodule "pack/all/start/completor.vim"]
 	path = pack/comp/start/completor.vim
 	url = https://github.com/maralla/completor.vim
+	ignore = dirty
+[submodule "pack/candy/start/vim-bufferline"]
+	path = pack/candy/start/vim-bufferline
+	url = https://github.com/bling/vim-bufferline
 	ignore = dirty

@@ -4,12 +4,12 @@ set cb+=unnamedplus
 
 set ts=2 sw=2 et
 
-set ls=1 sc ru list
+set ls=1 title sc ru list
 
-set tgc
+set bg=dark tgc
+au ColorScheme * hi Normal guibg=None ctermbg=None
 colo lucius
-LuciusWhiteLowContrast
-nm <leader>C :exe 'Lucius'.(&bg=='dark'?'WhiteLowContrast':'Dark')<cr>
+let g:bufferline_show_bufnr=0
 
 fu! TextObjBeg(...)
   norm! `[
