@@ -75,4 +75,10 @@ let g:rooter_change_directory_for_non_project_files='current'
 let g:python_host_skip_check=1
 let g:python3_host_skip_check=1
 
+let g:deoplete#enable_at_startup=1
+let g:deoplete#auto_complete_start_length=1
+let g:deoplete#ignore_sources={'_': ['member', 'buffer']}
+let g:deoplete#omni_patterns={'java': '[^. *\t]\.\w*'}
+nn <tab> :pclose!<cr>
+
 packl

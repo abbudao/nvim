@@ -98,11 +98,27 @@
 	path = pack/term/start/neoterm
 	url = https://github.com/kassio/neoterm
 	ignore = dirty
-[submodule "pack/all/start/completor.vim"]
-	path = pack/comp/start/completor.vim
-	url = https://github.com/maralla/completor.vim
+[submodule "pack/candy/start/vim-workspace"]
+	path = pack/candy/start/vim-workspace
+	url = https://github.com/bagrat/vim-workspace
 	ignore = dirty
-[submodule "pack/candy/start/vim-bufferline"]
-	path = pack/candy/start/vim-bufferline
-	url = https://github.com/bling/vim-bufferline
+[submodule "pack/comp/start/deoplete.nvim"]
+	path = pack/comp/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+	ignore = dirty
+[submodule "pack/comp/start/deoplete-ternjs"]
+	path = pack/comp/start/deoplete-ternjs
+	url = https://github.com/carlitux/deoplete-ternjs
+	ignore = dirty
+[submodule "pack/comp/start/deoplete-jedi"]
+	path = pack/comp/start/deoplete-jedi
+	url = https://github.com/zchee/deoplete-jedi
+	ignore = dirty
+[submodule "pack/comp/start/clang_complete"]
+	path = pack/comp/start/clang_complete
+	url = https://github.com/Rip-Rip/clang_complete
+	ignore = dirty
+[submodule "pack/comp/start/vim-javacomplete2"]
+	path = pack/comp/start/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2
 	ignore = dirty
