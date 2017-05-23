@@ -37,6 +37,7 @@ set udf noswf
 nn <leader>s :w<cr>
 nn <leader>S :SudoWrite<cr>
 
+set scbk=-1
 let g:neoterm_size=10
 let g:neoterm_keep_term_open=0
 nn <leader>t :T<space>
