@@ -7,18 +7,8 @@ set ts=2 sw=2 et
 set ls=1 title sc ru list
 
 set bg=dark tgc
-au ColorScheme * hi Normal guibg=None ctermbg=None
-colo lucius
+au VimEnter * colo one | hi Normal guibg=None ctermbg=None
 let g:bufferline_show_bufnr=0
-
-fu! TextObjBeg(...)
-  norm! `[
-endf
-fu! TextObjEnd(...)
-  norm! `]
-endf
-nn <silent> [a :set opfunc=TextObjBeg<cr>g@a
-nn <silent> ]a :set opfunc=TextObjEnd<cr>g@a
 
 set ic scs nohls
 map f /
@@ -37,7 +27,6 @@ set udf noswf
 nn <leader>s :w<cr>
 nn <leader>S :SudoWrite<cr>
 
-set scbk=-1
 let g:neoterm_size=10
 let g:neoterm_keep_term_open=0
 nn <leader>t :T<space>
@@ -60,8 +49,6 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-set cot+=menuone,noinsert,noselect
-
 let g:ctrlp_map='<leader>h'
 let g:ctrlp_cmd='CtrlPMRU'
 
@@ -71,10 +58,12 @@ nn <leader>e :e .<cr>
 
 let g:rooter_silent_chdir=1
 let g:rooter_change_directory_for_non_project_files='current'
+let g:rooter_patterns=['.git/', 'Makefile', 'CMakeLists.txt', 'setup.py', 'node_modules', 'pom.xml']
 
 let g:python_host_skip_check=1
 let g:python3_host_skip_check=1
 
+set cot+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_complete_start_length=1
 let g:deoplete#ignore_sources={'_': ['member', 'buffer']}

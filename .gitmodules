@@ -90,10 +90,6 @@
 	path = pack/file/start/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish
 	ignore = dirty
-[submodule "pack/all/start/vim-lucius"]
-	path = pack/candy/start/vim-lucius
-	url = https://github.com/jonathanfilip/vim-lucius
-	ignore = dirty
 [submodule "pack/all/start/neoterm"]
 	path = pack/term/start/neoterm
 	url = https://github.com/kassio/neoterm
@@ -114,11 +110,13 @@
 	path = pack/comp/start/deoplete-jedi
 	url = https://github.com/zchee/deoplete-jedi
 	ignore = dirty
-[submodule "pack/comp/start/clang_complete"]
-	path = pack/comp/start/clang_complete
-	url = https://github.com/Rip-Rip/clang_complete
-	ignore = dirty
 [submodule "pack/comp/start/vim-javacomplete2"]
 	path = pack/comp/start/vim-javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2
 	ignore = dirty
+[submodule "pack/candy/start/vim-one"]
+	path = pack/candy/start/vim-one
+	url = https://github.com/rakr/vim-one
+[submodule "pack/comp/start/deoplete-clang2"]
+	path = pack/comp/start/deoplete-clang2
+	url = https://github.com/tweekmonster/deoplete-clang2
