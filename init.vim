@@ -4,11 +4,14 @@ set cb+=unnamedplus
 
 set ts=2 sw=2 et
 
-set ls=1 title sc ru list
-
-set bg=dark tgc
+set bg=dark tgc title sc ru list
 au VimEnter * colo one | hi Normal guibg=None ctermbg=None
+au VimEnter * let &statusline='%{bufferline#refresh_status()}'.bufferline#get_status_string()
+let g:bufferline_echo=0
 let g:bufferline_show_bufnr=0
+let g:bufferline_pathshorten=1
+let g:bufferline_active_buffer_left=''
+let g:bufferline_active_buffer_right=''
 
 set ic scs nohls
 map f /
@@ -29,8 +32,7 @@ nn <leader>S :SudoWrite<cr>
 
 let g:neoterm_size=10
 let g:neoterm_keep_term_open=0
-nn <leader>t :T<space>
-nn <leader>T :Tclose<cr>
+nn <leader>t :te<cr>
 au TermOpen * tno <buffer> <esc> <c-\><c-n>
 
 nn <esc> q:<up>
