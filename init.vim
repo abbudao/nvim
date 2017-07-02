@@ -5,7 +5,7 @@ set cb+=unnamedplus
 set ts=2 sw=2 et
 
 set bg=dark tgc title sc ru list
-au VimEnter * colo one | hi Normal guibg=None ctermbg=None
+au VimEnter * colo one | hi Normal guibg=#31363b ctermbg=#31363b
 au VimEnter * let &statusline='%{bufferline#refresh_status()}'.bufferline#get_status_string()
 let g:bufferline_echo=0
 let g:bufferline_show_bufnr=0
@@ -60,7 +60,7 @@ nn <leader>e :e .<cr>
 
 let g:rooter_silent_chdir=1
 let g:rooter_change_directory_for_non_project_files='current'
-let g:rooter_patterns=['.git/', 'Makefile', 'CMakeLists.txt', 'setup.py', 'node_modules', 'pom.xml']
+let g:rooter_patterns=['Cargo.toml', 'CMakeLists.txt', 'setup.py', 'node_modules', 'pom.xml', 'Makefile', '.git/']
 
 let g:python_host_skip_check=1
 let g:python3_host_skip_check=1
@@ -70,6 +70,8 @@ let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_complete_start_length=1
 let g:deoplete#ignore_sources={'_': ['member', 'buffer']}
 let g:deoplete#omni_patterns={'java': '[^. *\t]\.\w*'}
+let g:deoplete#sources#rust#rust_source_path=$HOME.'/.config/nvim/pack/comp/start/rust/src'
+let g:deoplete#sources#rust#racer_binary=$HOME.'/.cargo/bin/racer'
 nn <tab> :pclose!<cr>
 
 packl

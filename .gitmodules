@@ -118,3 +118,9 @@
 	path = pack/candy/start/vim-bufferline
 	url = https://github.com/bling/vim-bufferline
 	ignore = dirty
+[submodule "pack/comp/start/deoplete-rust"]
+	path = pack/comp/start/deoplete-rust
+	url = https://github.com/sebastianmarkow/deoplete-rust
+[submodule "pack/comp/start/rust"]
+	path = pack/comp/start/rust
+	url = https://github.com/rust-lang/rust
