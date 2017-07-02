@@ -10,6 +10,7 @@ au VimEnter * let &statusline='%{bufferline#refresh_status()}'.bufferline#get_st
 let g:bufferline_echo=0
 let g:bufferline_show_bufnr=0
 let g:bufferline_pathshorten=1
+let g:bufferline_fname_mod = ':~:.'
 let g:bufferline_active_buffer_left=''
 let g:bufferline_active_buffer_right=''
 
@@ -70,7 +71,7 @@ let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_complete_start_length=1
 let g:deoplete#ignore_sources={'_': ['member', 'buffer']}
 let g:deoplete#omni_patterns={'java': '[^. *\t]\.\w*'}
-let g:deoplete#sources#rust#rust_source_path=$HOME.'/.config/nvim/pack/comp/start/rust/src'
+let g:deoplete#sources#rust#rust_source_path=$HOME.'/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 let g:deoplete#sources#rust#racer_binary=$HOME.'/.cargo/bin/racer'
 nn <tab> :pclose!<cr>
 
