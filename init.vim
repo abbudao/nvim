@@ -4,13 +4,13 @@ set cb+=unnamedplus
 
 set ts=2 sw=2 et
 
-set bg=dark tgc title sc ru list
-au VimEnter * colo one | hi Normal guibg=#31363b ctermbg=#31363b
+set tgc title sc ru list
+colo one | hi Normal guibg=none ctermbg=none
 au VimEnter * let &statusline='%{bufferline#refresh_status()}'.bufferline#get_status_string()
 let g:bufferline_echo=0
 let g:bufferline_show_bufnr=0
 let g:bufferline_pathshorten=1
-let g:bufferline_fname_mod = ':~:.'
+let g:bufferline_fname_mod=':~:.'
 let g:bufferline_active_buffer_left=''
 let g:bufferline_active_buffer_right=''
 
