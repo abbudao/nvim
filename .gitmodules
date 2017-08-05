@@ -15,7 +15,7 @@
 	url = https://github.com/SirVer/ultisnips
 	ignore = dirty
 [submodule "pack/all/start/vim-bbye"]
-	path = pack/misc/start/vim-bbye
+	path = pack/util/start/vim-bbye
 	url = https://github.com/moll/vim-bbye
 	ignore = dirty
 [submodule "pack/all/start/vim-commentary"]
@@ -23,15 +23,15 @@
 	url = https://github.com/tpope/vim-commentary
 	ignore = dirty
 [submodule "pack/all/start/vim-easy-align"]
-	path = pack/misc/start/vim-easy-align
+	path = pack/util/start/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
 	ignore = dirty
 [submodule "pack/all/start/vim-eunuch"]
-	path = pack/misc/start/vim-eunuch
+	path = pack/file/start/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
 	ignore = dirty
 [submodule "pack/all/start/vim-exchange"]
-	path = pack/util/start/vim-exchange
+	path = pack/core/start/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange
 	ignore = dirty
 [submodule "pack/all/start/vim-multiple-cursors"]
@@ -43,12 +43,8 @@
 	url = https://github.com/sheerun/vim-polyglot
 	ignore = dirty
 [submodule "pack/all/start/vim-repeat"]
-	path = pack/core/start/vim-repeat
+	path = pack/util/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-	ignore = dirty
-[submodule "pack/all/start/vim-rooter"]
-	path = pack/file/start/vim-rooter
-	url = https://github.com/airblade/vim-rooter
 	ignore = dirty
 [submodule "pack/all/start/vim-rsi"]
 	path = pack/util/start/vim-rsi
@@ -59,12 +55,8 @@
 	url = https://github.com/honza/vim-snippets
 	ignore = dirty
 [submodule "pack/all/start/vim-surround"]
-	path = pack/util/start/vim-surround
+	path = pack/core/start/vim-surround
 	url = https://github.com/tpope/vim-surround
-	ignore = dirty
-[submodule "pack/all/start/vimtex"]
-	path = pack/lang/start/vimtex
-	url = https://github.com/lervag/vimtex
 	ignore = dirty
 [submodule "pack/all/start/vim-textobj-user"]
 	path = pack/tobj/start/vim-textobj-user
@@ -86,24 +78,20 @@
 	path = pack/tobj/start/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
 	ignore = dirty
-[submodule "pack/all/start/vim-dirvish"]
-	path = pack/file/start/vim-dirvish
-	url = https://github.com/justinmk/vim-dirvish
-	ignore = dirty
 [submodule "pack/comp/start/deoplete.nvim"]
-	path = pack/comp/start/deoplete.nvim
+	path = pack/lang/start/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
 	ignore = dirty
 [submodule "pack/comp/start/deoplete-ternjs"]
-	path = pack/comp/start/deoplete-ternjs
+	path = pack/lang/start/deoplete-ternjs
 	url = https://github.com/carlitux/deoplete-ternjs
 	ignore = dirty
 [submodule "pack/comp/start/deoplete-jedi"]
-	path = pack/comp/start/deoplete-jedi
+	path = pack/lang/start/deoplete-jedi
 	url = https://github.com/zchee/deoplete-jedi
 	ignore = dirty
 [submodule "pack/comp/start/vim-javacomplete2"]
-	path = pack/comp/start/vim-javacomplete2
+	path = pack/lang/start/vim-javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2
 	ignore = dirty
 [submodule "pack/candy/start/vim-one"]
@@ -111,10 +99,10 @@
 	url = https://github.com/rakr/vim-one
 	ignore = dirty
 [submodule "pack/comp/start/deoplete-rust"]
-	path = pack/comp/start/deoplete-rust
+	path = pack/lang/start/deoplete-rust
 	url = https://github.com/sebastianmarkow/deoplete-rust
 	ignore = dirty
 [submodule "pack/comp/start/deoplete-clang"]
-	path = pack/comp/start/deoplete-clang
+	path = pack/lang/start/deoplete-clang
 	url = https://github.com/zchee/deoplete-clang
 	ignore = dirty

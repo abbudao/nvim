@@ -48,16 +48,27 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-let g:ctrlp_map='<leader>h'
 let g:ctrlp_cmd='CtrlPMRU'
-
-let g:loaded_netrwPlugin=1
-au FileType dirvish cd % | nm <buffer> h - | nm <buffer> l i | nm <buffer> ~ :e $HOME<cr>
-nn <leader>e :e .<cr>
+let g:ctrlp_map='<leader>h'
+let g:ctrlp_working_path_mode=0
+fu! NavInit()
+  retu filter(glob('{,.}*', 1, 1, 1), 'v:val != "./"')
+endf
+fu! NavAccept(mode, str)
+  if isdirectory(a:str)
+    exe 'cd '.a:str
+    cal ctrlp#exit()
+    cal ctrlp#init(g:ctrlp_builtins + len(g:ctrlp_ext_vars))
+  el
+    cal ctrlp#acceptfile(a:mode, a:str)
+  en
+endf
+au VimEnter * let g:ctrlp_ext_vars=[{'init': 'NavInit()', 'accept': 'NavAccept', 'lname': 'nav', 'sname': 'nav', 'type': 'file'}]
+nn <leader>e :cal ctrlp#init(g:ctrlp_builtins + len(g:ctrlp_ext_vars))<cr>
+nn <leader>d :cd %:h<cr>
 
 let g:rooter_silent_chdir=1
 let g:rooter_change_directory_for_non_project_files='current'
-let g:rooter_patterns=['Cargo.toml', 'package.json', 'setup.py', 'pom.xml', 'CMakeLists.txt', 'Makefile', '.git/']
 
 set cot+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
@@ -75,5 +86,3 @@ endf
 fu! Multiple_cursors_after()
   call deoplete#enable()
 endf
-
-packl
