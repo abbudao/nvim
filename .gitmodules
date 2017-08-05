@@ -107,17 +107,14 @@
 	url = https://github.com/artur-shaik/vim-javacomplete2
 	ignore = dirty
 [submodule "pack/candy/start/vim-one"]
-	path = pack/candy/start/vim-one
+	path = pack/colo/start/vim-one/
 	url = https://github.com/rakr/vim-one
-	ignore = dirty
-[submodule "pack/comp/start/deoplete-clang2"]
-	path = pack/comp/start/deoplete-clang2
-	url = https://github.com/tweekmonster/deoplete-clang2
-	ignore = dirty
-[submodule "pack/candy/start/vim-bufferline"]
-	path = pack/candy/start/vim-bufferline
-	url = https://github.com/bling/vim-bufferline
 	ignore = dirty
 [submodule "pack/comp/start/deoplete-rust"]
 	path = pack/comp/start/deoplete-rust
 	url = https://github.com/sebastianmarkow/deoplete-rust
+	ignore = dirty
+[submodule "pack/comp/start/deoplete-clang"]
+	path = pack/comp/start/deoplete-clang
+	url = https://github.com/zchee/deoplete-clang
+	ignore = dirty
