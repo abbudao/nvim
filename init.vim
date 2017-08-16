@@ -1,18 +1,20 @@
-let $EDITOR='nvr'
-
-let g:mapleader='g'
+let $EDITOR='nvr --remote-wait'
 
 set cb+=unnamedplus
 
 set ts=2 sw=2 et
 
 fu! BufferString()
-  retu join(map(filter(range(1, bufnr('$')), 'bufexists(v:val) && buflisted(v:val)'), 'join(v:val == bufnr("%") ? ["[ ", " ]"] : [" ", " "], fnamemodify(bufname(v:val), ":t"))'), " ")
+  let a=map(range(bufnr('$')), {k,v -> ' '.pathshorten(bufname(k + 1)).' '})
+  let a=map(a, {k,v -> k + 1 == bufnr('%') ? '['.v.']' : v})
+  retu join(filter(a, {k,v -> bufexists(k + 1) && buflisted(k + 1)}), ' ')
 endf
 set list ls=1 title titlestring=%{BufferString()}
 
 set tgc bg=dark
 au VimEnter * colo one | hi Normal ctermbg=None guibg=None
+
+let g:mapleader='g'
 
 set ic scs nohls
 map f /
@@ -52,7 +54,7 @@ let g:ctrlp_cmd='CtrlPMRU'
 let g:ctrlp_map='<leader>h'
 let g:ctrlp_working_path_mode=0
 fu! NavInit()
-  retu filter(glob('{,.}*', 1, 1, 1), 'v:val != "./"')
+  retu filter(glob('{,.}*', 1, 1, 1), {k,v -> v != './'})
 endf
 fu! NavAccept(mode, str)
   if isdirectory(a:str)
@@ -67,9 +69,6 @@ au VimEnter * let g:ctrlp_ext_vars=[{'init': 'NavInit()', 'accept': 'NavAccept',
 nn <leader>e :cal ctrlp#init(g:ctrlp_builtins + len(g:ctrlp_ext_vars))<cr>
 nn <leader>d :cd %:h<cr>
 
-let g:rooter_silent_chdir=1
-let g:rooter_change_directory_for_non_project_files='current'
-
 set cot+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_complete_start_length=0
@@ -81,8 +80,8 @@ let g:deoplete#sources#rust#racer_binary=$HOME.'/.cargo/bin/racer'
 nn <tab> :pclose!<cr>
 
 fu! Multiple_cursors_before()
-  call deoplete#disable()
+  cal deoplete#disable()
 endf
 fu! Multiple_cursors_after()
-  call deoplete#enable()
+  cal deoplete#enable()
 endf
