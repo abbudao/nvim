@@ -70,18 +70,26 @@ nn <leader>e :cal ctrlp#init(g:ctrlp_builtins + len(g:ctrlp_ext_vars))<cr>
 nn <leader>d :cd %:h<cr>
 
 set cot+=menuone,noinsert,noselect
+nn <tab> :pclose!<cr>
+
 let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_complete_start_length=0
 let g:deoplete#omni_patterns={'java': '[^. *\t]\.\w*'}
-let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
-let g:deoplete#sources#clang#clang_header='/usr/include/clang'
-let g:deoplete#sources#rust#rust_source_path=$HOME.'/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
-let g:deoplete#sources#rust#racer_binary=$HOME.'/.cargo/bin/racer'
-nn <tab> :pclose!<cr>
-
 fu! Multiple_cursors_before()
   cal deoplete#disable()
 endf
 fu! Multiple_cursors_after()
   cal deoplete#enable()
 endf
+
+set cfu=LanguageClient#complete
+set ofu=LanguageClient#complete
+let g:LanguageClient_autoStart=1
+let g:LanguageClient_signColumnAlwaysOn=0
+let g:LanguageClient_serverCommands={}
+let g:LanguageClient_serverCommands['c']=['clangd']
+let g:LanguageClient_serverCommands['cpp']=['clangd']
+let g:LanguageClient_serverCommands['python']=['pyls']
+let g:LanguageClient_serverCommands['javascript']=['javascript-typescript-stdio']
+let g:LanguageClient_serverCommands['javascript.jsx']=['javascript-typescript-stdio']
+let g:LanguageClient_serverCommands['rust']=['rustup', 'run', 'nightly', 'rls']

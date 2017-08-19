@@ -78,31 +78,19 @@
 	path = pack/tobj/start/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
 	ignore = dirty
-[submodule "pack/comp/start/deoplete.nvim"]
-	path = pack/lang/start/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
-	ignore = dirty
-[submodule "pack/comp/start/deoplete-ternjs"]
-	path = pack/lang/start/deoplete-ternjs
-	url = https://github.com/carlitux/deoplete-ternjs
-	ignore = dirty
-[submodule "pack/comp/start/deoplete-jedi"]
-	path = pack/lang/start/deoplete-jedi
-	url = https://github.com/zchee/deoplete-jedi
-	ignore = dirty
-[submodule "pack/comp/start/vim-javacomplete2"]
-	path = pack/lang/start/vim-javacomplete2
-	url = https://github.com/artur-shaik/vim-javacomplete2
-	ignore = dirty
 [submodule "pack/candy/start/vim-one"]
 	path = pack/colo/start/vim-one/
 	url = https://github.com/rakr/vim-one
 	ignore = dirty
-[submodule "pack/comp/start/deoplete-rust"]
-	path = pack/lang/start/deoplete-rust
-	url = https://github.com/sebastianmarkow/deoplete-rust
+[submodule "pack/lang/start/LanguageClient-neovim"]
+	path = pack/lang/start/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
 	ignore = dirty
-[submodule "pack/comp/start/deoplete-clang"]
-	path = pack/lang/start/deoplete-clang
-	url = https://github.com/zchee/deoplete-clang
+[submodule "pack/lang/start/deoplete.nvim"]
+	path = pack/lang/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+	ignore = dirty
+[submodule "pack/lang/start/vim-javacomplete2"]
+	path = pack/lang/start/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2
 	ignore = dirty
