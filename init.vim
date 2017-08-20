@@ -5,14 +5,16 @@ set cb+=unnamedplus
 set ts=2 sw=2 et
 
 fu! BufferString()
-  let a=map(range(bufnr('$')), {k,v -> ' '.pathshorten(bufname(k + 1)).' '})
+  let a=map(range(bufnr('$')), {k,v -> pathshorten(bufname(k + 1))})
+  let a=map(a, {k,v -> getbufvar(k + 1, '&mod') ? v.'+' : v})
+  let a=map(a, {k,v -> ' '.v.' '})
   let a=map(a, {k,v -> k + 1 == bufnr('%') ? '['.v.']' : v})
   retu join(filter(a, {k,v -> bufexists(k + 1) && buflisted(k + 1)}), ' ')
 endf
 set list ls=1 title titlestring=%{BufferString()}
 
-set tgc bg=dark
-au VimEnter * colo one | hi Normal ctermbg=None guibg=None
+set tgc
+au VimEnter * colo lucius | LuciusWhiteLowContrast
 
 let g:mapleader='g'
 
@@ -82,8 +84,7 @@ fu! Multiple_cursors_after()
   cal deoplete#enable()
 endf
 
-set cfu=LanguageClient#complete
-set ofu=LanguageClient#complete
+au VimEnter * set cfu=LanguageClient#complete
 let g:LanguageClient_autoStart=1
 let g:LanguageClient_signColumnAlwaysOn=0
 let g:LanguageClient_serverCommands={}

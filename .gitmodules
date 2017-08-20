@@ -78,10 +78,6 @@
 	path = pack/tobj/start/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
 	ignore = dirty
-[submodule "pack/candy/start/vim-one"]
-	path = pack/colo/start/vim-one/
-	url = https://github.com/rakr/vim-one
-	ignore = dirty
 [submodule "pack/lang/start/LanguageClient-neovim"]
 	path = pack/lang/start/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
@@ -93,4 +89,8 @@
 [submodule "pack/lang/start/vim-javacomplete2"]
 	path = pack/lang/start/vim-javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2
+	ignore = dirty
+[submodule "pack/colo/start/vim-lucius"]
+	path = pack/colo/start/vim-lucius
+	url = https://github.com/jonathanfilip/vim-lucius
 	ignore = dirty
