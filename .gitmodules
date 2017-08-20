@@ -1,6 +1,6 @@
-[submodule "pack/all/start/ctrlp.vim"]
-	path = pack/file/start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "pack/colo/start/vim-lucius"]
+	path = pack/colo/start/vim-lucius
+	url = https://github.com/jonathanfilip/vim-lucius
 	ignore = dirty
 [submodule "pack/all/start/delimitMate"]
 	path = pack/core/start/delimitMate
@@ -90,7 +90,11 @@
 	path = pack/lang/start/vim-javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2
 	ignore = dirty
-[submodule "pack/colo/start/vim-lucius"]
-	path = pack/colo/start/vim-lucius
-	url = https://github.com/jonathanfilip/vim-lucius
+[submodule "pack/all/start/ctrlp.vim"]
+	path = pack/file/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+	ignore = dirty
+[submodule "pack/file/start/ctrlp-nav"]
+	path = pack/file/start/ctrlp-nav
+	url = https://github.com/rliang/ctrlp-nav
 	ignore = dirty

@@ -1,15 +1,14 @@
 let $EDITOR='nvr --remote-wait'
 
-set cb+=unnamedplus
-
 set ts=2 sw=2 et
 
+set cb+=unnamedplus
+
 fu! BufferString()
-  let a=map(range(bufnr('$')), {k,v -> pathshorten(bufname(k + 1))})
+  let a=map(range(bufnr('$')), {k,v -> fnamemodify(pathshorten(bufname(k + 1)), ':~:.')})
   let a=map(a, {k,v -> getbufvar(k + 1, '&mod') ? v.'+' : v})
-  let a=map(a, {k,v -> ' '.v.' '})
-  let a=map(a, {k,v -> k + 1 == bufnr('%') ? '['.v.']' : v})
-  retu join(filter(a, {k,v -> bufexists(k + 1) && buflisted(k + 1)}), ' ')
+  let a=map(a, {k,v -> k + 1 == bufnr('%') ? '[ '.v.' ]' : v})
+  retu join(filter(a, {k,v -> bufexists(k + 1) && buflisted(k + 1)}), '  ')
 endf
 set list ls=1 title titlestring=%{BufferString()}
 
@@ -52,28 +51,14 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-let g:ctrlp_cmd='CtrlPMRU'
-let g:ctrlp_map='<leader>h'
-let g:ctrlp_working_path_mode=0
-fu! NavInit()
-  retu filter(glob('{,.}*', 1, 1, 1), {k,v -> v != './'})
-endf
-fu! NavAccept(mode, str)
-  if isdirectory(a:str)
-    exe 'cd '.a:str
-    cal ctrlp#exit()
-    cal ctrlp#init(g:ctrlp_builtins + len(g:ctrlp_ext_vars))
-  el
-    cal ctrlp#acceptfile(a:mode, a:str)
-  en
-endf
-au VimEnter * let g:ctrlp_ext_vars=[{'init': 'NavInit()', 'accept': 'NavAccept', 'lname': 'nav', 'sname': 'nav', 'type': 'file'}]
-nn <leader>e :cal ctrlp#init(g:ctrlp_builtins + len(g:ctrlp_ext_vars))<cr>
 nn <leader>d :cd %:h<cr>
+nn <leader>e :CtrlPNav<cr>
+nn <leader>h :CtrlPMRU<cr>
 
 set cot+=menuone,noinsert,noselect
 nn <tab> :pclose!<cr>
 
+au FileType java setl ofu=javacomplete#Complete
 let g:deoplete#enable_at_startup=1
 let g:deoplete#auto_complete_start_length=0
 let g:deoplete#omni_patterns={'java': '[^. *\t]\.\w*'}
