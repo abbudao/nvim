@@ -13,7 +13,10 @@ endf
 set list ls=1 title titlestring=%{BufferString()}
 
 set tgc
-au VimEnter * colo lucius | LuciusWhiteLowContrast
+let g:lucius_contrast='low'
+let g:lucius_contrast_bg='high'
+au ColorScheme * hi Normal ctermbg=None guibg=None
+colo lucius
 
 let g:mapleader='g'
 
