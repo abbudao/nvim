@@ -18,8 +18,6 @@ let g:lucius_contrast_bg='high'
 au ColorScheme * hi Normal ctermbg=None guibg=None
 colo lucius
 
-let g:mapleader='g'
-
 set ic scs nohls
 map f /
 map F ?
@@ -29,23 +27,23 @@ nn <c-f> :bn<cr>
 nn <c-b> :bp<cr>
 
 set cf
-nn <leader>v :vsp<cr>
-nn <leader>V :sp<cr>
+nn gv :vsp<cr>
+nn gV :sp<cr>
 nn X :Bdelete<cr>
 nn Q :q<cr>
 
 set udf noswf
-nn <leader>s :w<cr>
-nn <leader>S :SudoWrite<cr>
+nn gs :w<cr>
+nn gS :SudoWrite<cr>
 
-nn <leader>t :te<cr>
+nn gt :te<cr>
 au TermOpen * tno <buffer> <esc> <c-\><c-n>
 
 nn <esc> q:<up>
 au CmdwinEnter * nn <buffer> <esc> :q<cr>
 
-nn <leader>a :EasyAlign<space>
-vn <leader>a :EasyAlign<space>
+nn ga :EasyAlign<space>
+vn ga :EasyAlign<space>
 
 let g:delimitMate_expand_cr=1
 let g:delimitMate_expand_space=1
@@ -54,9 +52,9 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-nn <leader>d :cd %:h<cr>
-nn <leader>e :CtrlPNav<cr>
-nn <leader>h :CtrlPMRU<cr>
+nn gd :cd %:h<cr>
+nn ge :CtrlPNav<cr>
+nn gh :CtrlPMRU<cr>
 
 set cot+=menuone,noinsert,noselect
 nn <tab> :pclose!<cr>
@@ -82,3 +80,6 @@ let g:LanguageClient_serverCommands['python']=['pyls']
 let g:LanguageClient_serverCommands['javascript']=['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands['javascript.jsx']=['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands['rust']=['rustup', 'run', 'nightly', 'rls']
+nn K :call LanguageClient_textDocument_hover()<cr>
+nn gk :call LanguageClient_textDocument_definition()<cr>
+nn gr :call LanguageClient_textDocument_rename()<cr>
