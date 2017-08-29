@@ -70,10 +70,6 @@
 	path = pack/tobj/start/vim-textobj-methodcall
 	url = https://github.com/thalesmello/vim-textobj-methodcall
 	ignore = dirty
-[submodule "pack/all/start/vim-textobj-between"]
-	path = pack/tobj/start/vim-textobj-between
-	url = https://github.com/thinca/vim-textobj-between
-	ignore = dirty
 [submodule "pack/all/start/vim-textobj-variable-segment"]
 	path = pack/tobj/start/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
@@ -98,3 +94,9 @@
 	path = pack/file/start/ctrlp-nav
 	url = https://github.com/rliang/ctrlp-nav
 	ignore = dirty
+[submodule "pack/tobj/start/vim-textobj-function"]
+	path = pack/tobj/start/vim-textobj-function
+	url = https://github.com/kana/vim-textobj-function
+[submodule "pack/tobj/start/vim-textobj-function-syntax"]
+	path = pack/tobj/start/vim-textobj-function-syntax
+	url = https://github.com/haya14busa/vim-textobj-function-syntax
