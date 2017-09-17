@@ -1,13 +1,11 @@
 let $EDITOR='nvr --remote-wait'
 
-set ts=2 sw=2 et
-
-set cb+=unnamedplus
+set sw=2 et cb+=unnamedplus
 
 fu! BufferString()
   let a=map(range(bufnr('$')), {k,v -> fnamemodify(pathshorten(bufname(k + 1)), ':~:.')})
   let a=map(a, {k,v -> getbufvar(k + 1, '&mod') ? v.'+' : v})
-  let a=map(a, {k,v -> k + 1 == bufnr('%') ? '[ '.v.' ]' : v})
+  let a=map(a, {k,v -> k + 1 == bufnr('%') ? '【 '.v.' 】' : v})
   retu join(filter(a, {k,v -> bufexists(k + 1) && buflisted(k + 1)}), '  ')
 endf
 set list ls=1 title titlestring=%{BufferString()}
@@ -22,17 +20,13 @@ set ic scs nohls
 map f /
 map F ?
 
-set hid
+set cf hid udf noswf
 nn <c-f> :bn<cr>
 nn <c-b> :bp<cr>
-
-set cf
 nn gv :vsp<cr>
 nn gV :sp<cr>
 nn X :Bdelete<cr>
 nn Q :q<cr>
-
-set udf noswf
 nn gs :w<cr>
 nn gS :SudoWrite<cr>
 
