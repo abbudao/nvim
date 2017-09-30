@@ -1,6 +1,6 @@
 let $EDITOR='nvr --remote-wait'
 
-set sw=2 et cb+=unnamedplus
+set sw=2 et nowrap cb+=unnamedplus
 
 fu! BufferString()
   let a=map(range(bufnr('$')), {k,v -> fnamemodify(pathshorten(bufname(k + 1)), ':~:.')})
@@ -37,7 +37,7 @@ nn <esc> q:<up>
 au CmdwinEnter * nn <buffer> <esc> :q<cr>
 
 nn ga :EasyAlign<space>
-vn ga :EasyAlign<space>
+xn ga :EasyAlign<space>
 
 let g:delimitMate_expand_cr=1
 let g:delimitMate_expand_space=1
@@ -53,10 +53,12 @@ nn gh :CtrlPMRU<cr>
 set cot+=menuone,noinsert,noselect
 nn <tab> :pclose!<cr>
 
-au FileType java setl ofu=javacomplete#Complete
 let g:deoplete#enable_at_startup=1
+let g:deoplete#enable_refresh_always=1
 let g:deoplete#auto_complete_start_length=0
 let g:deoplete#omni_patterns={'java': '[^. *\t]\.\w*'}
+ino <expr><c-n> deoplete#manual_complete()
+au FileType java setl ofu=javacomplete#Complete
 fu! Multiple_cursors_before()
   cal deoplete#disable()
 endf
@@ -64,7 +66,6 @@ fu! Multiple_cursors_after()
   cal deoplete#enable()
 endf
 
-au VimEnter * set cfu=LanguageClient#complete
 let g:LanguageClient_autoStart=1
 let g:LanguageClient_signColumnAlwaysOn=0
 let g:LanguageClient_serverCommands={}
