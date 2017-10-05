@@ -30,6 +30,10 @@ nn Q :q<cr>
 nn gs :w<cr>
 nn gS :SudoWrite<cr>
 
+nn gd :cd %:h<cr>
+nn ge :CtrlPNav<cr>
+nn gh :CtrlPMRU<cr>
+
 nn gt :te<cr>
 au TermOpen * tno <buffer> <esc> <c-\><c-n>
 
@@ -46,28 +50,21 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-nn gd :cd %:h<cr>
-nn ge :CtrlPNav<cr>
-nn gh :CtrlPMRU<cr>
-
 set cot+=menuone,noinsert,noselect
 nn <tab> :pclose!<cr>
 
+ino <expr><c-n> deoplete#manual_complete()
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_refresh_always=1
-let g:deoplete#auto_complete_start_length=0
-let g:deoplete#omni_patterns={'java': '[^. *\t]\.\w*'}
-ino <expr><c-n> deoplete#manual_complete()
-au FileType java setl ofu=javacomplete#Complete
-fu! Multiple_cursors_before()
-  cal deoplete#disable()
+let g:deoplete#ignore_sources={'_': ['member']}
+fu! g:Multiple_cursors_before()
+  let g:deoplete#disable_auto_complete=1
 endf
-fu! Multiple_cursors_after()
-  cal deoplete#enable()
+fu! g:Multiple_cursors_after()
+  let g:deoplete#disable_auto_complete=0
 endf
 
 let g:LanguageClient_autoStart=1
-let g:LanguageClient_signColumnAlwaysOn=0
 let g:LanguageClient_serverCommands={}
 let g:LanguageClient_serverCommands['c']=['clangd']
 let g:LanguageClient_serverCommands['cpp']=['clangd']
