@@ -5,20 +5,28 @@ Personal Neovim configuration.
 
 ```sh
 git clone --recursive --depth=1 https://github.com/rliang/nvim ~/.config/nvim
-nvim +UpdateRemotePlugins +q
+nvim -u NORC +pa\ deoplete.nvim +pa\ LanguageClient-neovim +UpdateRemotePlugins +q
 ```
 
-## Adding plugins
+## Adding auto-loaded plugins
 
 ```sh
 git submodule add <repo> pack/<category>/start/<name>
 ```
 
+## Adding lazily-loaded plugins
+
+```sh
+git submodule add <repo> pack/<category>/opt/<name>
+```
+
+Then somewhere in init.vim `packadd <name>` has to be called.
+
 ## Removing plugins
 
 ```sh
-git submodule deinit pack/<category>/start/<name>
-git rm pack/<category>/start/<name>
+git submodule deinit pack/<category>/<start|opt>/<name>
+git rm pack/<category>/<start|opt>/<name>
 ```
 
 ## Updating plugins

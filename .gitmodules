@@ -1,96 +1,66 @@
 [submodule "pack/colo/start/vim-lucius"]
 	path = pack/colo/start/vim-lucius
 	url = https://github.com/jonathanfilip/vim-lucius
-	ignore = dirty
-[submodule "pack/core/start/delimitMate"]
-	path = pack/core/start/delimitMate
+[submodule "pack/core/opt/delimitMate"]
+	path = pack/core/opt/delimitMate
 	url = https://github.com/Raimondi/delimitMate
-	ignore = dirty
-[submodule "pack/core/start/vim-commentary"]
-	path = pack/core/start/vim-commentary
+[submodule "pack/core/opt/vim-commentary"]
+	path = pack/core/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-	ignore = dirty
-[submodule "pack/core/start/vim-sandwich"]
-	path = pack/core/start/vim-sandwich
+[submodule "pack/core/opt/vim-sandwich"]
+	path = pack/core/opt/vim-sandwich
 	url = https://github.com/machakann/vim-sandwich
-	ignore = dirty
-[submodule "pack/core/start/vim-exchange"]
-	path = pack/core/start/vim-exchange
+[submodule "pack/core/opt/vim-exchange"]
+	path = pack/core/opt/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange
-	ignore = dirty
-[submodule "pack/util/start/vim-bbye"]
-	path = pack/util/start/vim-bbye
+[submodule "pack/util/opt/vim-bbye"]
+	path = pack/util/opt/vim-bbye
 	url = https://github.com/moll/vim-bbye
-	ignore = dirty
-[submodule "pack/util/start/vim-multiple-cursors"]
-	path = pack/util/start/vim-multiple-cursors
+[submodule "pack/util/opt/vim-multiple-cursors"]
+	path = pack/util/opt/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
-	ignore = dirty
-[submodule "pack/util/start/vim-repeat"]
-	path = pack/util/start/vim-repeat
+[submodule "pack/util/opt/vim-repeat"]
+	path = pack/util/opt/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-	ignore = dirty
-[submodule "pack/util/start/vim-rsi"]
-	path = pack/util/start/vim-rsi
+[submodule "pack/util/opt/vim-rsi"]
+	path = pack/util/opt/vim-rsi
 	url = https://github.com/tpope/vim-rsi
-	ignore = dirty
-[submodule "pack/util/start/vim-easy-align"]
-	path = pack/util/start/vim-easy-align
+[submodule "pack/util/opt/vim-easy-align"]
+	path = pack/util/opt/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
-	ignore = dirty
-[submodule "pack/file/start/vim-eunuch"]
-	path = pack/file/start/vim-eunuch
+[submodule "pack/file/opt/vim-eunuch"]
+	path = pack/file/opt/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
-	ignore = dirty
-[submodule "pack/file/start/ctrlp.vim"]
-	path = pack/file/start/ctrlp.vim
+[submodule "pack/file/opt/ctrlp.vim"]
+	path = pack/file/opt/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
-	ignore = dirty
-[submodule "pack/file/start/ctrlp-nav"]
-	path = pack/file/start/ctrlp-nav
+[submodule "pack/file/opt/ctrlp-nav"]
+	path = pack/file/opt/ctrlp-nav
 	url = https://github.com/rliang/ctrlp-nav
-	ignore = dirty
-[submodule "pack/tobj/start/targets.vim"]
-	path = pack/tobj/start/targets.vim
-	url = https://github.com/wellle/targets.vim
-	ignore = dirty
-[submodule "pack/tobj/start/vim-textobj-user"]
-	path = pack/tobj/start/vim-textobj-user
+[submodule "pack/tobj/opt/vim-textobj-user"]
+	path = pack/tob0/opt/vim-textobj-user
 	url = https://github.com/kana/vim-textobj-user
-	ignore = dirty
-[submodule "pack/tobj/start/vim-textobj-indent"]
-	path = pack/tobj/start/vim-textobj-indent
+[submodule "pack/tobj/opt/vim-textobj-indent"]
+	path = pack/tob1/opt/vim-textobj-indent
 	url = https://github.com/kana/vim-textobj-indent
-	ignore = dirty
-[submodule "pack/tobj/start/vim-textobj-methodcall"]
-	path = pack/tobj/start/vim-textobj-methodcall
+[submodule "pack/tobj/opt/vim-textobj-methodcall"]
+	path = pack/tob1/opt/vim-textobj-methodcall
 	url = https://github.com/thalesmello/vim-textobj-methodcall
-	ignore = dirty
-[submodule "pack/tobj/start/vim-textobj-variable-segment"]
-	path = pack/tobj/start/vim-textobj-variable-segment
+[submodule "pack/tobj/opt/vim-textobj-variable-segment"]
+	path = pack/tob1/opt/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
-	ignore = dirty
 [submodule "pack/lang/start/vim-polyglot"]
 	path = pack/lang/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-	ignore = dirty
-[submodule "pack/lang/start/ultisnips"]
-	path = pack/lang/start/ultisnips
+[submodule "pack/lang/opt/ultisnips"]
+	path = pack/lang/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips
-	ignore = dirty
-[submodule "pack/lang/start/vim-snippets"]
-	path = pack/lang/start/vim-snippets
+[submodule "pack/lang/opt/vim-snippets"]
+	path = pack/lang/opt/vim-snippets
 	url = https://github.com/honza/vim-snippets
-	ignore = dirty
-[submodule "pack/lang/start/deoplete.nvim"]
-	path = pack/lang/start/deoplete.nvim
+[submodule "pack/lang/opt/deoplete.nvim"]
+	path = pack/lang/opt/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
-	ignore = dirty
-[submodule "pack/lang/start/LanguageClient-neovim"]
-	path = pack/lang/start/LanguageClient-neovim
+[submodule "pack/lang/opt/LanguageClient-neovim"]
+	path = pack/lang/opt/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
-	ignore = dirty
-[submodule "pack/lang/start/vim-javacomplete2"]
-	path = pack/lang/start/vim-javacomplete2
-	url = https://github.com/artur-shaik/vim-javacomplete2
-	ignore = dirty

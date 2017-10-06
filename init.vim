@@ -29,8 +29,8 @@ nn gs :w<cr>
 nn gS :SudoWrite<cr>
 
 nn gd :cd %:h<cr>
-nn ge :CtrlPNav<cr>
 nn gh :CtrlPMRU<cr>
+nn ge :CtrlPNav<cr>
 
 nn gt :te<cr>
 au TermOpen * tno <buffer> <esc> <c-\><c-n>
@@ -38,15 +38,11 @@ au TermOpen * tno <buffer> <esc> <c-\><c-n>
 nn <esc> q:<up>
 au CmdwinEnter * nn <buffer> <esc> :q<cr>
 
-nn ga :LiveEasyAlign<cr>
-xn ga :LiveEasyAlign<cr>
+nn ga :EasyAlign<space>
+xn ga :EasyAlign<space>
 
 let g:delimitMate_expand_cr=1
 let g:delimitMate_expand_space=1
-
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
 set cot+=menuone,noinsert,noselect
 nn <tab> :pclose!<cr>
@@ -73,3 +69,16 @@ let g:LanguageClient_serverCommands['rust']=['rustup', 'run', 'nightly', 'rls']
 nn K :call LanguageClient_textDocument_hover()<cr>
 nn gk :call LanguageClient_textDocument_definition()<cr>
 nn gr :call LanguageClient_textDocument_rename()<cr>
+
+let g:loaded_remote_plugins=''
+fu! LoadPlugins(paths)
+  if !len(a:paths) | return | en
+  exe 'pa '.fnamemodify(a:paths[0], ':t')
+  cal timer_start(0, {-> LoadPlugins(a:paths[1:])})
+endf
+fu! LoadRemotePlugins()
+  unl g:loaded_remote_plugins
+  so $VIM/runtime/plugin/rplugin.vim
+  cal timer_start(0, {-> LoadPlugins(glob(fnamemodify($MYVIMRC, ':h').'/pack/*/opt/*', 0, 1))})
+endf
+cal timer_start(0, {-> LoadRemotePlugins()})
