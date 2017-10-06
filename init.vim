@@ -2,19 +2,17 @@ let $EDITOR='nvr --remote-wait'
 
 set sw=2 et nowrap cb+=unnamedplus
 
+let g:lucius_contrast='low'
+let g:lucius_contrast_bg='high'
+au ColorScheme * hi Normal ctermbg=None guibg=None
+colo lucius
 fu! BufferString()
   let a=map(range(bufnr('$')), {k,v -> fnamemodify(pathshorten(bufname(k + 1)), ':~:.')})
   let a=map(a, {k,v -> getbufvar(k + 1, '&mod') ? v.'+' : v})
   let a=map(a, {k,v -> k + 1 == bufnr('%') ? '【 '.v.' 】' : v})
   retu join(filter(a, {k,v -> bufexists(k + 1) && buflisted(k + 1)}), '  ')
 endf
-set list ls=1 title titlestring=%{BufferString()}
-
-set tgc
-let g:lucius_contrast='low'
-let g:lucius_contrast_bg='high'
-au ColorScheme * hi Normal ctermbg=None guibg=None
-colo lucius
+set tgc list ls=1 title titlestring=%{BufferString()}
 
 set ic scs nohls
 map f /
@@ -40,8 +38,8 @@ au TermOpen * tno <buffer> <esc> <c-\><c-n>
 nn <esc> q:<up>
 au CmdwinEnter * nn <buffer> <esc> :q<cr>
 
-nn ga :EasyAlign<space>
-xn ga :EasyAlign<space>
+nn ga :LiveEasyAlign<cr>
+xn ga :LiveEasyAlign<cr>
 
 let g:delimitMate_expand_cr=1
 let g:delimitMate_expand_space=1
