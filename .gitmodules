@@ -70,17 +70,17 @@
 	path = pack/tobj/start/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
 	ignore = dirty
-[submodule "pack/snip/start/ultisnips"]
-	path = pack/snip/start/ultisnips
-	url = https://github.com/SirVer/ultisnips
-	ignore = dirty
-[submodule "pack/snip/start/vim-snippets"]
-	path = pack/snip/start/vim-snippets
-	url = https://github.com/honza/vim-snippets
-	ignore = dirty
 [submodule "pack/lang/start/vim-polyglot"]
 	path = pack/lang/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
+	ignore = dirty
+[submodule "pack/lang/start/ultisnips"]
+	path = pack/lang/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
+	ignore = dirty
+[submodule "pack/lang/start/vim-snippets"]
+	path = pack/lang/start/vim-snippets
+	url = https://github.com/honza/vim-snippets
 	ignore = dirty
 [submodule "pack/lang/start/deoplete.nvim"]
 	path = pack/lang/start/deoplete.nvim
