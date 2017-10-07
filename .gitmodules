@@ -64,3 +64,6 @@
 [submodule "pack/lang/opt/LanguageClient-neovim"]
 	path = pack/lang/opt/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
+[submodule "pack/core/opt/asyncpack.vim"]
+	path = pack/core/opt/asyncpack.vim
+	url = https://github.com/rliang/asyncpack.vim
