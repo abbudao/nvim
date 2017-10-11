@@ -20,6 +20,7 @@ no f /
 no F ?
 
 set confirm hidden undofile noswapfile
+let g:ctrlp_match_window='results:0'
 nn <c-f> :bn<cr>
 nn <c-b> :bp<cr>
 nn gv :vsp<cr>
