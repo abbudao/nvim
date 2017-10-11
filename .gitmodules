@@ -1,69 +1,69 @@
-[submodule "pack/colo/start/vim-lucius"]
-	path = pack/colo/start/vim-lucius
-	url = https://github.com/jonathanfilip/vim-lucius
-[submodule "pack/core/opt/delimitMate"]
-	path = pack/core/opt/delimitMate
-	url = https://github.com/Raimondi/delimitMate
-[submodule "pack/core/opt/vim-commentary"]
-	path = pack/core/opt/vim-commentary
-	url = https://github.com/tpope/vim-commentary
-[submodule "pack/core/opt/vim-sandwich"]
-	path = pack/core/opt/vim-sandwich
-	url = https://github.com/machakann/vim-sandwich
-[submodule "pack/core/opt/vim-exchange"]
-	path = pack/core/opt/vim-exchange
-	url = https://github.com/tommcdo/vim-exchange
-[submodule "pack/util/opt/vim-bbye"]
-	path = pack/util/opt/vim-bbye
-	url = https://github.com/moll/vim-bbye
-[submodule "pack/util/opt/vim-multiple-cursors"]
-	path = pack/util/opt/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors
-[submodule "pack/util/opt/vim-repeat"]
-	path = pack/util/opt/vim-repeat
-	url = https://github.com/tpope/vim-repeat
-[submodule "pack/util/opt/vim-rsi"]
-	path = pack/util/opt/vim-rsi
-	url = https://github.com/tpope/vim-rsi
-[submodule "pack/util/opt/vim-easy-align"]
-	path = pack/util/opt/vim-easy-align
-	url = https://github.com/junegunn/vim-easy-align
-[submodule "pack/file/opt/vim-eunuch"]
-	path = pack/file/opt/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch
-[submodule "pack/file/opt/ctrlp.vim"]
-	path = pack/file/opt/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
-[submodule "pack/file/opt/ctrlp-nav"]
-	path = pack/file/opt/ctrlp-nav
-	url = https://github.com/rliang/ctrlp-nav
-[submodule "pack/tobj/opt/vim-textobj-user"]
-	path = pack/tob0/opt/vim-textobj-user
-	url = https://github.com/kana/vim-textobj-user
-[submodule "pack/tobj/opt/vim-textobj-indent"]
-	path = pack/tob1/opt/vim-textobj-indent
-	url = https://github.com/kana/vim-textobj-indent
-[submodule "pack/tobj/opt/vim-textobj-methodcall"]
-	path = pack/tob1/opt/vim-textobj-methodcall
-	url = https://github.com/thalesmello/vim-textobj-methodcall
-[submodule "pack/tobj/opt/vim-textobj-variable-segment"]
-	path = pack/tob1/opt/vim-textobj-variable-segment
-	url = https://github.com/Julian/vim-textobj-variable-segment
-[submodule "pack/lang/start/vim-polyglot"]
-	path = pack/lang/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
-[submodule "pack/lang/opt/ultisnips"]
-	path = pack/lang/opt/ultisnips
-	url = https://github.com/SirVer/ultisnips
-[submodule "pack/lang/opt/vim-snippets"]
-	path = pack/lang/opt/vim-snippets
-	url = https://github.com/honza/vim-snippets
-[submodule "pack/lang/opt/deoplete.nvim"]
-	path = pack/lang/opt/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
-[submodule "pack/lang/opt/LanguageClient-neovim"]
-	path = pack/lang/opt/LanguageClient-neovim
-	url = https://github.com/autozimu/LanguageClient-neovim
-[submodule "pack/core/opt/asyncpack.vim"]
-	path = pack/core/opt/asyncpack.vim
+[submodule "pack/base/opt/asyncpack.vim"]
+	path = pack/base/opt/asyncpack.vim
 	url = https://github.com/rliang/asyncpack.vim
+[submodule "pack/base/opt/delimitMate"]
+	path = pack/base/opt/delimitMate
+	url = https://github.com/Raimondi/delimitMate
+[submodule "pack/base/opt/vim-commentary"]
+	path = pack/base/opt/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "pack/base/opt/vim-sandwich"]
+	path = pack/base/opt/vim-sandwich
+	url = https://github.com/machakann/vim-sandwich
+[submodule "pack/base/opt/vim-exchange"]
+	path = pack/base/opt/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange
+[submodule "pack/colors/opt/vim-lucius"]
+	path = pack/colors/opt/vim-lucius
+	url = https://github.com/jonathanfilip/vim-lucius
+[submodule "pack/files/opt/vim-eunuch"]
+	path = pack/files/opt/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule "pack/files/opt/ctrlp.vim"]
+	path = pack/files/opt/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "pack/files/opt/ctrlp-nav"]
+	path = pack/files/opt/ctrlp-nav
+	url = https://github.com/rliang/ctrlp-nav
+[submodule "pack/languages/start/vim-polyglot"]
+	path = pack/languages/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "pack/languages/opt/ultisnips"]
+	path = pack/languages/opt/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "pack/languages/opt/vim-snippets"]
+	path = pack/languages/opt/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "pack/languages/opt/deoplete.nvim"]
+	path = pack/languages/opt/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "pack/languages/opt/LanguageClient-neovim"]
+	path = pack/languages/opt/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
+[submodule "pack/textobjs/opt/00-vim-textobj-user"]
+	path = pack/textobjs/opt/00-vim-textobj-user
+	url = https://github.com/kana/vim-textobj-user
+[submodule "pack/textobjs/opt/vim-textobj-indent"]
+	path = pack/textobjs/opt/vim-textobj-indent
+	url = https://github.com/kana/vim-textobj-indent
+[submodule "pack/textobjs/opt/vim-textobj-methodcall"]
+	path = pack/textobjs/opt/vim-textobj-methodcall
+	url = https://github.com/thalesmello/vim-textobj-methodcall
+[submodule "pack/textobjs/opt/vim-textobj-variable-segment"]
+	path = pack/textobjs/opt/vim-textobj-variable-segment
+	url = https://github.com/Julian/vim-textobj-variable-segment
+[submodule "pack/utils/opt/vim-bbye"]
+	path = pack/utils/opt/vim-bbye
+	url = https://github.com/moll/vim-bbye
+[submodule "pack/utils/opt/vim-multiple-cursors"]
+	path = pack/utils/opt/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "pack/utils/opt/vim-repeat"]
+	path = pack/utils/opt/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "pack/utils/opt/vim-rsi"]
+	path = pack/utils/opt/vim-rsi
+	url = https://github.com/tpope/vim-rsi
+[submodule "pack/utils/opt/vim-easy-align"]
+	path = pack/utils/opt/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align

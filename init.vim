@@ -1,11 +1,12 @@
+pa! asyncpack.vim
 let $EDITOR='nvr --remote-wait'
 
 set sw=2 et nowrap list clipboard+=unnamedplus
 
 let g:lucius_contrast='low'
 let g:lucius_contrast_bg='high'
-au ColorScheme * hi Normal ctermbg=None guibg=None
-colorscheme lucius
+let g:lucius_no_term_bg=1
+au User asyncpack:vim-lucius colorscheme lucius
 fu! BufferString()
   let a=map(range(bufnr('$')), {k,v -> fnamemodify(pathshorten(bufname(k + 1)), ':~:.')})
   let a=map(a, {k,v -> getbufvar(k + 1, '&mod') ? v.'+' : v})
@@ -27,7 +28,6 @@ nn X :Bdelete<cr>
 nn Q :q<cr>
 nn gs :w<cr>
 nn gS :SudoWrite<cr>
-
 nn gd :cd %:h<cr>
 nn gh :CtrlPMRU<cr>
 nn ge :CtrlPNav<cr>
@@ -68,5 +68,3 @@ let g:LanguageClient_serverCommands['rust']=['rustup', 'run', 'nightly', 'rls']
 nn K :call LanguageClient_textDocument_hover()<cr>
 nn gk :call LanguageClient_textDocument_definition()<cr>
 nn gr :call LanguageClient_textDocument_rename()<cr>
-
-pa! asyncpack.vim
