@@ -1,11 +1,12 @@
 pa! asyncpack.vim
 let $EDITOR='nvr --remote-wait'
+set clipboard+=unnamedplus
 
 set bg=dark nowrap list
 let g:lucius_contrast='low'
-let g:lucius_contrast_bg='high'
 let g:lucius_no_term_bg=1
-au User asyncpack:vim-lucius colorscheme lucius
+au User asyncpack:vim-lucius colo lucius
+
 fu! BufferString()
   let a=map(range(bufnr('$')), {k,v -> fnamemodify(pathshorten(bufname(k + 1)), ':~:.')})
   let a=map(a, {k,v -> getbufvar(k + 1, '&mod') ? v.'+' : v})
@@ -14,7 +15,7 @@ fu! BufferString()
 endf
 set laststatus=1 shortmess+=I title titlestring=%{BufferString()}
 
-set incsearch nohlsearch
+set nohlsearch
 no f /
 no F ?
 
