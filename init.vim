@@ -1,8 +1,7 @@
 pa! asyncpack.vim
 let $EDITOR='nvr --remote-wait'
 
-set sw=2 et nowrap list clipboard+=unnamedplus
-
+set bg=dark nowrap list
 let g:lucius_contrast='low'
 let g:lucius_contrast_bg='high'
 let g:lucius_no_term_bg=1

@@ -25,6 +25,9 @@
 [submodule "pack/languages/start/vim-polyglot"]
 	path = pack/languages/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
+[submodule "pack/languages/start/vim-sleuth"]
+	path = pack/languages/start/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth
 [submodule "pack/languages/opt/ultisnips"]
 	path = pack/languages/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips
