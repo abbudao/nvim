@@ -42,9 +42,6 @@ au CmdwinEnter * nn <buffer> <esc> :q<cr>
 nn ga :EasyAlign<space>
 xn ga :EasyAlign<space>
 
-let g:delimitMate_expand_cr=1
-let g:delimitMate_expand_space=1
-
 set completeopt+=menuone,noinsert,noselect
 nn <tab> :pclose!<cr>
 

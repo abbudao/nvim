@@ -1,9 +1,6 @@
 [submodule "pack/base/opt/asyncpack.vim"]
 	path = pack/base/opt/asyncpack.vim
 	url = https://github.com/rliang/asyncpack.vim
-[submodule "pack/base/opt/delimitMate"]
-	path = pack/base/opt/delimitMate
-	url = https://github.com/Raimondi/delimitMate
 [submodule "pack/base/opt/vim-commentary"]
 	path = pack/base/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary
@@ -67,3 +64,6 @@
 [submodule "pack/utils/opt/vim-easy-align"]
 	path = pack/utils/opt/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
+[submodule "pack/base/opt/auto-pairs"]
+	path = pack/base/opt/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
