@@ -52,9 +52,6 @@
 [submodule "pack/textobjs/opt/vim-textobj-variable-segment"]
 	path = pack/textobjs/opt/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
-[submodule "pack/utils/opt/vim-bbye"]
-	path = pack/utils/opt/vim-bbye
-	url = https://github.com/moll/vim-bbye
 [submodule "pack/utils/opt/vim-multiple-cursors"]
 	path = pack/utils/opt/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
@@ -64,9 +61,6 @@
 [submodule "pack/utils/opt/vim-rsi"]
 	path = pack/utils/opt/vim-rsi
 	url = https://github.com/tpope/vim-rsi
-[submodule "pack/utils/opt/vim-easy-align"]
-	path = pack/utils/opt/vim-easy-align
-	url = https://github.com/junegunn/vim-easy-align
 [submodule "pack/base/opt/auto-pairs"]
 	path = pack/base/opt/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
