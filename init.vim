@@ -1,14 +1,8 @@
 pa asyncpack.vim
 au User asyncpack set clipboard+=unnamedplus
 
-au User asyncpack:vim-lucius set bg=dark | let g:lucius_no_term_bg=1 | colo lucius
-fu! BufferString()
-  let s=map(range(bufnr('$')), {k,v -> fnamemodify(pathshorten(bufname(k + 1)), ':~:.')})
-  let s=map(s, {k,v -> getbufvar(k + 1, '&mod') ? v.'+' : v})
-  let s=map(s, {k,v -> k + 1 == bufnr('%') ? '【 '.v.' 】' : v})
-  retu join(filter(s, {k,v -> bufexists(k + 1) && buflisted(k + 1)}), '  ')
-endf
-set list nowrap shortmess+=I laststatus=1 title titlestring=%{BufferString()}
+set bg=dark list nowrap shortmess+=I laststatus=1
+let g:lucius_no_term_bg=1 | au User asyncpack:vim-lucius colo lucius
 
 set nohlsearch
 no f /
