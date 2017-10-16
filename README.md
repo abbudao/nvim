@@ -20,8 +20,6 @@ git submodule add <repo> pack/<category>/start/<name>
 git submodule add <repo> pack/<category>/opt/<name>
 ```
 
-Then somewhere in init.vim `packadd <name>` has to be called.
-
 ## Removing plugins
 
 ```sh
