@@ -13,12 +13,12 @@
 [submodule "pack/base/opt/vim-exchange"]
 	path = pack/base/opt/vim-exchange
 	url = git@github.com:tommcdo/vim-exchange.git
+[submodule "pack/candy/opt/vim-colorschemes"]
+	path = pack/candy/opt/vim-colorschemes
+	url = git@github.com:flazz/vim-colorschemes.git
 [submodule "pack/candy/opt/buffertitle.vim"]
 	path = pack/candy/opt/buffertitle.vim
 	url = git@github.com:rliang/buffertitle.vim.git
-[submodule "pack/candy/opt/vim-lucius"]
-	path = pack/candy/opt/vim-lucius
-	url = git@github.com:jonathanfilip/vim-lucius.git
 [submodule "pack/files/opt/vim-eunuch"]
 	path = pack/files/opt/vim-eunuch
 	url = git@github.com:tpope/vim-eunuch.git
