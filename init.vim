@@ -1,8 +1,10 @@
 pa asyncpack.vim
-au User asyncpack set clipboard+=unnamedplus
+au User asyncpack:plugins set clipboard+=unnamedplus
 
-set bg=dark list nowrap shortmess+=I laststatus=1
-let g:lucius_no_term_bg=1 | au User asyncpack:vim-lucius colo lucius
+set tgc bg=dark list nowrap shortmess+=I laststatus=1
+let g:loaded_matchparen=1
+au ColorScheme * hi! Normal guibg=None | hi! NonText guibg=None
+colorscheme molokai
 
 set nohlsearch
 no f /
@@ -16,11 +18,11 @@ nn X :bd<cr>
 nn Q :q<cr>
 nn gs :w<cr>
 nn gd :cd %:h<cr>
-nn gh :CtrlPMRU<cr>
 nn ge :CtrlPNav<cr>
+nn gh :CtrlPMRU<cr>
 
 let $EDITOR='nvr --remote-wait'
-nn gt :te<cr>
+nn gt :term<cr>
 au TermOpen * tno <buffer> <esc> <c-\><c-n>
 
 nn <esc> q:<up>
@@ -28,7 +30,6 @@ au CmdwinEnter * nn <buffer> <esc> :q<cr>
 
 set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
-let g:deoplete#ignore_sources={'_': ['member']}
 au User MultipleCursorsPre let g:deoplete#disable_auto_complete=1
 au User MultipleCursorsPost let g:deoplete#disable_auto_complete=0
 nn <tab> :pclose!<cr>

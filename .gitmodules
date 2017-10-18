@@ -29,10 +29,10 @@
 	path = pack/files/opt/ctrlp-nav
 	url = git@github.com:rliang/ctrlp-nav.git
 [submodule "pack/languages/start/vim-polyglot"]
-	path = pack/languages/start/vim-polyglot
+	path = pack/languages/opt/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
 [submodule "pack/languages/start/vim-sleuth"]
-	path = pack/languages/start/vim-sleuth
+	path = pack/languages/opt/vim-sleuth
 	url = git@github.com:tpope/vim-sleuth.git
 [submodule "pack/languages/opt/ultisnips"]
 	path = pack/languages/opt/ultisnips
