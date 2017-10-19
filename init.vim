@@ -6,9 +6,10 @@ let g:loaded_matchparen=1
 au ColorScheme * hi! Normal guibg=None | hi! NonText guibg=None
 colorscheme molokai
 
-set nohlsearch
+set inccommand=nosplit
 no f /
 no F ?
+nn <tab> :nohlsearch\|pclose!<cr>
 
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
@@ -32,7 +33,6 @@ set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
 au User MultipleCursorsPre let g:deoplete#disable_auto_complete=1
 au User MultipleCursorsPost let g:deoplete#disable_auto_complete=0
-nn <tab> :pclose!<cr>
 ino <expr><c-n> deoplete#manual_complete()
 
 let g:LanguageClient_autoStart=1

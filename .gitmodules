@@ -67,3 +67,6 @@
 [submodule "pack/utils/opt/vim-rsi"]
 	path = pack/utils/opt/vim-rsi
 	url = git@github.com:tpope/vim-rsi.git
+[submodule "pack/textobjs/opt/targets.vim"]
+	path = pack/textobjs/opt/targets.vim
+	url = git@github.com:wellle/targets.vim.git
