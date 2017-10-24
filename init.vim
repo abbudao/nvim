@@ -1,15 +1,18 @@
-pa asyncpack.vim
-au User asyncpack:plugins set clipboard+=unnamedplus
+let s:vims=[]
+aug deferred
+  au SourceCmd * cal add(s:vims, expand('<afile>'))
+  au VimEnter * cal timer_start(0, {-> execute('so '.remove(s:vims, 0))}, {'repeat': len(s:vims)})
+  au VimEnter * au! deferred
+aug END
 
-set tgc bg=dark list nowrap shortmess+=I laststatus=1
+set cb+=unnamedplus bg=dark tgc list nowrap shortmess+=I laststatus=1
 let g:loaded_matchparen=1
-au ColorScheme * hi! Normal guibg=None | hi! NonText guibg=None
+au ColorScheme * hi! Normal guibg=None | hi! SignColumn guibg=None
 colorscheme molokai
 
-set inccommand=nosplit
-no f /
+set nohlsearch inccommand=nosplit
+no f //e<home>
 no F ?
-nn <tab> :nohlsearch\|pclose!<cr>
 
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
@@ -31,9 +34,10 @@ au CmdwinEnter * nn <buffer> <esc> :q<cr>
 
 set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
-au User MultipleCursorsPre let g:deoplete#disable_auto_complete=1
-au User MultipleCursorsPost let g:deoplete#disable_auto_complete=0
+au User MultipleCursorsPre let g:deoplete#disable_auto_complete=1 | let g:LanguageClient_windowLogMessageLevel=''
+au User MultipleCursorsPost let g:deoplete#disable_auto_complete=0 | let g:LanguageClient_windowLogMessageLevel='Warning'
 ino <expr><c-n> deoplete#manual_complete()
+nn <tab> :pclose!<cr>
 
 let g:LanguageClient_autoStart=1
 let g:LanguageClient_serverCommands={}

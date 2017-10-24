@@ -1,72 +1,69 @@
-[submodule "pack/base/opt/asyncpack.vim"]
-	path = pack/base/opt/asyncpack.vim
-	url = git@github.com:rliang/asyncpack.vim.git
-[submodule "pack/base/opt/auto-pairs"]
-	path = pack/base/opt/auto-pairs
+[submodule "pack/base/start/auto-pairs"]
+	path = pack/base/start/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
-[submodule "pack/base/opt/vim-commentary"]
-	path = pack/base/opt/vim-commentary
+[submodule "pack/base/start/vim-commentary"]
+	path = pack/base/start/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
-[submodule "pack/base/opt/vim-sandwich"]
-	path = pack/base/opt/vim-sandwich
+[submodule "pack/base/start/vim-sandwich"]
+	path = pack/base/start/vim-sandwich
 	url = git@github.com:machakann/vim-sandwich.git
-[submodule "pack/base/opt/vim-exchange"]
-	path = pack/base/opt/vim-exchange
+[submodule "pack/base/start/vim-exchange"]
+	path = pack/base/start/vim-exchange
 	url = git@github.com:tommcdo/vim-exchange.git
-[submodule "pack/candy/opt/vim-colorschemes"]
-	path = pack/candy/opt/vim-colorschemes
+[submodule "pack/candy/start/vim-colorschemes"]
+	path = pack/candy/start/vim-colorschemes
 	url = git@github.com:flazz/vim-colorschemes.git
-[submodule "pack/candy/opt/buffertitle.vim"]
-	path = pack/candy/opt/buffertitle.vim
+[submodule "pack/candy/start/buffertitle.vim"]
+	path = pack/candy/start/buffertitle.vim
 	url = git@github.com:rliang/buffertitle.vim.git
-[submodule "pack/files/opt/vim-eunuch"]
-	path = pack/files/opt/vim-eunuch
+[submodule "pack/files/start/vim-eunuch"]
+	path = pack/files/start/vim-eunuch
 	url = git@github.com:tpope/vim-eunuch.git
-[submodule "pack/files/opt/ctrlp.vim"]
-	path = pack/files/opt/ctrlp.vim
+[submodule "pack/files/start/ctrlp.vim"]
+	path = pack/files/start/ctrlp.vim
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
-[submodule "pack/files/opt/ctrlp-nav"]
-	path = pack/files/opt/ctrlp-nav
+[submodule "pack/files/start/ctrlp-nav"]
+	path = pack/files/start/ctrlp-nav
 	url = git@github.com:rliang/ctrlp-nav.git
 [submodule "pack/languages/start/vim-polyglot"]
-	path = pack/languages/opt/vim-polyglot
+	path = pack/languages/start/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
 [submodule "pack/languages/start/vim-sleuth"]
-	path = pack/languages/opt/vim-sleuth
+	path = pack/languages/start/vim-sleuth
 	url = git@github.com:tpope/vim-sleuth.git
-[submodule "pack/languages/opt/ultisnips"]
-	path = pack/languages/opt/ultisnips
+[submodule "pack/languages/start/ultisnips"]
+	path = pack/languages/start/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
-[submodule "pack/languages/opt/vim-snippets"]
-	path = pack/languages/opt/vim-snippets
+[submodule "pack/languages/start/vim-snippets"]
+	path = pack/languages/start/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
-[submodule "pack/languages/opt/deoplete.nvim"]
-	path = pack/languages/opt/deoplete.nvim
+[submodule "pack/languages/start/deoplete.nvim"]
+	path = pack/languages/start/deoplete.nvim
 	url = git@github.com:Shougo/deoplete.nvim.git
-[submodule "pack/languages/opt/LanguageClient-neovim"]
-	path = pack/languages/opt/LanguageClient-neovim
+[submodule "pack/languages/start/LanguageClient-neovim"]
+	path = pack/languages/start/LanguageClient-neovim
 	url = git@github.com:autozimu/LanguageClient-neovim.git
-[submodule "pack/textobjs/opt/00-vim-textobj-user"]
-	path = pack/textobjs/opt/00-vim-textobj-user
+[submodule "pack/textobjs/start/00-vim-textobj-user"]
+	path = pack/textobjs/start/00-vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
-[submodule "pack/textobjs/opt/vim-textobj-indent"]
-	path = pack/textobjs/opt/vim-textobj-indent
+[submodule "pack/textobjs/start/vim-textobj-indent"]
+	path = pack/textobjs/start/vim-textobj-indent
 	url = git@github.com:kana/vim-textobj-indent.git
-[submodule "pack/textobjs/opt/vim-textobj-methodcall"]
-	path = pack/textobjs/opt/vim-textobj-methodcall
+[submodule "pack/textobjs/start/vim-textobj-methodcall"]
+	path = pack/textobjs/start/vim-textobj-methodcall
 	url = git@github.com:thalesmello/vim-textobj-methodcall.git
-[submodule "pack/textobjs/opt/vim-textobj-variable-segment"]
-	path = pack/textobjs/opt/vim-textobj-variable-segment
+[submodule "pack/textobjs/start/vim-textobj-variable-segment"]
+	path = pack/textobjs/start/vim-textobj-variable-segment
 	url = git@github.com:Julian/vim-textobj-variable-segment.git
-[submodule "pack/utils/opt/vim-multiple-cursors"]
-	path = pack/utils/opt/vim-multiple-cursors
+[submodule "pack/utils/start/vim-multiple-cursors"]
+	path = pack/utils/start/vim-multiple-cursors
 	url = git@github.com:terryma/vim-multiple-cursors.git
-[submodule "pack/utils/opt/vim-repeat"]
-	path = pack/utils/opt/vim-repeat
+[submodule "pack/utils/start/vim-repeat"]
+	path = pack/utils/start/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
-[submodule "pack/utils/opt/vim-rsi"]
-	path = pack/utils/opt/vim-rsi
+[submodule "pack/utils/start/vim-rsi"]
+	path = pack/utils/start/vim-rsi
 	url = git@github.com:tpope/vim-rsi.git
-[submodule "pack/textobjs/opt/targets.vim"]
-	path = pack/textobjs/opt/targets.vim
+[submodule "pack/textobjs/start/targets.vim"]
+	path = pack/textobjs/start/targets.vim
 	url = git@github.com:wellle/targets.vim.git
