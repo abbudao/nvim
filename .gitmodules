@@ -1,6 +1,12 @@
 [submodule "pack/base/start/auto-pairs"]
 	path = pack/base/start/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule "pack/base/start/vim-repeat"]
+	path = pack/base/start/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
+[submodule "pack/base/start/vim-rsi"]
+	path = pack/base/start/vim-rsi
+	url = git@github.com:tpope/vim-rsi.git
 [submodule "pack/base/start/vim-commentary"]
 	path = pack/base/start/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
@@ -55,15 +61,6 @@
 [submodule "pack/textobjs/start/vim-textobj-variable-segment"]
 	path = pack/textobjs/start/vim-textobj-variable-segment
 	url = git@github.com:Julian/vim-textobj-variable-segment.git
-[submodule "pack/utils/start/vim-multiple-cursors"]
-	path = pack/utils/start/vim-multiple-cursors
-	url = git@github.com:terryma/vim-multiple-cursors.git
-[submodule "pack/utils/start/vim-repeat"]
-	path = pack/utils/start/vim-repeat
-	url = git@github.com:tpope/vim-repeat.git
-[submodule "pack/utils/start/vim-rsi"]
-	path = pack/utils/start/vim-rsi
-	url = git@github.com:tpope/vim-rsi.git
 [submodule "pack/textobjs/start/targets.vim"]
 	path = pack/textobjs/start/targets.vim
 	url = git@github.com:wellle/targets.vim.git

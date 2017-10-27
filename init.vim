@@ -1,18 +1,29 @@
-let s:vims=[]
+let s:cmds=[]
 aug deferred
-  au SourceCmd * cal add(s:vims, expand('<afile>'))
-  au VimEnter * cal timer_start(0, {-> execute('so '.remove(s:vims, 0))}, {'repeat': len(s:vims)})
+  au SourceCmd * cal add(s:cmds, 'so '.expand('<afile>'))
+  au VimEnter * cal timer_start(0, {-> execute(remove(s:cmds, 0))}, {'repeat': len(s:cmds)})
   au VimEnter * au! deferred
 aug END
 
-set cb+=unnamedplus bg=dark tgc list nowrap shortmess+=I laststatus=1
 let g:loaded_matchparen=1
+set bg=dark tgc list nowrap laststatus=1 shortmess+=I
 au ColorScheme * hi! Normal guibg=None | hi! SignColumn guibg=None
-colorscheme molokai
+colo molokai
 
-set nohlsearch inccommand=nosplit
+set cb+=unnamedplus
+nn <silent> <tab> :noh\|pclose!<cr>
+au TextChanged,InsertLeave * if len(@*)>1 | let @/='\V'.escape(@*,'\') | en
+
+set ignorecase smartcase inccommand=nosplit
+cno <c-y> .*
 no f //e<home>
 no F ?
+xn gw :s-
+nn gW :%s-
+
+let $EDITOR='nvr --remote-wait'
+nn gt :term<cr>
+au TermOpen * tno <buffer> <esc> <c-\><c-n>
 
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
@@ -25,19 +36,12 @@ nn gd :cd %:h<cr>
 nn ge :CtrlPNav<cr>
 nn gh :CtrlPMRU<cr>
 
-let $EDITOR='nvr --remote-wait'
-nn gt :term<cr>
-au TermOpen * tno <buffer> <esc> <c-\><c-n>
-
 nn <esc> q:<up>
-au CmdwinEnter * nn <buffer> <esc> :q<cr>
+au CmdwinEnter * nn <buffer> <esc> :close<cr>
 
 set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
-au User MultipleCursorsPre let g:deoplete#disable_auto_complete=1 | let g:LanguageClient_windowLogMessageLevel=''
-au User MultipleCursorsPost let g:deoplete#disable_auto_complete=0 | let g:LanguageClient_windowLogMessageLevel='Warning'
 ino <expr><c-n> deoplete#manual_complete()
-nn <tab> :pclose!<cr>
 
 let g:LanguageClient_autoStart=1
 let g:LanguageClient_serverCommands={}
@@ -48,5 +52,5 @@ let g:LanguageClient_serverCommands['javascript']=['javascript-typescript-stdio'
 let g:LanguageClient_serverCommands['javascript.jsx']=['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands['rust']=['rustup', 'run', 'nightly', 'rls']
 nn K :call LanguageClient_textDocument_hover()<cr>
-nn gk :call LanguageClient_textDocument_definition()<cr>
-nn gr :call LanguageClient_textDocument_rename()<cr>
+nn gD :call LanguageClient_textDocument_definition()<cr>
+nn gR :call LanguageClient_textDocument_rename()<cr>
