@@ -1,8 +1,8 @@
-let s:cmds=[]
-aug deferred
-  au SourceCmd * cal add(s:cmds, 'so '.expand('<afile>'))
-  au VimEnter * cal timer_start(0, {-> execute(remove(s:cmds, 0))}, {'repeat': len(s:cmds)})
-  au VimEnter * au! deferred
+let s:lazy=[]
+aug lazy
+  au SourceCmd * cal add(s:lazy, 'so '.expand('<afile>'))
+  au VimEnter * cal timer_start(0, {-> execute(remove(s:lazy, 0))}, {'repeat': len(s:lazy)})
+  au VimEnter * au! lazy
 aug END
 
 set bg=dark tgc
@@ -14,8 +14,8 @@ set ls=0 shm+=I list nowrap
 au VimResized * set ls=2 | cal timer_start(0, {-> execute('set ls=0')})
 
 set cb+=unnamedplus
-nn <silent> <tab> :noh\|pclose!<cr>
 au TextChanged,InsertLeave * if len(@*)>1 | let @/='\V'.escape(@*,'\') | en
+nn <silent> <tab> :noh\|pc!<cr>
 
 set ignorecase smartcase inccommand=nosplit
 cno <c-y> .*
@@ -24,9 +24,9 @@ no F ?
 xn gw :s-
 nn gW :%s-
 
-let $EDITOR='nvr --remote-wait'
-nn gt :term<cr>
+if executable('nvr') | let $EDITOR='nvr --remote-wait' | en
 au TermOpen * tno <buffer> <esc> <c-\><c-n>
+nn gt :term<cr>
 
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
@@ -39,8 +39,8 @@ nn gd :cd %:h<cr>
 nn ge :CtrlPNav<cr>
 nn gh :CtrlPMRU<cr>
 
-nn <esc> q:<up>
 au CmdwinEnter * nn <buffer> <esc> :close<cr>
+nn <esc> q:<up>
 
 set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
