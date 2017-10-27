@@ -5,10 +5,13 @@ aug deferred
   au VimEnter * au! deferred
 aug END
 
-let g:loaded_matchparen=1
-set bg=dark tgc list nowrap laststatus=1 shortmess+=I
+set bg=dark tgc
 au ColorScheme * hi! Normal guibg=None | hi! SignColumn guibg=None
 colo molokai
+
+let g:loaded_matchparen=1
+set ls=0 shm+=I list nowrap
+au VimResized * set ls=2 | cal timer_start(0, {-> execute('set ls=0')})
 
 set cb+=unnamedplus
 nn <silent> <tab> :noh\|pclose!<cr>
