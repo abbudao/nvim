@@ -10,11 +10,11 @@ au ColorScheme * hi! Normal guibg=None | hi! SignColumn guibg=None
 colo molokai
 
 let g:loaded_matchparen=1
-set ls=0 shm+=I list nowrap
+set ls=0 shm+=I list nowrap lazyredraw
 au VimResized * set ls=2 | cal timer_start(0, {-> execute('set ls=0')})
 
 set cb+=unnamedplus
-au TextChanged,InsertLeave * if len(@*)>1 | let @/='\V'.escape(@*,'\') | en
+au TextChanged,InsertLeave * if len(@")>1 | let @/='\V'.escape(@",'\') | en
 nn <silent> <tab> :noh\|pc!<cr>
 
 set ignorecase smartcase inccommand=nosplit
