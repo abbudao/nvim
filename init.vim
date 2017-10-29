@@ -29,7 +29,8 @@ nn <silent>sc :set opfunc=Change<cr>g@
 vn <silent>sc :<c-u>cal Change(visualmode())<cr>
 
 fu! Paste(type)
-  sil exe 'norm!' (a:type=='v' ? 'gv' : '`[v`]').'"_d'
+  sil exe 'norm!' (a:type=='v' ? 'gv' : '`[v`]').'""d'
+  let @/='\V\C'.escape(@",'\')
   sil norm! P
 endf
 nn <silent>sp :set opfunc=Paste<cr>g@
