@@ -1,9 +1,8 @@
-aug lazy
-  let s:lazy=[]
-  au SourceCmd * cal add(s:lazy,'so '.expand('<afile>'))
-  au VimEnter * cal timer_start(0,{->execute(remove(s:lazy,0))},{'repeat':len(s:lazy)})
-  au VimEnter * au! lazy
-aug END
+let s:lazy=[]
+aug lazy | aug END
+au lazy SourceCmd * cal add(s:lazy,'so '.expand('<afile>'))
+au lazy VimEnter * cal timer_start(0,{->execute(remove(s:lazy,0))},{'repeat':len(s:lazy)})
+au lazy VimEnter * au! lazy
 
 set bg=dark tgc
 au ColorScheme * hi! Normal guibg=None | hi! SignColumn guibg=None
@@ -11,37 +10,35 @@ colo molokai
 
 let g:loaded_matchparen=1
 set ls=0 shm+=I list nowrap lazyredraw
-au VimResized * set ls=2 | cal timer_start(0, {-> execute('set ls=0')})
+au VimResized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
+
+set cb+=unnamedplus
+nn <tab> :noh\|pc!<cr>
 
 set ignorecase smartcase
 no f //e<home>
 no F ?
-
-set cb+=unnamedplus
-nn <silent><tab> :noh\|pc!<cr>
-
-fu! Change(type)
-  sil exe 'norm!' (a:type=='v' ? 'gv' : '`[v`]').'""y'
-  let @/='\V\C'.escape(@",'\')
-  cal feedkeys('""cgn','n')
-endf
-nn <silent>sc :set opfunc=Change<cr>g@
-vn <silent>sc :<c-u>cal Change(visualmode())<cr>
-
-fu! Paste(type)
-  sil exe 'norm!' (a:type=='v' ? 'gv' : '`[v`]').'""d'
-  let @/='\V\C'.escape(@",'\')
-  sil norm! P
-endf
-nn <silent>sp :set opfunc=Paste<cr>g@
-vn <silent>sp :<c-u>cal Paste(visualmode())<cr>
 
 set inccommand=nosplit
 nn gr :s-
 nn gR :%s-
 cno <c-l> .*
 
-au CmdwinEnter * nn <buffer> <esc> :close<cr>
+au TextYankPost * if v:event['regname']=='"' | let @/='\V\C'.escape(@",'\') | en
+
+fu! Change(type)
+  cal feedkeys((a:type=='v' ? 'gv' : '`[v`]').'""y""cgn','n')
+endf
+nn c :set opfunc=Change<cr>g@
+vn c :<c-u>cal Change(visualmode())<cr>
+
+fu! Paste(type)
+  cal feedkeys((a:type=='v' ? 'gv' : '`[v`]').'""y""cgn'."\<c-r>".v:register."\<esc>",'n')
+endf
+nn sp :set opfunc=Paste<cr>g@
+vn sp :<c-u>cal Paste(visualmode())<cr>
+
+au CmdwinEnter * nn <buffer><esc> :close<cr>
 nn <esc> q:<up>
 
 if executable('nvr') | let $EDITOR='nvr --remote-wait' | en
