@@ -20,13 +20,20 @@ no F ?
 set cb+=unnamedplus
 nn <silent><tab> :noh\|pc!<cr>
 
-fu! Operate(type)
-  sil exe 'norm!' a:type=='v' ? 'gv""y' : '`[v`]""y'
+fu! Change(type)
+  sil exe 'norm!' (a:type=='v' ? 'gv' : '`[v`]').'""y'
   let @/='\V\C'.escape(@",'\')
   cal feedkeys('""cgn','n')
 endf
-nn <silent>sc :set opfunc=Operate<cr>g@
-xn <silent>sc :<c-u>cal Operate(visualmode())<cr>
+nn <silent>sc :set opfunc=Change<cr>g@
+vn <silent>sc :<c-u>cal Change(visualmode())<cr>
+
+fu! Paste(type)
+  sil exe 'norm!' (a:type=='v' ? 'gv' : '`[v`]').'"_d'
+  sil norm! P
+endf
+nn <silent>sp :set opfunc=Paste<cr>g@
+vn <silent>sp :<c-u>cal Paste(visualmode())<cr>
 
 set inccommand=nosplit
 nn gr :s-
