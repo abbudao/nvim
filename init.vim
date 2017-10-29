@@ -11,7 +11,7 @@ colo molokai
 
 let g:loaded_matchparen=1
 set ls=0 shm+=I list nowrap lazyredraw
-au VimResized * set ls=2 | cal timer_start(0, -> execute('set ls=0')})
+au VimResized * set ls=2 | cal timer_start(0, {-> execute('set ls=0')})
 
 set ignorecase smartcase
 no f //e<home>
@@ -29,9 +29,9 @@ nn <silent>sc :set opfunc=Operate<cr>g@
 xn <silent>sc :<c-u>cal Operate(visualmode())<cr>
 
 set inccommand=nosplit
-nn gw :s-
-nn gW :%s-
-cno <c-y> .*
+nn gr :s-
+nn gR :%s-
+cno <c-l> .*
 
 au CmdwinEnter * nn <buffer> <esc> :close<cr>
 nn <esc> q:<up>
@@ -63,6 +63,9 @@ let g:LanguageClient_serverCommands['python']=['pyls']
 let g:LanguageClient_serverCommands['javascript']=['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands['javascript.jsx']=['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands['rust']=['rustup', 'run', 'nightly', 'rls']
-nn K :call LanguageClient_textDocument_hover()<cr>
-nn gD :call LanguageClient_textDocument_definition()<cr>
-nn gR :call LanguageClient_textDocument_rename()<cr>
+nn <f1> :cal LanguageClient_textDocument_hover()<cr>
+nn <f2> :cal LanguageClient_textDocument_definition()<cr>
+nn <f3> :cal LanguageClient_textDocument_references()<cr>
+nn <f4> :cal LanguageClient_textDocument_rename()<cr>
+nn <f5> :cal LanguageClient_textDocument_codeAction()<cr>
+nn <f6> :cal LanguageClient_textDocument_formatting()<cr>
