@@ -1,7 +1,7 @@
-let s:lazy=[]
 aug lazy
-  au SourceCmd * cal add(s:lazy, 'so '.expand('<afile>'))
-  au VimEnter * cal timer_start(0, {-> execute(remove(s:lazy, 0))}, {'repeat': len(s:lazy)})
+  let s:lazy=[]
+  au SourceCmd * cal add(s:lazy,'so '.expand('<afile>'))
+  au VimEnter * cal timer_start(0,{->execute(remove(s:lazy,0))},{'repeat':len(s:lazy)})
   au VimEnter * au! lazy
 aug END
 
@@ -11,21 +11,33 @@ colo molokai
 
 let g:loaded_matchparen=1
 set ls=0 shm+=I list nowrap lazyredraw
-au VimResized * set ls=2 | cal timer_start(0, {-> execute('set ls=0')})
+au VimResized * set ls=2 | cal timer_start(0, -> execute('set ls=0')})
 
-set cb+=unnamedplus
-au TextChanged,InsertLeave * if len(@")>1 | let @/='\V'.escape(@",'\') | en
-nn <silent> <tab> :noh\|pc!<cr>
-
-set ignorecase smartcase inccommand=nosplit
-cno <c-y> .*
+set ignorecase smartcase
 no f //e<home>
 no F ?
-xn gw :s-
+
+set cb+=unnamedplus
+nn <silent><tab> :noh\|pc!<cr>
+
+fu! Operate(type)
+  sil exe 'norm!' a:type=='v' ? 'gv""y' : '`[v`]""y'
+  let @/='\V\C'.escape(@",'\')
+  cal feedkeys('""cgn','n')
+endf
+nn <silent>sc :set opfunc=Operate<cr>g@
+xn <silent>sc :<c-u>cal Operate(visualmode())<cr>
+
+set inccommand=nosplit
+nn gw :s-
 nn gW :%s-
+cno <c-y> .*
+
+au CmdwinEnter * nn <buffer> <esc> :close<cr>
+nn <esc> q:<up>
 
 if executable('nvr') | let $EDITOR='nvr --remote-wait' | en
-au TermOpen * tno <buffer> <esc> <c-\><c-n>
+au TermOpen * tno <buffer><esc> <c-\><c-n>
 nn gt :term<cr>
 
 set confirm hidden undofile noswapfile
@@ -38,9 +50,6 @@ nn gs :w<cr>
 nn gd :cd %:h<cr>
 nn ge :CtrlPNav<cr>
 nn gh :CtrlPMRU<cr>
-
-au CmdwinEnter * nn <buffer> <esc> :close<cr>
-nn <esc> q:<up>
 
 set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1

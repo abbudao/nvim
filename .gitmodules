@@ -10,6 +10,9 @@
 [submodule "pack/base/start/vim-commentary"]
 	path = pack/base/start/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule "pack/base/start/vim-sleuth"]
+	path = pack/base/start/vim-sleuth
+	url = git@github.com:tpope/vim-sleuth.git
 [submodule "pack/base/start/vim-sandwich"]
 	path = pack/base/start/vim-sandwich
 	url = git@github.com:machakann/vim-sandwich.git
@@ -34,9 +37,6 @@
 [submodule "pack/languages/start/vim-polyglot"]
 	path = pack/languages/start/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
-[submodule "pack/languages/start/vim-sleuth"]
-	path = pack/languages/start/vim-sleuth
-	url = git@github.com:tpope/vim-sleuth.git
 [submodule "pack/languages/start/ultisnips"]
 	path = pack/languages/start/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
@@ -49,8 +49,8 @@
 [submodule "pack/languages/start/LanguageClient-neovim"]
 	path = pack/languages/start/LanguageClient-neovim
 	url = git@github.com:autozimu/LanguageClient-neovim.git
-[submodule "pack/textobjs/start/00-vim-textobj-user"]
-	path = pack/textobjs/start/00-vim-textobj-user
+[submodule "pack/textobjs/start/vim-textobj-user"]
+	path = pack/textobjs/start/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
 [submodule "pack/textobjs/start/vim-textobj-indent"]
 	path = pack/textobjs/start/vim-textobj-indent
