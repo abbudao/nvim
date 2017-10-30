@@ -24,19 +24,12 @@ nn gr :s-
 nn gR :%s-
 cno <c-l> .*
 
-au TextYankPost * if v:event['regname']=='"' | let @/='\V\C'.escape(@",'\') | en
-
-fu! Change(type)
-  cal feedkeys((a:type=='v' ? 'gv' : '`[v`]').'""y""cgn','n')
+au TextYankPost * if v:event['regname']=='z' | let @/='\V\C'.escape(@z,'\') | en
+fu! s:operate(t)
+  cal feedkeys((a:t=='char' ? "`[v`]" : "gv").'"zc','n')
 endf
-nn c :set opfunc=Change<cr>g@
-vn c :<c-u>cal Change(visualmode())<cr>
-
-fu! Paste(type)
-  cal feedkeys((a:type=='v' ? 'gv' : '`[v`]').'""y""cgn'."\<c-r>".v:register."\<esc>",'n')
-endf
-nn sp :set opfunc=Paste<cr>g@
-vn sp :<c-u>cal Paste(visualmode())<cr>
+nn c :set opfunc=<sid>operate<cr>g@
+vn c :<c-u>cal <sid>operate(visualmode())<cr>
 
 au CmdwinEnter * nn <buffer><esc> :close<cr>
 nn <esc> q:<up>
