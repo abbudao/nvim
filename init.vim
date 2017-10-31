@@ -1,21 +1,23 @@
-let s:lazy=[]
-aug lazy | aug end
-au lazy sourcecmd * cal add(s:lazy,'so '.expand('<afile>'))
-au lazy vimenter * cal timer_start(0,{->execute(remove(s:lazy,0))},{'repeat':len(s:lazy)})
-au lazy vimenter * au! lazy
+set cb+=unnamedplus
+let g:python3_host_prog='python3'
 
 set bg=dark tgc
-au colorscheme * hi! normal guibg=None | hi! signcolumn guibg=None
+au colorscheme * hi! normal guibg=None | hi! link signcolumn normal
 colo molokai
 
 let g:loaded_matchparen=1
-set laststatus=0 shortmess+=I scrolloff=999 list nowrap lazyredraw
+set laststatus=0 shortmess+=I list nowrap lazyredraw
 au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
-let IsPv={->len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')}))}
-let IsCw={->len(getcmdwintype())}
-nno <expr><esc> IsPv() ? ":pc\<cr>" : v:hlsearch ? ":noh\<cr>" : IsCw() ? ":q\<cr>" : "q:"
+let Pvw={->len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')}))}
+let Cdw={->len(getcmdwintype())}
+nno <expr><esc> Pvw() ? ":pc\<cr>" : v:hlsearch ? ":noh\<cr>" : Cdw() ? ":q\<cr>" : "q:"
 
+nor ; f
+nor , F
+nor F ?
+nor f /
+ono f //e<home>
 map c <plug>(sad-change-forward)
 map R <plug>(operator-replace)
 map H <plug>(operator-jump-head-out)
@@ -23,10 +25,7 @@ map L <plug>(operator-jump-tail-out)
 map + <plug>(operator-assign)
 map _ <plug>(operator-camelize-toggle)
 
-set cb+=unnamedplus ignorecase smartcase inccommand=nosplit
-nor F ?
-nor f /
-ono f //e<home>
+set ignorecase smartcase gdefault inccommand=nosplit
 nno gr :s-
 nno gR :%s-
 cno <c-o> .*
