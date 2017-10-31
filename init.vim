@@ -12,7 +12,7 @@ let g:loaded_matchparen=1
 set laststatus=0 shortmess+=I scrolloff=999 list nowrap lazyredraw
 au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
-let IsPv={->len(filter(range(1,winnr('$')),{k,v->getwinvar(v,'&pvw')}))}
+let IsPv={->len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')}))}
 let IsCw={->len(getcmdwintype())}
 nno <expr><esc> IsPv() ? ":pc\<cr>" : v:hlsearch ? ":noh\<cr>" : IsCw() ? ":q\<cr>" : "q:"
 
