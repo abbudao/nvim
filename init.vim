@@ -9,7 +9,7 @@ au colorscheme * hi! normal guibg=None | hi! signcolumn guibg=None
 colo molokai
 
 let g:loaded_matchparen=1
-set ls=0 shm+=I list nowrap lazyredraw
+set laststatus=0 shortmess+=I scrolloff=999 list nowrap lazyredraw
 au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
 let IsPv={->len(filter(range(1,winnr('$')),{k,v->getwinvar(v,'&pvw')}))}
