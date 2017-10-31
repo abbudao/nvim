@@ -12,25 +12,25 @@ let g:loaded_matchparen=1
 set ls=0 shm+=I list nowrap lazyredraw
 au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
+let IsPv={->len(filter(range(1,winnr('$')),{k,v->getwinvar(v,'&pvw')}))}
+let IsCw={->len(getcmdwintype())}
+nno <expr><esc> IsPv() ? ":pc\<cr>" : v:hlsearch ? ":noh\<cr>" : IsCw() ? ":q\<cr>" : "q:"
+
 map c <plug>(sad-change-forward)
 map R <plug>(operator-replace)
 map H <plug>(operator-jump-head-out)
 map L <plug>(operator-jump-tail-out)
-map ga <plug>(operator-assign)
-map gz <plug>(operator-camelize-toggle)
+map + <plug>(operator-assign)
+map _ <plug>(operator-camelize-toggle)
 
-set ignorecase smartcase inccommand=nosplit
+set cb+=unnamedplus ignorecase smartcase inccommand=nosplit
 nor F ?
 nor f /
 ono f //e<home>
 nno gr :s-
 nno gR :%s-
-
-set cb+=unnamedplus
-nno <tab> :noh\|pc!<cr>
-
-au cmdwinenter * nno <buffer><esc> :close<cr>
-nno <esc> q:<up>
+cno <c-o> .*
+cno <c-x> \<\><left><left>
 
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
@@ -44,8 +44,8 @@ nno ge :CtrlPNav<cr>
 nno gh :CtrlPMRU<cr>
 
 if executable('nvr') | let $EDITOR='nvr --remote-wait' | en
-au termopen * tno <buffer><esc> <c-\><c-n>
 nno gt :term<cr>
+tno <esc> <c-\><c-n>
 
 set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
