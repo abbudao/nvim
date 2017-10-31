@@ -1,53 +1,54 @@
 let s:lazy=[]
-aug lazy | aug END
-au lazy SourceCmd * cal add(s:lazy,'so '.expand('<afile>'))
-au lazy VimEnter * cal timer_start(0,{->execute(remove(s:lazy,0))},{'repeat':len(s:lazy)})
-au lazy VimEnter * au! lazy
+aug lazy | aug end
+au lazy sourcecmd * cal add(s:lazy,'so '.expand('<afile>'))
+au lazy vimenter * cal timer_start(0,{->execute(remove(s:lazy,0))},{'repeat':len(s:lazy)})
+au lazy vimenter * au! lazy
 
 set bg=dark tgc
-au ColorScheme * hi! Normal guibg=None | hi! SignColumn guibg=None
+au colorscheme * hi! normal guibg=None | hi! signcolumn guibg=None
 colo molokai
 
 let g:loaded_matchparen=1
 set ls=0 shm+=I list nowrap lazyredraw
-au VimResized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
+au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
 set cb+=unnamedplus
-nn <tab> :noh\|pc!<cr>
+nno <tab> :noh\|pc!<cr>
 
-set ignorecase smartcase
-no f //e<home>
-no F ?
+map c <plug>(sad-change-forward)
+map [ <plug>(operator-jump-head)
+map ] <plug>(operator-jump-tail)
+map R <plug>(operator-replace)
+map ga <plug>(operator-assign)
+map gz <plug>(operator-camelize-toggle)
+map sa <plug>(operator-surround-append)
+map sd <plug>(operator-surround-delete)
+map sr <plug>(operator-surround-replace)
 
-set inccommand=nosplit
-nn gr :s-
-nn gR :%s-
-cno <c-l> .*
+set ignorecase smartcase inccommand=nosplit
+nor F ?
+nor f /
+ono f //e<home>
+nno gr :s-
+nno gR :%s-
 
-au TextYankPost * if v:event['regname']=='z' | let @/='\V\C'.escape(@z,'\') | en
-fu! s:operate(t)
-  cal feedkeys((a:t=='char' ? "`[v`]" : "gv").'"zc','n')
-endf
-nn c :set opfunc=<sid>operate<cr>g@
-vn c :<c-u>cal <sid>operate(visualmode())<cr>
-
-au CmdwinEnter * nn <buffer><esc> :close<cr>
-nn <esc> q:<up>
-
-if executable('nvr') | let $EDITOR='nvr --remote-wait' | en
-au TermOpen * tno <buffer><esc> <c-\><c-n>
-nn gt :term<cr>
+au cmdwinenter * nno <buffer><esc> :close<cr>
+nno <esc> q:<up>
 
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
-nn <c-f> :bn<cr>
-nn <c-b> :bp<cr>
-nn X :bd<cr>
-nn Q :q<cr>
-nn gs :w<cr>
-nn gd :cd %:h<cr>
-nn ge :CtrlPNav<cr>
-nn gh :CtrlPMRU<cr>
+nno <c-f> :bn<cr>
+nno <c-b> :bp<cr>
+nno X :bd<cr>
+nno Q :q<cr>
+nno gs :w<cr>
+nno gd :cd %:h<cr>
+nno ge :CtrlPNav<cr>
+nno gh :CtrlPMRU<cr>
+
+if executable('nvr') | let $EDITOR='nvr --remote-wait' | en
+au termopen * tno <buffer><esc> <c-\><c-n>
+nno gt :term<cr>
 
 set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
@@ -61,9 +62,9 @@ let g:LanguageClient_serverCommands['python']=['pyls']
 let g:LanguageClient_serverCommands['javascript']=['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands['javascript.jsx']=['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands['rust']=['rustup', 'run', 'nightly', 'rls']
-nn <f1> :cal LanguageClient_textDocument_hover()<cr>
-nn <f2> :cal LanguageClient_textDocument_definition()<cr>
-nn <f3> :cal LanguageClient_textDocument_references()<cr>
-nn <f4> :cal LanguageClient_textDocument_rename()<cr>
-nn <f5> :cal LanguageClient_textDocument_codeAction()<cr>
-nn <f6> :cal LanguageClient_textDocument_formatting()<cr>
+nno <f1> :cal LanguageClient_textDocument_hover()<cr>
+nno <f2> :cal LanguageClient_textDocument_definition()<cr>
+nno <f3> :cal LanguageClient_textDocument_references()<cr>
+nno <f4> :cal LanguageClient_textDocument_rename()<cr>
+nno <f5> :cal LanguageClient_textDocument_codeAction()<cr>
+nno <f6> :cal LanguageClient_textDocument_formatting()<cr>
