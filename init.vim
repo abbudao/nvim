@@ -12,12 +12,10 @@ let g:loaded_matchparen=1
 set ls=0 shm+=I list nowrap lazyredraw
 au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
-let g:loaded_matchit=1
 map c <plug>(sad-change-forward)
-map [ <plug>(operator-jump-head-out)
-map ] <plug>(operator-jump-tail-out)
-map % <plug>(operator-jump-toggle)ab
 map R <plug>(operator-replace)
+map H <plug>(operator-jump-head-out)
+map L <plug>(operator-jump-tail-out)
 map ga <plug>(operator-assign)
 map gz <plug>(operator-camelize-toggle)
 
