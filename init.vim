@@ -12,18 +12,14 @@ let g:loaded_matchparen=1
 set ls=0 shm+=I list nowrap lazyredraw
 au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
-set cb+=unnamedplus
-nno <tab> :noh\|pc!<cr>
-
+let g:loaded_matchit=1
 map c <plug>(sad-change-forward)
-map [ <plug>(operator-jump-head)
-map ] <plug>(operator-jump-tail)
+map [ <plug>(operator-jump-head-out)
+map ] <plug>(operator-jump-tail-out)
+map % <plug>(operator-jump-toggle)ab
 map R <plug>(operator-replace)
 map ga <plug>(operator-assign)
 map gz <plug>(operator-camelize-toggle)
-map sa <plug>(operator-surround-append)
-map sd <plug>(operator-surround-delete)
-map sr <plug>(operator-surround-replace)
 
 set ignorecase smartcase inccommand=nosplit
 nor F ?
@@ -31,6 +27,9 @@ nor f /
 ono f //e<home>
 nno gr :s-
 nno gR :%s-
+
+set cb+=unnamedplus
+nno <tab> :noh\|pc!<cr>
 
 au cmdwinenter * nno <buffer><esc> :close<cr>
 nno <esc> q:<up>
