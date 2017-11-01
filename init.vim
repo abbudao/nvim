@@ -22,9 +22,9 @@ map _ <plug>(operator-camelize-toggle)
 set ignorecase smartcase gdefault inccommand=nosplit
 nor ; f
 nor , F
-nor F ?
-nor f /
-ono f //e<home>
+nor F ?\V
+nor f /\V
+ono f /\V/e<left><left>
 nno gr :s-
 nno gR :%s-
 
@@ -37,6 +37,7 @@ nno Q :q<cr>
 nno gs :w<cr>
 nno gd :cd %:h<cr>
 nno ge :CtrlPNav<cr>
+nno gf :CtrlPRoot<cr>
 nno gh :CtrlPMRU<cr>
 
 let $EDITOR='nvr --remote-wait'
