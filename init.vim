@@ -13,23 +13,20 @@ let Pvw={->len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')}))}
 let Cdw={->len(getcmdwintype())}
 nno <expr><esc> Pvw() ? ":pc\<cr>" : v:hlsearch ? ":noh\<cr>" : Cdw() ? ":q\<cr>" : "q:"
 
+au textyankpost * let @/='\V\C'.join(split(escape(@z,'\'),'\n'),'\n')
+nor c "zc
+nor Y "zy
+map R <plug>(operator-replace)
+map _ <plug>(operator-camelize-toggle)
+
+set ignorecase smartcase gdefault inccommand=nosplit
 nor ; f
 nor , F
 nor F ?
 nor f /
 ono f //e<home>
-map c <plug>(sad-change-forward)
-map R <plug>(operator-replace)
-map H <plug>(operator-jump-head-out)
-map L <plug>(operator-jump-tail-out)
-map + <plug>(operator-assign)
-map _ <plug>(operator-camelize-toggle)
-
-set ignorecase smartcase gdefault inccommand=nosplit
 nno gr :s-
 nno gR :%s-
-cno <c-o> .*
-cno <c-x> \<\><left><left>
 
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
@@ -42,7 +39,7 @@ nno gd :cd %:h<cr>
 nno ge :CtrlPNav<cr>
 nno gh :CtrlPMRU<cr>
 
-if executable('nvr') | let $EDITOR='nvr --remote-wait' | en
+let $EDITOR='nvr --remote-wait'
 nno gt :term<cr>
 tno <esc> <c-\><c-n>
 

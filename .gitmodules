@@ -1,87 +1,104 @@
 [submodule "pack/base/start/auto-pairs"]
 	path = pack/base/start/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
+	ignore = dirty
 [submodule "pack/base/start/vim-repeat"]
 	path = pack/base/start/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
+	ignore = dirty
 [submodule "pack/base/start/vim-rsi"]
 	path = pack/base/start/vim-rsi
 	url = git@github.com:tpope/vim-rsi.git
+	ignore = dirty
 [submodule "pack/base/start/vim-sleuth"]
 	path = pack/base/start/vim-sleuth
 	url = git@github.com:tpope/vim-sleuth.git
+	ignore = dirty
 [submodule "pack/candy/start/vim-colorschemes"]
 	path = pack/candy/start/vim-colorschemes
 	url = git@github.com:flazz/vim-colorschemes.git
+	ignore = dirty
 [submodule "pack/candy/start/buffertitle.vim"]
 	path = pack/candy/start/buffertitle.vim
 	url = git@github.com:rliang/buffertitle.vim.git
+	ignore = dirty
 [submodule "pack/files/start/vim-eunuch"]
 	path = pack/files/start/vim-eunuch
 	url = git@github.com:tpope/vim-eunuch.git
+	ignore = dirty
 [submodule "pack/files/start/ctrlp.vim"]
 	path = pack/files/start/ctrlp.vim
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
+	ignore = dirty
 [submodule "pack/files/start/ctrlp-nav"]
 	path = pack/files/start/ctrlp-nav
 	url = git@github.com:rliang/ctrlp-nav.git
+	ignore = dirty
 [submodule "pack/languages/start/vim-polyglot"]
 	path = pack/languages/start/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
+	ignore = dirty
 [submodule "pack/languages/start/ultisnips"]
 	path = pack/languages/start/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
+	ignore = dirty
 [submodule "pack/languages/start/vim-snippets"]
 	path = pack/languages/start/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
+	ignore = dirty
 [submodule "pack/languages/start/deoplete.nvim"]
 	path = pack/languages/start/deoplete.nvim
 	url = git@github.com:Shougo/deoplete.nvim.git
+	ignore = dirty
 [submodule "pack/languages/start/LanguageClient-neovim"]
 	path = pack/languages/start/LanguageClient-neovim
 	url = git@github.com:autozimu/LanguageClient-neovim.git
+	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-user"]
 	path = pack/objects/start/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
+	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-indent"]
 	path = pack/objects/start/vim-textobj-indent
 	url = git@github.com:kana/vim-textobj-indent.git
+	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-parameter"]
 	path = pack/objects/start/vim-textobj-parameter
 	url = git@github.com:sgur/vim-textobj-parameter.git
+	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-comment"]
 	path = pack/objects/start/vim-textobj-comment
 	url = git@github.com:glts/vim-textobj-comment.git
+	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-methodcall"]
 	path = pack/objects/start/vim-textobj-methodcall
 	url = git@github.com:thalesmello/vim-textobj-methodcall.git
+	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-variable-segment"]
 	path = pack/objects/start/vim-textobj-variable-segment
 	url = git@github.com:Julian/vim-textobj-variable-segment.git
+	ignore = dirty
 [submodule "pack/operators/start/vim-operator-user"]
 	path = pack/operators/start/vim-operator-user
 	url = git@github.com:kana/vim-operator-user.git
+	ignore = dirty
 [submodule "pack/operators/start/vim-operator-replace"]
 	path = pack/operators/start/vim-operator-replace
 	url = git@github.com:kana/vim-operator-replace.git
+	ignore = dirty
 [submodule "pack/operators/start/operator-camelize.vim"]
 	path = pack/operators/start/operator-camelize.vim
 	url = git@github.com:tyru/operator-camelize.vim.git
-[submodule "pack/operators/start/vim-exchange"]
-	path = pack/operators/start/vim-exchange
-	url = git@github.com:tommcdo/vim-exchange.git
-[submodule "pack/operators/start/vim-operator-assign"]
-	path = pack/operators/start/vim-operator-assign
-	url = git@github.com:tek/vim-operator-assign.git
+	ignore = dirty
 [submodule "pack/operators/start/vim-commentor"]
 	path = pack/operators/start/vim-commentor
 	url = git@github.com:manasthakur/vim-commentor.git
-[submodule "pack/operators/start/vim-operator-jump_side"]
-	path = pack/operators/start/vim-operator-jump_side
-	url = git@github.com:osyo-manga/vim-operator-jump_side.git
-[submodule "pack/operators/start/sad.vim"]
-	path = pack/operators/start/sad.vim
-	url = git@github.com:hauleth/sad.vim.git
+	ignore = dirty
+[submodule "pack/operators/start/vim-exchange"]
+	path = pack/operators/start/vim-exchange
+	url = git@github.com:tommcdo/vim-exchange.git
+	ignore = dirty
 [submodule "pack/operators/start/vim-sandwich"]
 	path = pack/operators/start/vim-sandwich
 	url = git@github.com:machakann/vim-sandwich.git
+	ignore = dirty

@@ -5,7 +5,7 @@ Personal Neovim configuration.
 
 ```sh
 git clone --recursive --depth=1 https://github.com/rliang/nvim ~/.config/nvim
-nvim -u NORC +packl +UpdateRemotePlugins +qa
+nvim '+UpdateRemotePlugins' '+helptags\ ~/.config/nvim' '+qa'
 ```
 
 ## Adding auto-loaded plugins
