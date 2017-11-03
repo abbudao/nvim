@@ -7,27 +7,22 @@ au colorscheme * hi! normal guibg=None | hi! link signcolumn normal
 
 let g:loaded_matchparen=1
 set ls=0 shortmess+=I list nowrap lazyredraw
-au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
+au vimresized * set ls=2 | cal timer_start(1,{->execute('set ls=0')})
 
-let g:PvOpen={->len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')}))}
-nno <expr><esc> PvOpen() ? ":pc!\<cr>" : v:hlsearch ? ":noh\<cr>" : "q:"
-au cmdwinenter * nno <buffer><esc> :q<cr>
+let PvOpen={->len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')}))}
+let CwOpen={->len(getcmdwintype())}
+nno <expr><esc> PvOpen() ? ":pc!\<cr>" : v:hlsearch ? ":noh\<cr>" : CwOpen() ? ":q\<cr>" : "q:"
 
-no c "zc
-no Y "zy
 map R <plug>(operator-replace)
 map _ <plug>(operator-camelize-toggle)
-au textyankpost * if v:event['regname']=='z' | let v:hlsearch=1 | redr
-au textyankpost * let @/='\V\C'.join(split(escape(@z,'\'),'\n'),'\n')
 
 set ignorecase smartcase gdefault inccommand=nosplit
+nmap f /
+nmap F ?
 no ; f
 no , F
-no F ?\V
-no f /\V
 ono f /\V/e<left><left>
-nno gr :s-
-nno gR :%s-
+nno gr :%s-
 
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
@@ -58,7 +53,7 @@ let g:LanguageClient_serverCommands['javascript']=['javascript-typescript-stdio'
 let g:LanguageClient_serverCommands['javascript.jsx']=['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands['rust']=['rustup', 'run', 'nightly', 'rls']
 nno K :cal LanguageClient_textDocument_hover()<cr>
-nno gd :cal LanguageClient_textDocument_definition()<cr>
+nno gD :cal LanguageClient_textDocument_definition()<cr>
 nno <f1> :cal LanguageClient_textDocument_codeAction()<cr>
 nno <f2> :cal LanguageClient_textDocument_rename()<cr>
 nno <f3> :cal LanguageClient_textDocument_references()<cr>

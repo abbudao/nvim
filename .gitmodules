@@ -102,3 +102,7 @@
 	path = pack/operators/start/vim-sandwich
 	url = git@github.com:machakann/vim-sandwich.git
 	ignore = dirty
+[submodule "pack/operators/start/macrosearch.vim"]
+	path = pack/operators/start/macrosearch.vim
+	url = git@github.com:rliang/macrosearch.vim.git
+	ignore = dirty
