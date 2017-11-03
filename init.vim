@@ -1,21 +1,27 @@
+"providers
 set cb+=unnamedplus
 let g:python3_host_prog='python3'
 
+"colors
 set bg=dark tgc
 colo molokai
 au colorscheme * hi! normal guibg=None | hi! link signcolumn normal
 
+"interface
 let g:loaded_matchparen=1
 set ls=0 shortmess+=I list nowrap lazyredraw
 au vimresized * set ls=2 | cal timer_start(1,{->execute('set ls=0')})
 
+"operators
+map R <plug>(operator-replace)
+map _ <plug>(operator-camelize-toggle)
+
+"escape
 let PvOpen={->len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')}))}
 let CwOpen={->len(getcmdwintype())}
 nno <expr><esc> PvOpen() ? ":pc!\<cr>" : v:hlsearch ? ":noh\<cr>" : CwOpen() ? ":q\<cr>" : "q:"
 
-map R <plug>(operator-replace)
-map _ <plug>(operator-camelize-toggle)
-
+"search
 set ignorecase smartcase gdefault inccommand=nosplit
 nmap f /
 nmap F ?
@@ -24,6 +30,7 @@ no , F
 ono f /\V/e<left><left>
 nno gr :%s-
 
+"buffers
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
 nno <c-f> :bn<cr>
@@ -36,14 +43,17 @@ nno ge :CtrlPNav<cr>
 nno gf :CtrlPRoot<cr>
 nno gh :CtrlPMRU<cr>
 
+"terminal
 let $EDITOR='nvr --remote-wait'
 nno gt :term<cr>
 tno <esc> <c-\><c-n>
 
+"completion
 set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
 ino <expr><c-n> deoplete#manual_complete()
 
+"languages
 let g:LanguageClient_autoStart=1
 let g:LanguageClient_serverCommands={}
 let g:LanguageClient_serverCommands['c']=['clangd']
