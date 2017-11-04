@@ -5,7 +5,11 @@ let g:python3_host_prog='python3'
 "colors
 set bg=dark tgc
 colo molokai
-au colorscheme * hi! normal guibg=None | hi! link signcolumn normal
+au colorscheme * hi! normal guibg=None
+      \ | hi! link signcolumn normal
+      \ | hi! link diffadd directory
+      \ | hi! link diffchange moremsg
+      \ | hi! link diffdelete errormsg
 
 "interface
 let g:loaded_matchparen=1
@@ -14,20 +18,22 @@ au vimresized * set ls=2 | cal timer_start(1,{->execute('set ls=0')})
 
 "operators
 map R <plug>(operator-replace)
-map _ <plug>(operator-camelize-toggle)
+map - <plug>(operator-camelize-toggle)
 
 "escape
-let PvOpen={->len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')}))}
-let CwOpen={->len(getcmdwintype())}
-nno <expr><esc> PvOpen() ? ":pc!\<cr>" : v:hlsearch ? ":noh\<cr>" : CwOpen() ? ":q\<cr>" : "q:"
+nno <expr><esc> len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')})) ? ":pc!\<cr>"
+      \ : &hlsearch && v:hlsearch ? ":noh\<cr>"
+      \ : len(getcmdwintype()) ? ":q\<cr>"
+      \ : "q:"
 
 "search
-set ignorecase smartcase gdefault inccommand=nosplit
-nmap f /
-nmap F ?
+set nohlsearch ignorecase smartcase gdefault inccommand=nosplit
 no ; f
 no , F
+nmap f /
+nmap F ?
 ono f /\V/e<left><left>
+ono F ?\V?e<left><left>
 nno gr :%s-
 
 "buffers

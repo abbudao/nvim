@@ -58,6 +58,10 @@
 	path = pack/objects/start/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
 	ignore = dirty
+[submodule "pack/objects/start/vim-textobj-between"]
+	path = pack/objects/start/vim-textobj-between
+	url = git@github.com:thinca/vim-textobj-between.git
+	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-indent"]
 	path = pack/objects/start/vim-textobj-indent
 	url = git@github.com:kana/vim-textobj-indent.git
