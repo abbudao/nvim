@@ -14,9 +14,9 @@
 	path = pack/base/start/vim-sleuth
 	url = git@github.com:tpope/vim-sleuth.git
 	ignore = dirty
-[submodule "pack/candy/start/vim-colorschemes"]
-	path = pack/candy/start/vim-colorschemes
-	url = git@github.com:flazz/vim-colorschemes.git
+[submodule "pack/candy/start/awesome-vim-colorschemes"]
+	path = pack/candy/start/awesome-vim-colorschemes
+	url = git@github.com:rafi/awesome-vim-colorschemes.git
 	ignore = dirty
 [submodule "pack/candy/start/buffertitle.vim"]
 	path = pack/candy/start/buffertitle.vim

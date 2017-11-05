@@ -4,17 +4,13 @@ let g:python3_host_prog='python3'
 
 "colors
 set bg=dark tgc
-colo molokai
 au colorscheme * hi! normal guibg=None
-      \ | hi! link signcolumn normal
-      \ | hi! link diffadd directory
-      \ | hi! link diffchange moremsg
-      \ | hi! link diffdelete errormsg
+colo molokai
 
 "interface
 let g:loaded_matchparen=1
 set ls=0 shortmess+=I list nowrap lazyredraw
-au vimresized * set ls=2 | cal timer_start(1,{->execute('set ls=0')})
+au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
 "operators
 map R <plug>(operator-replace)
@@ -28,10 +24,10 @@ nno <expr><esc> len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')})) ? ":pc
 
 "search
 set nohlsearch ignorecase smartcase gdefault inccommand=nosplit
+nmap f <plug>(macrosearch-/)
+nmap F <plug>(macrosearch-?)
 no ; f
 no , F
-nmap f /
-nmap F ?
 ono f /\V/e<left><left>
 ono F ?\V?e<left><left>
 nno gr :%s-
