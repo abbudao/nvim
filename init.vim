@@ -41,8 +41,7 @@ nno X :bd<cr>
 nno Q :q<cr>
 nno gs :w<cr>
 nno gd :cd %:h<cr>
-nno ge :CtrlPNav<cr>
-nno gf :CtrlPRoot<cr>
+nno gf :CtrlPNav<cr>
 nno gh :CtrlPMRU<cr>
 
 "terminal
