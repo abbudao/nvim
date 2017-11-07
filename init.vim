@@ -17,10 +17,8 @@ map R <plug>(operator-replace)
 map - <plug>(operator-camelize-toggle)
 
 "escape
-nno <expr><esc> len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')})) ? ":pc!\<cr>"
-      \ : &hlsearch && v:hlsearch ? ":noh\<cr>"
-      \ : len(getcmdwintype()) ? ":q\<cr>"
-      \ : "q:"
+nno <expr><esc> len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')})) ? ":pc!\<cr>" : ":norm q\<cr>q:k"
+au cmdwinenter * nno <buffer><esc> :q<cr>
 
 "search
 set nohlsearch ignorecase smartcase gdefault inccommand=nosplit
