@@ -25,8 +25,8 @@ nno <expr><esc>
 
 "search
 set ignorecase smartcase gdefault inccommand=nosplit
-no f /
-no F ?
+map f <plug>(macrosearch-/)
+map F <plug>(macrosearch-?)
 ono f /\V/e<left><left>
 ono F ?\V?e<left><left>
 no ; f
