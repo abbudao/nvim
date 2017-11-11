@@ -28,6 +28,11 @@
 	url = git@github.com:rliang/buffertitle.vim.git
 	branch = master
 	ignore = dirty
+[submodule "pack/candy/start/vim-mundo"]
+	path = pack/candy/start/vim-mundo
+	url = git@github.com:simnalamburt/vim-mundo.git
+	branch = master
+	ignore = dirty
 [submodule "pack/files/start/vim-eunuch"]
 	path = pack/files/start/vim-eunuch
 	url = git@github.com:tpope/vim-eunuch.git

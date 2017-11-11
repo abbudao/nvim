@@ -12,10 +12,6 @@ let g:loaded_matchparen=1
 set ls=0 shortmess+=I list nowrap lazyredraw
 au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
-"operators
-map R <plug>(operator-replace)
-map - <plug>(operator-camelize-toggle)
-
 "escape
 nno <expr><esc>
       \ len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')})) ? ":pc!\<cr>"
@@ -23,16 +19,20 @@ nno <expr><esc>
       \ : len(getcmdwintype()) ? ":q\<cr>"
       \ : ":norm q\<cr>q:k"
 
+"operators
+map R <plug>(operator-replace)
+map - <plug>(operator-camelize-toggle)
+
 "search
 set ignorecase smartcase gdefault inccommand=nosplit
+nno gr :%s-
+vno gr :s-
 map f <plug>(macrosearch-/)
 map F <plug>(macrosearch-?)
 ono f /\V/e<left><left>
 ono F ?\V?e<left><left>
 no ; f
 no , F
-nno gr :%s-
-vno gr :s-
 
 "buffers
 set confirm hidden undofile noswapfile
@@ -64,11 +64,12 @@ fu! s:lsp_ft()
   nno <buffer>K :cal LanguageClient_textDocument_hover()<cr>
   nno <buffer>gD :cal LanguageClient_textDocument_definition()<cr>
   nno <buffer>gQ :cal LanguageClient_textDocument_formatting()<cr>
+  vno <buffer>gq :cal LanguageClient_textDocument_rangeFormatting()<cr>
   nno <buffer><f1> :cal LanguageClient_textDocument_codeAction()<cr>
   nno <buffer><f2> :cal LanguageClient_textDocument_rename()<cr>
   nno <buffer><f3> :cal LanguageClient_textDocument_references()<cr>
   nno <buffer><f4> :cal LanguageClient_textDocument_documentSymbol()<cr>
-  nno <buffer><f5> :cal LanguageClient_workspaceSymbol()<cr>
+  nno <buffer><f5> :cal LanguageClient_workspace_symbol()<cr>
 endf
 fu! s:lsp(ft,cmd)
   let g:LanguageClient_serverCommands[a:ft]=a:cmd
