@@ -1,29 +1,29 @@
-"providers
+" providers
 set cb+=unnamedplus
 let g:python3_host_prog='python3'
 
-"colors
+" colors
 set bg=dark tgc
 au colorscheme * hi! normal guibg=None | hi! link signcolumn normal
 colo molokai
 
-"interface
+" interface
 let g:loaded_matchparen=1
-set ls=0 shortmess+=I list nowrap lazyredraw
+set ls=0 shortmess+=cI list nowrap lazyredraw
 au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
 
-"escape
+" escape
 nno <expr><esc>
       \ len(filter(range(winnr('$')),{k->getwinvar(k+1,'&pvw')})) ? ":pc!\<cr>"
       \ : &hlsearch && v:hlsearch ? ":noh\<cr>"
       \ : len(getcmdwintype()) ? ":q\<cr>"
       \ : ":norm q\<cr>q:k"
 
-"operators
+" operators
 map R <plug>(operator-replace)
 map - <plug>(operator-camelize-toggle)
 
-"search
+" search
 set ignorecase smartcase gdefault inccommand=nosplit
 nno gr :%s-
 vno gr :s-
@@ -34,7 +34,7 @@ ono F ?\V?e<left><left>
 no ; f
 no , F
 
-"buffers
+" buffers
 set confirm hidden undofile noswapfile
 let g:loaded_netrwPlugin=1
 nno <c-j> :bn<cr>
@@ -46,7 +46,7 @@ nno gd :cd %:h<cr>
 nno gf :CtrlPNav<cr>
 nno gh :CtrlPMRU<cr>
 
-"terminal
+" terminal
 let $EDITOR='nvr --remote-wait'
 nno gt :term<cr>
 tno <esc> <c-\><c-n>

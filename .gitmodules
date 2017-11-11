@@ -93,11 +93,6 @@
 	url = git@github.com:sgur/vim-textobj-parameter.git
 	branch = master
 	ignore = dirty
-[submodule "pack/objects/start/vim-textobj-comment"]
-	path = pack/objects/start/vim-textobj-comment
-	url = git@github.com:glts/vim-textobj-comment.git
-	branch = master
-	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-methodcall"]
 	path = pack/objects/start/vim-textobj-methodcall
 	url = git@github.com:thalesmello/vim-textobj-methodcall.git
@@ -123,9 +118,9 @@
 	url = git@github.com:tyru/operator-camelize.vim.git
 	branch = master
 	ignore = dirty
-[submodule "pack/operators/start/vim-commentor"]
-	path = pack/operators/start/vim-commentor
-	url = git@github.com:manasthakur/vim-commentor.git
+[submodule "pack/operators/start/vim-commentary"]
+	path = pack/operators/start/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
 	branch = master
 	ignore = dirty
 [submodule "pack/operators/start/vim-exchange"]
