@@ -52,13 +52,13 @@ au bufenter * if isdirectory(expand('%')) | cd % | bd! | cal compick#do('cwd') |
 let $EDITOR='nvr --remote-wait'
 nno gt :te<cr>:tno <buffer><lt>esc> <lt>c-\><lt>c-n><cr>i
 
-"completion
+" completion
 set completeopt+=menuone,noinsert,noselect
 let g:deoplete#enable_at_startup=1
 let g:deoplete#ignore_sources={}
 ino <expr><c-space> deoplete#manual_complete()
 
-"languages
+" languages
 let g:LanguageClient_autoStart=1
 let g:LanguageClient_serverCommands={}
 fu! s:lsp_ft()

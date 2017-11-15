@@ -1,125 +1,81 @@
 [submodule "pack/base/start/auto-pairs"]
 	path = pack/base/start/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
-	branch = master
-	ignore = dirty
+[submodule "pack/base/start/vim-eunuch"]
+	path = pack/base/start/vim-eunuch
+	url = git@github.com:tpope/vim-eunuch.git
 [submodule "pack/base/start/vim-repeat"]
 	path = pack/base/start/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
-	branch = master
-	ignore = dirty
 [submodule "pack/base/start/vim-rsi"]
 	path = pack/base/start/vim-rsi
 	url = git@github.com:tpope/vim-rsi.git
-	branch = master
-	ignore = dirty
 [submodule "pack/base/start/vim-sleuth"]
 	path = pack/base/start/vim-sleuth
 	url = git@github.com:tpope/vim-sleuth.git
-	branch = master
-	ignore = dirty
-[submodule "pack/candy/start/awesome-vim-colorschemes"]
-	path = pack/candy/start/awesome-vim-colorschemes
+[submodule "pack/interface/start/awesome-vim-colorschemes"]
+	path = pack/interface/start/awesome-vim-colorschemes
 	url = git@github.com:rafi/awesome-vim-colorschemes.git
-	branch = master
-	ignore = dirty
-[submodule "pack/candy/start/buffertitle.vim"]
-	path = pack/candy/start/buffertitle.vim
+[submodule "pack/interface/start/buffertitle.vim"]
+	path = pack/interface/start/buffertitle.vim
 	url = git@github.com:rliang/buffertitle.vim.git
-	branch = master
-	ignore = dirty
-[submodule "pack/candy/start/vim-mundo"]
-	path = pack/candy/start/vim-mundo
-	url = git@github.com:simnalamburt/vim-mundo.git
-	branch = master
-	ignore = dirty
-[submodule "pack/files/start/vim-eunuch"]
-	path = pack/files/start/vim-eunuch
-	url = git@github.com:tpope/vim-eunuch.git
-	branch = master
-	ignore = dirty
-[submodule "pack/files/start/compick.vim"]
-	path = pack/files/start/compick.vim
+[submodule "pack/interface/start/compick.vim"]
+	path = pack/interface/start/compick.vim
 	url = git@github.com:rliang/compick.vim.git
-	branch = master
-	ignore = dirty
+[submodule "pack/interface/start/vim-mundo"]
+	path = pack/interface/start/vim-mundo
+	url = git@github.com:simnalamburt/vim-mundo.git
 [submodule "pack/languages/start/vim-polyglot"]
 	path = pack/languages/start/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
-	branch = master
-	ignore = dirty
-[submodule "pack/languages/start/neosnippet.vim"]
-	path = pack/languages/start/neosnippet.vim
-	url = git@github.com:Shougo/neosnippet.vim.git
-	branch = master
-	ignore = dirty
-[submodule "pack/languages/start/neosnippet-snippets"]
-	path = pack/languages/start/neosnippet-snippets
-	url = git@github.com:Shougo/neosnippet-snippets.git
-	branch = master
-	ignore = dirty
+[submodule "pack/languages/start/ultisnips"]
+	path = pack/languages/start/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "pack/languages/start/vim-snippets"]
+	path = pack/languages/start/vim-snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule "pack/languages/start/deoplete.nvim"]
+	path = pack/languages/start/deoplete.nvim
+	url = git@github.com:Shougo/deoplete.nvim.git
+[submodule "pack/languages/start/LanguageClient-neovim"]
+	path = pack/languages/start/LanguageClient-neovim
+	url = git@github.com:autozimu/LanguageClient-neovim.git
 [submodule "pack/objects/start/vim-textobj-user"]
 	path = pack/objects/start/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
-	branch = master
-	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-between"]
 	path = pack/objects/start/vim-textobj-between
 	url = git@github.com:thinca/vim-textobj-between.git
-	branch = master
-	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-indent"]
 	path = pack/objects/start/vim-textobj-indent
 	url = git@github.com:kana/vim-textobj-indent.git
-	branch = master
-	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-parameter"]
 	path = pack/objects/start/vim-textobj-parameter
 	url = git@github.com:sgur/vim-textobj-parameter.git
-	branch = master
-	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-methodcall"]
 	path = pack/objects/start/vim-textobj-methodcall
 	url = git@github.com:thalesmello/vim-textobj-methodcall.git
-	branch = master
-	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-variable-segment"]
 	path = pack/objects/start/vim-textobj-variable-segment
 	url = git@github.com:Julian/vim-textobj-variable-segment.git
-	branch = master
-	ignore = dirty
 [submodule "pack/operators/start/vim-operator-user"]
 	path = pack/operators/start/vim-operator-user
 	url = git@github.com:kana/vim-operator-user.git
-	branch = master
-	ignore = dirty
 [submodule "pack/operators/start/vim-operator-replace"]
 	path = pack/operators/start/vim-operator-replace
 	url = git@github.com:kana/vim-operator-replace.git
-	branch = master
-	ignore = dirty
 [submodule "pack/operators/start/operator-camelize.vim"]
 	path = pack/operators/start/operator-camelize.vim
 	url = git@github.com:tyru/operator-camelize.vim.git
-	branch = master
-	ignore = dirty
 [submodule "pack/operators/start/vim-commentary"]
 	path = pack/operators/start/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
-	branch = master
-	ignore = dirty
 [submodule "pack/operators/start/vim-exchange"]
 	path = pack/operators/start/vim-exchange
 	url = git@github.com:tommcdo/vim-exchange.git
-	branch = master
-	ignore = dirty
 [submodule "pack/operators/start/vim-sandwich"]
 	path = pack/operators/start/vim-sandwich
 	url = git@github.com:machakann/vim-sandwich.git
-	branch = master
-	ignore = dirty
 [submodule "pack/operators/start/macrosearch.vim"]
 	path = pack/operators/start/macrosearch.vim
 	url = git@github.com:rliang/macrosearch.vim.git
-	branch = master
-	ignore = dirty
