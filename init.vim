@@ -10,7 +10,7 @@ colo molokai
 " interface
 let g:loaded_matchparen=1
 set ls=0 shortmess+=cI list nowrap lazyredraw
-au vimresized * set ls=2 | cal timer_start(0,{->execute('set ls=0')})
+au vimresized * cal timer_start(0,{->execute('mod')})
 
 " escape
 nno <expr><esc>
@@ -35,7 +35,7 @@ no ; f
 no , F
 
 " buffers
-set confirm hidden undofile noswapfile
+set confirm hidden undofile noswapfile wig+=./,../
 let g:loaded_netrwPlugin=1
 nno <c-j> :bn<cr>
 nno <c-k> :bp<cr>
@@ -43,13 +43,14 @@ nno X :bd<cr>
 nno Q :q<cr>
 nno gs :w<cr>
 nno gd :cd %:h<cr>
-nno gf :CtrlPNav<cr>
-nno gh :CtrlPMRU<cr>
+nno gh :cal compick#do('mru')<cr>
+nno gf :cal compick#do('cwd')<cr>
+au filetype compick-cwd ino <buffer><c-u> <esc>:cal compick#accept('..')<cr>
+au bufenter * if isdirectory(expand('%')) | cd % | bd! | cal compick#do('cwd') | en
 
 " terminal
 let $EDITOR='nvr --remote-wait'
-nno gt :term<cr>
-tno <esc> <c-\><c-n>
+nno gt :te<cr>:tno <buffer><lt>esc> <lt>c-\><lt>c-n><cr>i
 
 "completion
 set completeopt+=menuone,noinsert,noselect

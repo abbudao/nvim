@@ -38,14 +38,9 @@
 	url = git@github.com:tpope/vim-eunuch.git
 	branch = master
 	ignore = dirty
-[submodule "pack/files/start/ctrlp.vim"]
-	path = pack/files/start/ctrlp.vim
-	url = git@github.com:ctrlpvim/ctrlp.vim.git
-	branch = master
-	ignore = dirty
-[submodule "pack/files/start/ctrlp-nav"]
-	path = pack/files/start/ctrlp-nav
-	url = git@github.com:rliang/ctrlp-nav.git
+[submodule "pack/files/start/compick.vim"]
+	path = pack/files/start/compick.vim
+	url = git@github.com:rliang/compick.vim.git
 	branch = master
 	ignore = dirty
 [submodule "pack/languages/start/vim-polyglot"]
@@ -53,24 +48,14 @@
 	url = git@github.com:sheerun/vim-polyglot.git
 	branch = master
 	ignore = dirty
-[submodule "pack/languages/start/ultisnips"]
-	path = pack/languages/start/ultisnips
-	url = git@github.com:SirVer/ultisnips.git
+[submodule "pack/languages/start/neosnippet.vim"]
+	path = pack/languages/start/neosnippet.vim
+	url = git@github.com:Shougo/neosnippet.vim.git
 	branch = master
 	ignore = dirty
-[submodule "pack/languages/start/vim-snippets"]
-	path = pack/languages/start/vim-snippets
-	url = git@github.com:honza/vim-snippets.git
-	branch = master
-	ignore = dirty
-[submodule "pack/languages/start/deoplete.nvim"]
-	path = pack/languages/start/deoplete.nvim
-	url = git@github.com:Shougo/deoplete.nvim.git
-	branch = master
-	ignore = dirty
-[submodule "pack/languages/start/LanguageClient-neovim"]
-	path = pack/languages/start/LanguageClient-neovim
-	url = git@github.com:autozimu/LanguageClient-neovim.git
+[submodule "pack/languages/start/neosnippet-snippets"]
+	path = pack/languages/start/neosnippet-snippets
+	url = git@github.com:Shougo/neosnippet-snippets.git
 	branch = master
 	ignore = dirty
 [submodule "pack/objects/start/vim-textobj-user"]
