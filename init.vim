@@ -45,8 +45,8 @@ nno gs :w<cr>
 nno gd :cd %:h<cr>
 nno gh :cal compick#do('mru')<cr>
 nno gf :cal compick#do('cwd')<cr>
-au filetype compick-cwd ino <buffer><c-u> <esc>:cal compick#accept('..')<cr>
-au filetype compick-cwd let b:compick_action={f->execute(printf(isdirectory(f) ? 'cd %s | cal compick#do("cwd")' : 'e %s',f))}
+au filetype compick-cwd ino <buffer><silent><c-u> <esc>:cal compick#accept('..')<cr>
+au bufenter * if isdirectory(expand('%')) | cd % | bd! | cal compick#do('cwd') | en
 
 " terminal
 let $EDITOR='nvr --remote-wait'
