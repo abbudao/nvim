@@ -13,9 +13,9 @@
 [submodule "pack/base/start/vim-sleuth"]
 	path = pack/base/start/vim-sleuth
 	url = git@github.com:tpope/vim-sleuth.git
-[submodule "pack/interface/start/awesome-vim-colorschemes"]
-	path = pack/interface/start/awesome-vim-colorschemes
-	url = git@github.com:rafi/awesome-vim-colorschemes.git
+[submodule "pack/interface/start/vim-colorschemes"]
+	path = pack/interface/start/vim-colorschemes
+	url = git@github.com:flazz/vim-colorschemes.git
 [submodule "pack/interface/start/buffertitle.vim"]
 	path = pack/interface/start/buffertitle.vim
 	url = git@github.com:rliang/buffertitle.vim.git
