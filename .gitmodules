@@ -58,15 +58,6 @@
 [submodule "pack/objects/start/vim-textobj-variable-segment"]
 	path = pack/objects/start/vim-textobj-variable-segment
 	url = git@github.com:Julian/vim-textobj-variable-segment.git
-[submodule "pack/operators/start/vim-operator-user"]
-	path = pack/operators/start/vim-operator-user
-	url = git@github.com:kana/vim-operator-user.git
-[submodule "pack/operators/start/vim-operator-replace"]
-	path = pack/operators/start/vim-operator-replace
-	url = git@github.com:kana/vim-operator-replace.git
-[submodule "pack/operators/start/operator-camelize.vim"]
-	path = pack/operators/start/operator-camelize.vim
-	url = git@github.com:tyru/operator-camelize.vim.git
 [submodule "pack/operators/start/vim-commentary"]
 	path = pack/operators/start/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
@@ -76,6 +67,3 @@
 [submodule "pack/operators/start/vim-sandwich"]
 	path = pack/operators/start/vim-sandwich
 	url = git@github.com:machakann/vim-sandwich.git
-[submodule "pack/operators/start/macrosearch.vim"]
-	path = pack/operators/start/macrosearch.vim
-	url = git@github.com:rliang/macrosearch.vim.git
