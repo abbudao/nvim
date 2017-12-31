@@ -16,23 +16,32 @@ nno <expr><esc>
 \ : len(getcmdwintype()) ? ":q\<cr>"
 \ : ":norm! q\<cr>q:k"
 nno gt :ter<cr>:tno <buffer><lt>esc> <lt>c-\><lt>c-n><cr>i
+nmap gC <plug>(operator-camelize-toggle)
+
+" macros
+fu! s:macro_a()
+  nno <silent>q :cal <sid>macro_b()<cr>qq
+endf
+fu! s:macro_b()
+  nno <silent>q q:cal <sid>macro_a()<cr>
+endf
+cal s:macro_a()
 
 " search/replace
 set ignorecase smartcase gdefault inccommand=nosplit
 nno gr :%s-
 vno gr :s-
-nno / f
-nno ? F
 nno f /
 nno F ?
-nno q :sil! cal repeat#invalidate()<bar>norm! q<cr>qe
-nno n :cal repeat#set('@e',1)<bar>norm! q<cr>n
-nno N :cal repeat#set('@e',1)<bar>norm! q<cr>N
-nno gn "ey
-vno gn "ey
-au textyankpost * if v:event['regname']=='e' | let @/='\V\C'.escape(@e,'\')
+nno / f
+nno ? F
+nno * *``
+nno # #``
+nno gn "sy
+vno gn "sy
+au textyankpost * if v:event['regname']=='s' | let @/='\V\C'.escape(@s,'\')
 
-" buffers
+" files
 let g:loaded_netrwPlugin=1
 set confirm hidden undofile noswapfile shada='1000,:1000 wig+=./,../
 nno <c-j> :bn<cr>
@@ -53,14 +62,16 @@ let g:deoplete#ignore_sources={'_':['member']}
 ino <expr><c-space> deoplete#manual_complete()
 
 " languages
+let $PATH=join(['~/.local/bin', '~/.pub-cache/bin', 'node_modules/.bin', $PATH],':')
 let g:LanguageClient_autoStart=1
+let g:LanguageClient_loadSettings=1
 let g:LanguageClient_serverCommands={}
-let g:LanguageClient_serverCommands['c']=['clangd']
-let g:LanguageClient_serverCommands['cpp']=['clangd']
+let g:LanguageClient_serverCommands['c']=['cquery', '--language-server']
+let g:LanguageClient_serverCommands['cpp']=['cquery', '--language-server']
 let g:LanguageClient_serverCommands['python']=['pyls']
 let g:LanguageClient_serverCommands['javascript.jsx']=['javascript-typescript-stdio']
 let g:LanguageClient_serverCommands['rust']=['rustup', 'run', 'nightly', 'rls']
-let g:LanguageClient_serverCommands['dart']=join([$HOME,'.pub-cache','bin','dart_language_server'],'/')
+let g:LanguageClient_serverCommands['dart']=['dart_language_server']
 fu! s:lsp_setup()
   nno <buffer>K :cal LanguageClient_textDocument_hover()<cr>
   nno <buffer>gD :cal LanguageClient_textDocument_definition()<cr>

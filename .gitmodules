@@ -67,3 +67,9 @@
 [submodule "pack/operators/start/vim-sandwich"]
 	path = pack/operators/start/vim-sandwich
 	url = git@github.com:machakann/vim-sandwich.git
+[submodule "pack/operators/start/vim-operator-user"]
+	path = pack/operators/start/vim-operator-user
+	url = git@github.com:kana/vim-operator-user.git
+[submodule "pack/operators/start/operator-camelize.vim"]
+	path = pack/operators/start/operator-camelize.vim
+	url = git@github.com:tyru/operator-camelize.vim.git
