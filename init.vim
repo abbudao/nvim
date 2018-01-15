@@ -17,6 +17,10 @@ nno <expr><esc>
 \ : ":norm! q\<cr>q:k"
 nno gt :ter<cr>:tno <buffer><lt>esc> <lt>c-\><lt>c-n><cr>i
 nmap gC <plug>(operator-camelize-toggle)
+nn ga :EasyAlign<space>
+xn ga :EasyAlign<space>
+nn <c-f> :bn<cr>
+nn <c-b> :bp<cr>
 
 " macros
 fu! s:macro_a()

@@ -73,3 +73,6 @@
 [submodule "pack/operators/start/operator-camelize.vim"]
 	path = pack/operators/start/operator-camelize.vim
 	url = git@github.com:tyru/operator-camelize.vim.git
+[submodule "pack/operators/start/vim-easy-align"]
+	path = pack/operators/start/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align
