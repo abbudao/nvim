@@ -4,7 +4,7 @@ Personal Neovim configuration.
 ## Installation
 
 ```sh
-git clone --recursive --depth=1 https://github.com/rliang/nvim ~/.config/nvim
+git clone --recursive --depth=1 https://github.com/abbudao/nvim ~/.config/nvim
 nvim '+UpdateRemotePlugins' '+helptags\ ~/.config/nvim' '+qa'
 ```
 
@@ -97,6 +97,8 @@ A text object to turn foo_bar_baz into foo_baz *and* quuxSpamEggs into quuxEggs 
 snake_case -> SnakeCase, CamelCase -> camel_case
 ##### [vim-commentary](https://github.com/tpope/vim-commentary)
 commentary.vim: comment stuff out
+##### [vim-easy-align](https://github.com/junegunn/vim-easy-align)
+:sunflower: A Vim alignment plugin
 ##### [vim-exchange](https://github.com/tommcdo/vim-exchange)
 Easy text exchange operator for Vim
 ##### [vim-operator-user](https://github.com/kana/vim-operator-user)

@@ -9,7 +9,7 @@ try:
         headers = {'Content-Type': 'application/json',
                    'Authorization': 'Bearer {0}'.format(api_token)}
 except OSError:
-    print("IO error")
+    print("No API Token found. Using unauthenticated requests (limited to 60/hour)")
     headers = {'Content-Type': 'application/json'}
 
 
