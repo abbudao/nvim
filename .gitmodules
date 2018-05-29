@@ -76,3 +76,15 @@
 [submodule "pack/operators/start/vim-easy-align"]
 	path = pack/operators/start/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
+[submodule "pack/languages/start/ale"]
+	path = pack/languages/start/ale
+	url = https://github.com/w0rp/ale
+[submodule "pack/languages/start/vim-react-snippets"]
+	path = pack/languages/start/vim-react-snippets
+	url = https://github.com/epilande/vim-react-snippets
+[submodule "pack/languages/start/vim-es2015-snippets"]
+	path = pack/languages/start/vim-es2015-snippets
+	url = https://github.com/epilande/vim-es2015-snippets
+[submodule "pack/languages/start/vim-styled-components"]
+	path = pack/languages/start/vim-styled-components
+	url = https://github.com/styled-components/vim-styled-components
