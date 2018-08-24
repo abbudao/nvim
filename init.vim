@@ -1,6 +1,7 @@
 " external
 let $EDITOR='nvr --remote-wait'
-let g:python3_host_prog='python3'
+let g:python3_host_prog='/usr/bin/python3'
+let g:python_host_prog='/usr/bin/python'
 set cb+=unnamedplus
 
 " interface
@@ -105,3 +106,5 @@ fu! s:lsp_setup()
   nno <buffer><f5> :cal LanguageClient_workspace_symbol()<cr>
 endf
 exe 'au filetype' join(keys(g:LanguageClient_serverCommands),',') 'cal s:lsp_setup()'
+
+
