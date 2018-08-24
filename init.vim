@@ -1,7 +1,7 @@
 " external
 let $EDITOR='nvr --remote-wait'
 let g:python3_host_prog='/usr/bin/python3'
-let g:python_host_prog='/usr/bin/python'
+let g:python_host_prog='/usr/bin/python2'
 set cb+=unnamedplus
 
 " interface
